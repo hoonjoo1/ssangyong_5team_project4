@@ -93,6 +93,18 @@ height:200px;
 <script type="text/javascript">
 
 			$(document).ready(function(){
+				
+				var proc = "${proc}";
+				if(proc!=""){
+					alert(proc);
+					location.href="${path}/empList.do"
+					/* 화면이 다를 때는 꼭 필요
+					if(confirm(proc+"\n조회화면으로 이동하시겠습니까?")){
+						location.href="${path}/empList.do"
+					}
+					*/
+				}
+				
 				$('#confirmbtn').click(function(){
 					$('#mymodal').modal({
 						show: false
@@ -133,14 +145,14 @@ height:200px;
 
 <!-- 인원 -->
 	<div id="number">
-		인원 <input type="text" name="num" placeholder="인원" size="5">명
+		인원 <input type="text" name="meetcnt" placeholder="인원" size="5">명
 	</div>
 
 <!-- 지불방식 -->
 	<div id="payway">
 		지불방식
-		<input type="radio" class="form-check-input" name="pay" value="더치페이" checked="checked"> 더치페이
-		<input type="radio" class="form-check-input" name="pay" value="무료"> 무료
+		<input type="radio" class="form-check-input" name="paytype" value="더치페이" checked="checked"> 더치페이
+		<input type="radio" class="form-check-input" name="paytype" value="무료"> 무료
 	</div>
 	
 <!-- 내용 -->
