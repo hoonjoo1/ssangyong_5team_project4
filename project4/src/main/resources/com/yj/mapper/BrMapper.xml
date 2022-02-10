@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yj.mapper.BrMapper">
+
+	<select id="list" resultType="com.yj.domain.BrVO">
+		select * from br
+	</select>
+	
+	
+	
+	
+	
+	<select id="get" resultType="com.yj.domain.BrVO"
+		parameterType="int">
+		select * 
+		from br
+		where bkey=#{bkey}
+	</select>
+
+	<insert id="insert">
+		INSERT INTO br (BKEY, USERKEY, TITLE)
+		values(seq_br.nextval, #{userkey}, #{title})
+	</insert>
+
+	<update id="update" parameterType="com.yj.domain.BrVO">
+		update br
+		set
+		title=#{title},
+		grade=${grade}
+		where bkey=#{bkey}
+	</update>
+	<delete id="delete" parameterType="int">
+		delete
+		from br
+		where
+		bkey=#{bkey}
+	</delete>
+</mapper>
