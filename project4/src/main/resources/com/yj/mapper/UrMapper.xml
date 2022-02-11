@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yj.mapper.UrMapper">
+
+	<select id="getList" resultType="com.yj.domain.UrVO">
+		select * from ur
+	</select>
+	<select id="get" resultType="com.yj.domain.UrVO"
+		parameterType="int">
+		select * from ur
+		where urkey=#{urkey}
+	</select>
+
+	<insert id="register">
+	
+			insert into ur values (seq_ur.nextval, #{userkey}, #{boardkey}
+		, #{title},
+		to_date(#{writeDateS},'YYYY/MM/DD'), #{content}, #{oppoid}, #{oppograde})
+	
+	</insert>
+
+	<update id="update" parameterType="com.yj.domain.UrVO">
+		update ur
+		set
+		title=#{title}
+		where urkey=#{urkey}
+	</update>
+	<delete id="delete" parameterType="int">
+		delete
+		from ur
+		where
+		urkey=#{urkey}
+	</delete>
+</mapper>

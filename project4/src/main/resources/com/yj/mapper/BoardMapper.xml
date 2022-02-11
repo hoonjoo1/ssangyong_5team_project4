@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yj.mapper.BoardMapper">
+
+	<select id="getList" resultType="com.yj.domain.BoardVO">
+		select * from Board2
+	</select>
+
+	<insert id="insert">
+		insert into board2 
+		values (seq_board.nextval, #{boardname})
+	</insert>
+
+	<insert id="insertSelectKey">
+		<selectKey keyProperty="boardkey" order="BEFORE"
+			resultType="int">
+			select seq_board.nextval from dual
+		</selectKey>
+
+		insert into board2 
+		values (#{boardkey}, #{boardname})
+	</insert>
+
+	<select id="read" resultType="com.yj.domain.BoardVO">
+		select * from board2 where boardkey =
+		#{boardkey}
+	</select>
+
+
+	<delete id="delete">
+		delete board2 where boardkey = #{boardkey}
+	</delete>
+
+	<update id="update">
+		update board2
+		set boardname= #{boardname}
+		where boardkey =
+		#{boardkey}
+	</update>
+</mapper>

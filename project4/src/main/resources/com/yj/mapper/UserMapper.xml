@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.yj.mapper.UserMapper">
+
+	<select id="getList" resultType="com.yj.domain.UserVO">
+		select * from User2
+	</select>
+
+	<insert id="insertUser" parameterType="com.yj.domain.UserVO">
+		INSERT INTO user2 values(
+		seq_user.nextval,'1', '1',
+		'1','1', '1', sysdate,'1', 1)
+	</insert>
+
+
+
+
+</mapper>
