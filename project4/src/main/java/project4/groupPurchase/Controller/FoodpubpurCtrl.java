@@ -1,3 +1,7 @@
+/*
+ 작성자 : 장훈주
+ 식자재 공동 구매 컨트롤러
+ * */
 package project4.groupPurchase.Controller;
 
 import org.springframework.stereotype.Controller;

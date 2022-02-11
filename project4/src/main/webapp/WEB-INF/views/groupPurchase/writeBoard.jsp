@@ -1,3 +1,8 @@
+<!-- 
+작성자 : 장훈주
+식자재 공동구매 게시글 작성 화면
+ -->
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"
     import="java.util.*"
