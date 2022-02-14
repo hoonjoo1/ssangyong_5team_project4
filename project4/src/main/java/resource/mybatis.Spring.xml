@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<typeAliases>
+		<typeAlias alias="fpp" type="project4.vo.Foodpubpur"/>
+		<typeAlias alias="board" type="project4_Board.vo.BoardInfo"/>
+		<typeAlias alias="boardList" type="project4_Board.vo.BoardList"/>
+		<typeAlias alias="fcomm" type="project4_Board.vo.Fppcomm"/>
+		<typeAlias alias="insfcomm" type="project4_Board.vo.InsFppcomm"/>
+	</typeAliases>
+	
+	<mappers>
+		<mapper resource="resource/FoodpubpurMapper.xml"/>
+	</mappers>
+
+</configuration>
