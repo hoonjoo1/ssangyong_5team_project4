@@ -4,10 +4,10 @@
 <configuration>
 	<typeAliases>
 		<typeAlias alias="fpp" type="project4.vo.Foodpubpur"/>
-		<typeAlias alias="board" type="project4_Board.vo.BoardInfo"/>
-		<typeAlias alias="boardList" type="project4_Board.vo.BoardList"/>
-		<typeAlias alias="fcomm" type="project4_Board.vo.Fppcomm"/>
-		<typeAlias alias="insfcomm" type="project4_Board.vo.InsFppcomm"/>
+		<typeAlias alias="board" type="project4.vo.BoardInfo"/>
+		<typeAlias alias="boardList" type="project4.vo.BoardList"/>
+		<typeAlias alias="fcomm" type="project4.vo.Fppcomm"/>
+		<typeAlias alias="insfcomm" type="project4.vo.InsFppcomm"/>
 	</typeAliases>
 	
 	<mappers>
