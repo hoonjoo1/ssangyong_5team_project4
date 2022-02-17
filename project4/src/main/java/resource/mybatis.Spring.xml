@@ -12,6 +12,7 @@
 	
 	<mappers>
 		<mapper resource="resource/FoodpubpurMapper.xml"/>
+		<mapper resource="resource/UrMapper.xml"/>
 	</mappers>
 
 </configuration>

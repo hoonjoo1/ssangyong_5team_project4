@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yj.mapper.UrMapper">
+
+	<sql id="criteria">
+		<trim prefix="(" suffix=") AND " prefixOverrides="OR">
+			<foreach item='type' collection="typeArr">
+				<trim prefix="OR">
+					<choose>
+						<when test="type == 'T'.toString()">
+							title like '%'||#{keyword}||'%'
+						</when>
+						<when test="type == 'C'.toString()">
+							content like '%'||#{keyword}||'%'
+						</when>
+						<when test="type == 'W'.toString()">
+							oppoid like '%'||#{keyword}||'%'
+						</when>
+					</choose>
+				</trim>
+			</foreach>
+		</trim>
+	</sql>
+
+
+
+
+	<select id="getListWithPaging" resultType="com.yj.domain.UrVO"> 
+		<![CDATA[ select urkey
+		from ( 
+			select /*+INDEX_DESC(ur urkey) */ 
+			rownum rn, urkey
+			from ur
+			where 
+			]]>
+		<include refid="criteria"></include>   
+  <![CDATA[    
+			rownum <= #{pageNum} * #{amount} 
+		) where rn > (#{pageNum} -1) * #{amount} ]]>
+	</select>
+
+
+
+
+	<select id="getList" resultType="com.yj.domain.UrVO">
+		select * from ur
+	</select>
+
+	<select id="get" resultType="com.yj.domain.UrVO"
+		parameterType="int">
+		select * from ur
+		where urkey=#{urkey}
+	</select>
+
+	<insert id="register" parameterType="com.yj.domain.UrVO">
+		insert into ur
+		(urkey,userkey,boardkey,
+		title, content, oppoid, oppograde)
+		values
+		(seq_ur.nextval,1,1
+		,
+		#{title},#{content}, #{oppoid},
+		#{oppograde})
+
+	</insert>
+
+	<update id="update" parameterType="com.yj.domain.UrVO">
+		update ur
+		set
+		title=#{title},
+		oppograde=#{oppograde}
+		where urkey=#{urkey}
+	</update>
+	<delete id="delete" parameterType="int">
+		delete
+		from ur
+		where
+		urkey=#{urkey}
+	</delete>
+
+	<select id="getTotalCount" resultType="int">
+		select count(*) from ur where
+
+		<include refid="criteria"></include>
+
+		urkey > 0
+
+	</select>
+
+</mapper>

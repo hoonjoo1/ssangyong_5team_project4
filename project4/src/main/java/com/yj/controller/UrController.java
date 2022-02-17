@@ -22,11 +22,12 @@ public class UrController {
 	UrService service;
 
 	@RequestMapping("/list.do")
-	public void list(Model d) {
+	public String list(Model d) {
 		d.addAttribute("psc", "리스트");
 		d.addAttribute("list", service.List());
 		// d.addAttribute("pageMaker", new PageDTO(cri,123));
 		System.out.println("리스트");
+		return "\\WEB-INF\\views\\ur\\list.jsp";
 	}
 
 	@GetMapping("/get.do")
