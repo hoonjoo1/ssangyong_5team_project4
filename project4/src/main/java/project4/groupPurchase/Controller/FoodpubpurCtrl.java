@@ -18,7 +18,7 @@ public class FoodpubpurCtrl {
 	@RequestMapping("/boardlist.do")
 	public String groupboardlist(Model d) {
 		d.addAttribute("boardlist",service.getBoardList());
-		return "BoardList";
+		return "groupPurchase//BoardList";
 	}
 	
 	@RequestMapping("/groupread.do")
@@ -27,13 +27,13 @@ public class FoodpubpurCtrl {
 		service.uptViewcnt(fppkey);
 		d.addAttribute("commlist",service.getCommList(fppkey));
 		d.addAttribute("fppkey", fppkey);
-		return "readBoard";
+		return "groupPurchase//readBoard";
 	}
 	
 	@RequestMapping("/groupwrite.do")
 	public String groupwrite() {
 		
-		return "WEB-INF\\views\\groupPurchase\\writeBoard.jsp";
+		return "groupPurchase//writeBoard";
 	}
 	
 	@RequestMapping("/insertfpp.do")
@@ -41,7 +41,7 @@ public class FoodpubpurCtrl {
 		
 		d.addAttribute("proc","작성 완료되었습니다");
 		service.insertFoodpubpur(ins);
-		return "writeBoard";
+		return "groupPurchase//writeBoard";
 	}
 	
 	@RequestMapping("/insertcomm.do")
@@ -49,6 +49,6 @@ public class FoodpubpurCtrl {
 		
 		d.addAttribute("proc","작성 완료되었습니다");
 		service.insertcomm(ins);
-		return "readBoard";
+		return "groupPurchase//readBoard";
 	}
 }
