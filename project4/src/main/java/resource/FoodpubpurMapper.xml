@@ -1,68 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper
 	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-	"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-
-<mapper namespace="project4.groupPurchase.Dao.FoodpubpurDao">
-	<select id="getBoardList" resultType="boardList">
-		SELECT *
-		FROM FOODPUBPUR f , USERS u
-		WHERE f.USERKEY
-		= u.USERKEY
-	</select>
-<!-- 	<insert id="insertWrite" parameterType="fpp">
-		INSERT INTO Foodpubpur
-		VALUES((SELECT NVL(MAX(foodpubpurkey)+1,1) FROM FOODPUBPUR), 1, 1, 1,
-		#{title}, to_char(sysdate,'YYYY-MM-DD'), #{content},#{loc},
-		#{meetcnt},#{paytype},0,0)
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >	
+	
+<mapper namespace="Project4_Board.groupPurchase.dao.FoodpubpurDao">
+	<insert id="insertWrite" parameterType="fpp">
+		INSERT INTO Foodpubpur VALUES((SELECT NVL(MAX(foodpubpurkey)+1,1) FROM FOODPUBPUR), 1, 1, 1, 
+		#{title}, to_char(sysdate,'YYYY-MM-DD'), #{content},#{loc}, #{meetcnt},#{paytype},0,0)
 	</insert>
-
+	
 	<select id="getRead" parameterType="int" resultType="board">
-		SELECT
-		u.NICKNAME nickname, f.TITLE title, f.WRITEDATE writedate,
-		f.CONTENT
-		content , f.LOC loc , f.MEETCNT meetcnt, f.PAYTYPE paytype,
-		b.BOARDNAME boardname
-		FROM FOODPUBPUR f , USERS u , BOARD b
-		WHERE
-		f.USERKEY = u.USERKEY
+		SELECT u.NICKNAME nickname, f.TITLE title, f.WRITEDATE writedate,
+		f.CONTENT content , f.LOC loc , f.MEETCNT meetcnt, f.PAYTYPE paytype, b.BOARDNAME boardname 
+		FROM FOODPUBPUR f , USERS u , BOARD b 
+		WHERE f.USERKEY = u.USERKEY
 		AND f.BOARDKEY = b.BOARDKEY
-		AND f.FOODPUBPURKEY =
-		#{fppkey}
+		AND f.FOODPUBPURKEY = #{fppkey}
 	</select>
-
+	
 	<select id="getBoardList" resultType="boardList">
-		SELECT f.FOODPUBPURKEY
-		fppkey , f.TITLE title , f.LOC loc ,
-		f.WRITEDATE writedate , u.NICKNAME
-		nickname , f.viewcnt viewcnt
-		FROM FOODPUBPUR f , USERS u
-		WHERE f.USERKEY
-		= u.USERKEY
+	SELECT f.FOODPUBPURKEY fppkey , f.TITLE title , f.LOC loc , 
+		   f.WRITEDATE writedate , u.NICKNAME nickname , f.viewcnt viewcnt
+	FROM FOODPUBPUR f , USERS u 
+	WHERE f.USERKEY = u.USERKEY
 	</select>
-
+	
 	<update id="uptViewcnt" parameterType="int">
-		UPDATE Foodpubpur SET
-		viewcnt = viewcnt+1
+		UPDATE Foodpubpur SET viewcnt = viewcnt+1
 		WHERE FOODPUBPURKEY = #{fppkey}
 	</update>
 
 	<select id="getCommList" resultType="fcomm" parameterType="int">
-		SELECT fc.COMMENTKEY commkey, fc.COMMCONTENTS commcontent ,fc.COMMDATE
-		commdate , u.NICKNAME nickname
-		FROM FOODPUBPUR f, FPPCOMM fc , USERS u
+		SELECT fc.FCOMMENTKEY commkey, fc.COMMCONTENTS commcontent ,fc.COMMDATE commdate , u.NICKNAME nickname
+		FROM FOODPUBPUR f, FPPCOMM fc , USERS u 
 		WHERE fc.fppkey = f.FOODPUBPURKEY
-		AND fc.USERKEY = u.USERKEY
-		AND
-		f.FOODPUBPURKEY = #{fppkey}
-		ORDER BY fc.COMMENTKEY desc
+		AND fc.USERKEY = u.USERKEY 
+		AND f.FOODPUBPURKEY = #{fppkey}
+		ORDER BY fc.FCOMMENTKEY desc
 	</select>
-
+	
 	<insert id="insertcomm" parameterType="insfcomm">
-		INSERT INTO fppcomm VALUES
-		((SELECT NVL(MAX(COMMENTKEY)+1,1) FROM
-		fppcomm),1,#{commcontents},sysdate,#{fppkey})
+		INSERT INTO fppcomm VALUES ((SELECT NVL(MAX(FCOMMENTKEY)+1,1) FROM fppcomm),1,#{commcontents},sysdate,#{fppkey})
 	</insert>
- -->
-
+	 
+	
 </mapper>

@@ -1,7 +1,7 @@
 package project4.vo;
 
 public class Fppcomm {
-	private int commkey;
+	private int fcommkey;
 	private String commcontent;
 	private String commdate;
 	private String nickname;
@@ -9,18 +9,18 @@ public class Fppcomm {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public Fppcomm(int commkey, String commcontent, String commdate, String nickname) {
+	public Fppcomm(int fcommkey, String commcontent, String commdate, String nickname) {
 		super();
-		this.commkey = commkey;
+		this.fcommkey = fcommkey;
 		this.commcontent = commcontent;
 		this.commdate = commdate;
 		this.nickname = nickname;
 	}
-	public int getCommkey() {
-		return commkey;
+	public int getFcommkey() {
+		return fcommkey;
 	}
-	public void setCommkey(int commkey) {
-		this.commkey = commkey;
+	public void setFcommkey(int fcommkey) {
+		this.fcommkey = fcommkey;
 	}
 	public String getCommcontent() {
 		return commcontent;
