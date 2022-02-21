@@ -145,12 +145,17 @@ height:200px;
 					
 			$(document).ready(function(){
 				
-				var proc = "${proc}"; 
+				var proc = "${proc}";
 				
 				if(proc!=""){
 					alert(proc);
-					location.href = document.referrer; 
+					location.href = document.referrer;
+					
+					if(proc=="삭제되었습니다"){
+						location.href= "${path}/boardlist.do"
+					}
 				}
+							
 				
 				$('#confirmbtn').click(function(){
 					$('#mymodal').modal({

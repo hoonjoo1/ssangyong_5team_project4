@@ -54,4 +54,8 @@ public class FoodpubpurService {
 		dao.uptboard(upt);
 	}
 	
+	public ArrayList<BoardList> searchBdList(String search){
+		return dao.searchBdList(search);
+	}
+	
 }

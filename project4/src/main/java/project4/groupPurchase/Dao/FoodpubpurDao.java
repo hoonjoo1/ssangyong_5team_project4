@@ -30,5 +30,7 @@ public interface FoodpubpurDao {
 		 public void uptboard(Foodpubpur upt);
 		//게시글 수정 정보 조회
 		 public ArrayList<Foodpubpur> getfpp(int fppkey);
+		// 게시글 통합 검색
+		 public ArrayList<BoardList> searchBdList(String search);
 
 }

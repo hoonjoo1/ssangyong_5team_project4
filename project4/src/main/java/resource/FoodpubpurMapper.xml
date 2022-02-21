@@ -18,14 +18,6 @@
 		AND f.FOODPUBPURKEY = #{fppkey}
 	</select>
 	
-	<select id="getBoardList" resultType="boardList">
-	SELECT f.FOODPUBPURKEY fppkey , f.TITLE title , f.LOC loc , 
-		   f.WRITEDATE writedate , u.NICKNAME nickname , f.viewcnt viewcnt
-	FROM FOODPUBPUR f , USERS u 
-	WHERE f.USERKEY = u.USERKEY
-	ORDER BY fppkey DESC
-	</select>
-	
 	<update id="uptViewcnt" parameterType="int">
 		UPDATE Foodpubpur SET viewcnt = viewcnt+1
 		WHERE FOODPUBPURKEY = #{fppkey}
@@ -41,7 +33,7 @@
 	</select>
 	
 	<insert id="insertcomm" parameterType="insfcomm">
-		INSERT INTO fppcomm VALUES ((SELECT NVL(MAX(FCOMMENTKEY)+1,1) FROM fppcomm),1,#{commcontents},sysdate,#{fppkey})
+		INSERT INTO fppcomm VALUES ((SELECT NVL(MAX(FCOMMENTKEY)+1,1) FROM fppcomm),1,#{commcontents},to_char(sysdate,'YYYY-MM-DD'),#{fppkey})
 	</insert>
 	
 	<delete id="delboard" parameterType="int">
@@ -57,13 +49,25 @@
 	<update id="uptboard" parameterType="fpp">
 	UPDATE FOODPUBPUR SET 
 	TITLE = #{title},
-	WRITEDATE = SYSDATE ,
+	WRITEDATE = to_char(sysdate,'YYYY-MM-DD') ,
 	CONTENT = #{content} ,
 	LOC = #{loc},
 	MEETCNT = #{meetcnt},
 	PAYTYPE = #{paytype}
 	WHERE FOODPUBPURKEY = #{foodpubpurkey}
 	</update>
-	 
+	
+	<select id="searchBdList" parameterType="boardList" resultType="boardList">
+	SELECT f.FOODPUBPURKEY fppkey , f.TITLE title , f.LOC loc ,
+		f.WRITEDATE writedate , u.NICKNAME nickname, f.viewcnt
+	FROM FOODPUBPUR f , USERS u 
+	WHERE f.USERKEY = u.USERKEY
+	<if test = "value!=null and value!=''">
+	AND f.loc LIKE '%'||#{value}||'%'
+	OR f.title LIKE '%'||#{value}||'%'
+	OR u.nickname LIKE '%'||#{value}||'%'
+	</if>
+	order by writedate desc
+	</select>
 	
 </mapper>

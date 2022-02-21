@@ -16,11 +16,11 @@ public class FoodpubpurCtrl {
 	FoodpubpurService service;
 	
 	@RequestMapping("/boardlist.do")
-	public String groupboardlist(Model d) {
-		d.addAttribute("boardlist",service.getBoardList());
+	public String groupboardlist(String search, Model d) {
+		d.addAttribute("boardlist",service.searchBdList(search));
 		return "groupPurchase//BoardList";
 	}
-	
+		
 	@RequestMapping("/groupread.do")
 	public String groupread(int fppkey,Model d) {
 		d.addAttribute("blist",service.getRead(fppkey));
