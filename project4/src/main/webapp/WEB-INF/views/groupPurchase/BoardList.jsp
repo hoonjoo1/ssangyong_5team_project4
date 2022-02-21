@@ -1,8 +1,3 @@
-<!-- 
-작성자 : 장훈주
-식자재 공동구매 게시판 목록
- -->
-
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"
     import="java.util.*"
@@ -46,7 +41,7 @@ width:100%;
 #search{
 position: absolute;
 top:1000px;
-left:500px;
+left:450px;
 }
 
 #writebtn{
@@ -77,8 +72,16 @@ right:50px;
 				
 				$('#submitbtn').click(function(){
 					$('form').submit();
-				})
-			});	
+				});
+				
+				$('#writebtn').click(function(){
+					location.href="${path}/groupwrite.do";	
+				});
+			});
+			
+			function goRead(fppkey){
+				location.href="${path}/groupread.do?fppkey="+fppkey;
+			}
 			
 </script>
 </head>
@@ -103,7 +106,10 @@ right:50px;
 				</tr>
 			</thead>
 			<tbody>
-				<tr><td>1</td><td>예시 제목입니다</td><td>서울</td><td>닉네임</td><td>2022-02-08</td><td>36</td></tr>
+				<c:forEach var="blist" items="${boardlist}">
+					<tr><td>${blist.fppkey}</td><td onclick="goRead(${blist.fppkey})">${blist.title}</td><td>${blist.loc}</td>
+					<td>${blist.nickname}</td><td>${blist.writedate}</td><td>${blist.viewcnt}</td></tr>
+				</c:forEach>
 			</tbody>
 		</table>
 	</div>
@@ -125,27 +131,5 @@ right:50px;
 
 </div>
 
-
-<!-- modal -->
-<div class="modal" id="mymodal">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">댓글등록</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true"></span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <p>등록 하시겠습니까??</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" id="submitbtn" class="btn btn-primary">확인</button>
-        <button type="button" id="closebtn" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
-      </div>
-    </div>
-  </div>
-</div>
-  
 </body>
 </html>

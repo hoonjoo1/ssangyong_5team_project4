@@ -1,8 +1,3 @@
-<!-- 
-작성자 : 장훈주
-식자재 공동구매 게시판 글 화면
- -->
-
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"
     import="java.util.*"
@@ -70,6 +65,18 @@ top : 100px;
 right: 50px;
 }
 
+#delbtn{
+position: absolute;
+top: 50px;
+right: 150px;
+}
+
+#uptbtn{
+position: absolute;
+top:50px;
+right:20px;
+}
+
 #titlehr{
 position: relative;
 top: 120px;
@@ -106,7 +113,13 @@ position:absolute;
 top:680px;
 width:100%;
 height:200px;
+}
+
+#commentlisttb{
 overflow: auto;
+position: absolute;
+width:100%;
+height:200px;
 }
 
 #commentwrite{
@@ -129,8 +142,16 @@ height:200px;
 <script src="${path}/a00_com/bootstrap.min.js"></script>
 <script src="${path}/a00_com/jquery-ui.js"></script>
 <script type="text/javascript">
-
+					
 			$(document).ready(function(){
+				
+				var proc = "${proc}"; 
+				
+				if(proc!=""){
+					alert(proc);
+					location.href = document.referrer; 
+				}
+				
 				$('#confirmbtn').click(function(){
 					$('#mymodal').modal({
 						show: false
@@ -144,69 +165,85 @@ height:200px;
 				
 				$('#submitbtn').click(function(){
 					$('form').submit();
+						
 				})
+				
+				$('#delbtn').click(function(){
+					if(confirm('삭제하시겠습니까?')){
+						location.href="${path}/delboard.do?fppkey="+$("[name=fppkey1]").val();						
+					}
+				});
+				
+					
 			});	
 			
+			function goupt(fppkey){
+				if(confirm("수정하시겠습니까?")){
+					location.href="${path}/uptwrite.do?fppkey="+fppkey;
+				}
+			}
+								
 </script>
 </head>
 
 <body>
 <div id="form1">
+
+<input type="hidden" name="fppkey1" value="${fppkey}">
+
+<c:forEach var="board" items="${blist}">
 <!-- 제목 -->
 	<div id="title">
-		<h4 id="catname">식자재 공동구매</h4>
+		<h4 id="catname">${board.boardname}</h4>
 		<div class="updown"></div>
-		<h1 id="titname">제목입니다</h1>
-		<h5 id="nickname">닉네임</h5>
-		<h5 id="date">작성일자 2022-01-25</h5>
+		<h1 id="titname">${board.title}</h1>
+		<h5 id="nickname">${board.nickname}</h5>
+		<h5 id="date">작성일자 ${board.writedate}</h5>
 		<hr id="titlehr">
+		<button id="delbtn" class="btn btn-primary">삭제하기</button>
+		
+		<button id="uptbtn" type="button" onclick="goupt(${fppkey})"
+		 class="btn btn-primary">수정하기</button>
 	</div>
 
 	<div id="userinfo">
 		<div id="loc">
-			<h5 id=loctxt>지역: 서울</h5>
-			<h5>모집인원: 3명</h5>
-			<h5>지불방식: 더치페이</h5>
+			<h5 id=loctxt>지역: ${board.loc}</h5>
+			<h5>모집인원: ${board.meetcnt}명</h5>
+			<h5>지불방식: ${board.paytype}</h5>
 			<hr id="userhr">
 		</div>
 	</div>
 	
 	<div id="content">
-		<p>스프링 프레임워크(영어: Spring Framework)는 자바 플랫폼을 위한 오픈 소스 애플리케이션 프레임워크로서 간단히 스프링(Spring)이라고도 한다. 
-		동적인 웹 사이트를 개발하기 위한 여러 가지 서비스를 제공하고 있다. 
-		대한민국 공공기관의 웹 서비스 개발 시 사용을 권장하고 있는 전자정부 표준프레임워크의 기반 기술로서 쓰이고 있다.</p>
+		<p>${board.content}</p>
 		<hr id="conhr">
 	</div>
+</c:forEach>
 	
 	<div id="commentlist">
 		<h5>댓글 목록</h5>
 		<!-- 후에 for문으로 대체 -->
-		<table>
-				<tr>
-				<th>닉네임1</th>
-				<td>댓글 내용</td>
-				<th>2022-12-31</th>
-				</tr>
-				<tr>
-				<th>닉네임2</th>
-				<td>댓글 내용</td>
-				<th>2022-12-31</th>
-				</tr>
-				<tr>
-				<th>닉네임3</th>
-				<td>댓글 내용</td>
-				<th>2022-12-31</th>
-				</tr>
-		</table>
+		<div id="commentlisttb">
+			<table>
+				<c:forEach var="fcomm" items="${commlist}">
+					<tr>
+					<th>${fcomm.nickname}</th>
+					<td>${fcomm.commcontent}</td>
+					<th>${fcomm.commdate}</th>
+					</tr>
+				</c:forEach>
+			</table>
+		</div>
 		
 	</div>
 	
-	<form>
+	<form method="post" action="${path}/insertcomm.do">
 		<div id="commentwrite">
 			<hr>
 			<h5>댓글 작성</h5>
-			<textarea rows="5" cols="100%" name="comment"></textarea>
-			
+			<textarea rows="5" cols="100%" name="commcontents"></textarea>
+			<input type="hidden" name="fppkey" value="${fppkey}">
 			<button type="reset" class="btn btn-primary">초기화</button>
 			<button type="button" id="confirmbtn" class="btn btn-primary" data-toggle="modal" data-target="#mymodal">등록</button>
 		</div>

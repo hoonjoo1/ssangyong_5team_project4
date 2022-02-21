@@ -121,12 +121,14 @@ height:200px;
 </head>
 
 <body>
-<form method="post" action="${path}/insertfpp.do">
+<form method="post" action="${path}/uptboard.do">
 <!-- form DIV -->
 <div id="form1">
+	<c:forEach var="ublist" items="${ublist}">
 <!-- 제목 -->
 	<div id="title">
-		제목 <input type="text" name="title" placeholder="제목을 입력해주세요" size="70">
+		<input type="hidden" name="foodpubpurkey" value="${fppkey}">
+		제목 <input type="text" name="title" value="${ublist.title}" placeholder="제목을 입력해주세요" size="70">
 	</div>
 <!-- 지역 -->
 	<div id="loc">
@@ -141,7 +143,7 @@ height:200px;
 
 <!-- 인원 -->
 	<div id="number">
-		인원 <input type="text" name="meetcnt" placeholder="인원" size="5">명
+		인원 <input type="text" name="meetcnt" value="${ublist.meetcnt}" placeholder="인원" size="5">명
 	</div>
 
 <!-- 지불방식 -->
@@ -154,13 +156,13 @@ height:200px;
 <!-- 내용 -->
 	<div id="content">
 		<label class="form-label mt-4">내용</label>
-		<textarea class="form-control" name="content" placeholder="내용을 입력해주세요" id="exampleTextarea" rows="25"></textarea>
+		<textarea class="form-control" name="content" placeholder="내용을 입력해주세요" id="exampleTextarea" rows="25">${ublist.content}</textarea>
 	</div>
-	
+	</c:forEach>
 <!-- 버튼 -->
 	<div id="btn">
 		<button type="button" id="canclebtn" class="btn btn-primary">취소</button>
-		<button type="button" id="confirmbtn" class="btn btn-primary" data-toggle="modal" data-target="#mymodal">작성완료</button>
+		<button type="button" id="confirmbtn" class="btn btn-primary" data-toggle="modal" data-target="#mymodal">수정하기</button>
 	</div>
 	
 </div>
@@ -177,13 +179,13 @@ height:200px;
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title">작성완료</h5>
+        <h5 class="modal-title">수정하기</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
           <span aria-hidden="true"></span>
         </button>
       </div>
       <div class="modal-body">
-        <p>작성완료 하시겠습니까?</p>
+        <p>수정하시겠습니까?</p>
       </div>
       <div class="modal-footer">
         <button type="button" id="submitbtn" class="btn btn-primary">확인</button>

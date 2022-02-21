@@ -51,4 +51,24 @@ public class FoodpubpurCtrl {
 		service.insertcomm(ins);
 		return "groupPurchase//readBoard";
 	}
+	
+	@RequestMapping("/delboard.do")
+	public String delboard(int fppkey, Model d) {
+		d.addAttribute("proc", "삭제되었습니다");
+		service.delboard(fppkey);
+		return "groupPurchase//readBoard";
+	}
+	@RequestMapping("/uptwrite.do")
+	public String uptwrite(int fppkey,Model d) {
+		d.addAttribute("fppkey", fppkey);
+		d.addAttribute("ublist",service.getffp(fppkey));
+		return "groupPurchase//uptBoard";
+	}
+	
+	@RequestMapping("/uptboard.do")
+	public String uptboard(Foodpubpur upt, Model d) {
+		d.addAttribute("proc", "수정되었습니다");
+		service.uptboard(upt);
+		return "groupPurchase//uptBoard";
+	}
 }

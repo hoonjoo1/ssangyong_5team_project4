@@ -42,4 +42,16 @@ public class FoodpubpurService {
 		dao.insertcomm(ins);
 	}
 	
+	public void delboard(int fppkey) {
+		dao.delboard(fppkey);
+	}
+	
+	public ArrayList<Foodpubpur> getffp(int fppkey){
+		return dao.getfpp(fppkey);
+	}
+	
+	public void uptboard(Foodpubpur upt) {
+		dao.uptboard(upt);
+	}
+	
 }

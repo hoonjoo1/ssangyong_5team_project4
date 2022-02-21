@@ -5,7 +5,7 @@
 	
 <mapper namespace="Project4_Board.groupPurchase.dao.FoodpubpurDao">
 	<insert id="insertWrite" parameterType="fpp">
-		INSERT INTO Foodpubpur VALUES((SELECT NVL(MAX(foodpubpurkey)+1,1) FROM FOODPUBPUR), 1, 1, 1, 
+		INSERT INTO Foodpubpur VALUES((SELECT NVL(MAX(foodpubpurkey)+1,1) FROM FOODPUBPUR), 1, 1, 
 		#{title}, to_char(sysdate,'YYYY-MM-DD'), #{content},#{loc}, #{meetcnt},#{paytype},0,0)
 	</insert>
 	
@@ -23,6 +23,7 @@
 		   f.WRITEDATE writedate , u.NICKNAME nickname , f.viewcnt viewcnt
 	FROM FOODPUBPUR f , USERS u 
 	WHERE f.USERKEY = u.USERKEY
+	ORDER BY fppkey DESC
 	</select>
 	
 	<update id="uptViewcnt" parameterType="int">
@@ -42,6 +43,27 @@
 	<insert id="insertcomm" parameterType="insfcomm">
 		INSERT INTO fppcomm VALUES ((SELECT NVL(MAX(FCOMMENTKEY)+1,1) FROM fppcomm),1,#{commcontents},sysdate,#{fppkey})
 	</insert>
+	
+	<delete id="delboard" parameterType="int">
+		DELETE FROM FOODPUBPUR WHERE foodpubpurkey = #{foodpubpurkey}
+	</delete>
+	
+	<select id="getfpp" resultType="fpp" parameterType="int">
+		select *
+		from FOODPUBPUR
+		where FOODPUBPURKEY = #{foodpubpurkey}
+	</select>
+	
+	<update id="uptboard" parameterType="fpp">
+	UPDATE FOODPUBPUR SET 
+	TITLE = #{title},
+	WRITEDATE = SYSDATE ,
+	CONTENT = #{content} ,
+	LOC = #{loc},
+	MEETCNT = #{meetcnt},
+	PAYTYPE = #{paytype}
+	WHERE FOODPUBPURKEY = #{foodpubpurkey}
+	</update>
 	 
 	
 </mapper>
