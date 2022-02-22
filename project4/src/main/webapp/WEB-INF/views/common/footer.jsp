@@ -16,18 +16,18 @@ request.setCharacterEncoding("utf-8");
 
 <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet">
-<script src="/javaexp/a00_com/jquery-3.6.0.js" type="text/javascript"></script>
+<script src="/project4/res/a00_com/jquery-3.6.0.js" type="text/javascript"></script>
 <link rel="stylesheet" type="text/css"
 	href="#"><!-- css 파일 경로  -->
  <!-- Css Styles -->
-    <link rel="stylesheet" href="/proj1/views/css/bootstrap.min.css" type="text/css">
-    <link rel="stylesheet" href="/proj1/views/css/font-awesome.min.css" type="text/css">
-    <link rel="stylesheet" href="/proj1/views/css/elegant-icons.css" type="text/css">
-    <link rel="stylesheet" href="/proj1/views/css/nice-select.css" type="text/css">
-    <link rel="stylesheet" href="/proj1/views/css/jquery-ui.min.css" type="text/css">
-    <link rel="stylesheet" href="/proj1/views/css/owl.carousel.min.css" type="text/css">
-    <link rel="stylesheet" href="/proj1/views/css/slicknav.min.css" type="text/css">
-    <link rel="stylesheet" href="/proj1/views/css/style.css" type="text/css">
+    <link rel="stylesheet" href="/project4/res/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="/project4/res/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="/project4/res/css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="/project4/res/css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="/project4/res/css/jquery-ui.min.css" type="text/css">
+    <link rel="stylesheet" href="/project4/res/css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="/project4/res/css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="/project4/res/css/style.css" type="text/css">
 <style>
 
 /*---------------------
@@ -382,7 +382,7 @@ request.setCharacterEncoding("utf-8");
   Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with 
   <img src="https://img.icons8.com/ios-filled/16/000000/hearts.png"/>by <a href="https://colorlib.com" target="_blank">Colorlib</a>
   <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p></div>
-                        <div class="footer__copyright__payment"><img src="/proj1/views/img/payment-item.png" alt=""></div>
+                        <div class="footer__copyright__payment"><img src="/project4/res/views/img/payment-item.png" alt=""></div>
                     </div>
                 </div>
             </div>

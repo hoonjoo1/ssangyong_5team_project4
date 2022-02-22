@@ -10,26 +10,25 @@ request.setCharacterEncoding("utf-8");
 <meta charset="UTF-8">
     <meta name="description" content="Ogani Template">
     <meta name="keywords" content="Ogani, unica, creative, html">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="port" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <title>우리끼니 | 같이 식사하실래요?</title>
 
 <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet">
-<script src="/javaexp/a00_com/jquery-3.6.0.js" type="text/javascript"></script>
+<script src="/project4/res/a00_com/jquery-3.6.0.js" type="text/javascript"></script>
 <link rel="stylesheet" type="text/css"
 	href="#"><!-- css 파일 경로  -->
  <!-- Css Styles -->
   <!-- Css Styles -->
-    <link rel="stylesheet" href="/project4/Resources/css/bootstrap.min.css" type="text/css">
-    <link rel="stylesheet" href="/project4/Resources/css/font-awesome.min.css" type="text/css">
-    <link rel="stylesheet" href="/project4/Resources/css/elegant-icons.css" type="text/css">
-    <link rel="stylesheet" href="/project4/Resources/css/nice-select.css" type="text/css">
-    <link rel="stylesheet" href="/project4/Resources/css/jquery-ui.min.css" type="text/css">
-    <link rel="stylesheet" href="/project4/Resources/css/owl.carousel.min.css" type="text/css">
-    <link rel="stylesheet" href="/project4/Resources/css/slicknav.min.css" type="text/css">
-    <link rel="stylesheet" href="/project4/Resources/css/style.css" type="text/css">
-   
+    <link rel="stylesheet" href="/project4/res/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="/project4/res/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="/project4/res/css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="/project4/res/css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="/project4/res/css/jquery-ui.min.css" type="text/css">
+    <link rel="stylesheet" href="/project4/res/css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="/project4/res/css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="/project4/res/css/style.css" type="text/css">
 <style>
 
 /*---------------------
@@ -381,7 +380,7 @@ request.setCharacterEncoding("utf-8");
             <div class="row">
                 <div class="col-lg-3">
                     <div class="header__logo">
-                        <a href="./index.html"><img src="./logoimage.png" alt=""></a>
+                        <a href="./index.html"><img src="logoimage.png" alt=""></a>
                     </div>
                 </div>
                 <div class="col-lg-6">
