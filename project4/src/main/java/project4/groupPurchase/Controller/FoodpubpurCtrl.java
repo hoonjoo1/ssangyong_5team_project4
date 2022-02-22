@@ -18,7 +18,7 @@ public class FoodpubpurCtrl {
 	@RequestMapping("/boardlist.do")
 	public String groupboardlist(String search, Model d) {
 		d.addAttribute("boardlist",service.searchBdList(search));
-		return "groupPurchase//BoardList";
+		return "groupPurchase/BoardList";
 	}
 		
 	@RequestMapping("/groupread.do")
