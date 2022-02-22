@@ -20,6 +20,15 @@ request.setCharacterEncoding("utf-8");
 <link rel="stylesheet" type="text/css"
 	href="#"><!-- css 파일 경로  -->
  <!-- Css Styles -->
+  <!-- Css Styles -->
+    <link rel="stylesheet" href="/project4/Resources/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="/project4/Resources/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="/project4/Resources/css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="/project4/Resources/css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="/project4/Resources/css/jquery-ui.min.css" type="text/css">
+    <link rel="stylesheet" href="/project4/Resources/css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="/project4/Resources/css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="/project4/Resources/css/style.css" type="text/css">
    
 <style>
 
@@ -337,6 +346,9 @@ request.setCharacterEncoding("utf-8");
 </head>
 
 <body>
+
+
+	
 
      <!-- Header Section Begin -->
     <header class="header">
