@@ -56,7 +56,6 @@
 	PAYTYPE = #{paytype}
 	WHERE FOODPUBPURKEY = #{foodpubpurkey}
 	</update>
-	
 	<select id="searchBdList" parameterType="boardList" resultType="boardList">
 	SELECT f.FOODPUBPURKEY fppkey , f.TITLE title , f.LOC loc ,
 		f.WRITEDATE writedate , u.NICKNAME nickname, f.viewcnt
@@ -69,5 +68,4 @@
 	</if>
 	order by writedate desc
 	</select>
-	
 </mapper>
