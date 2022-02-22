@@ -5,7 +5,7 @@
 
 <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 <link rel="icon" href="/favicon.ico" type="image/x-icon">
-<%@ include file="../includes/header.jsp"%>
+<%@ include file="../yjincludes/header.jsp"%>
 <div class="checkout__form" style="width: 50%; margin: 0 auto;">
 	<h4>유저 리뷰 상세</h4>
 	<div class="row">
@@ -357,4 +357,4 @@ $(document).ready(function () {
 
 
 
-<%@ include file="../includes/footer.jsp"%>
+<%@ include file="../yjincludes/footer.jsp"%>
