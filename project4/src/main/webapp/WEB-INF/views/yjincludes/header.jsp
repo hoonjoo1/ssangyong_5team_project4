@@ -13,43 +13,43 @@
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet">
 
     <!-- Css Styles -->
-    <link rel="stylesheet" href="/resources/css/bootstrap.min.css" type="text/css">
-    <link rel="stylesheet" href="/resources/css/font-awesome.min.css" type="text/css">
-    <link rel="stylesheet" href="/resources/css/elegant-icons.css" type="text/css">
-    <link rel="stylesheet" href="/resources/css/nice-select.css" type="text/css">
-    <link rel="stylesheet" href="/resources/css/jquery-ui.min.css" type="text/css">
-    <link rel="stylesheet" href="/resources/css/owl.carousel.min.css" type="text/css">
-    <link rel="stylesheet" href="/resources/css/slicknav.min.css" type="text/css">
-    <link rel="stylesheet" href="/resources/css/style.css" type="text/css">
+    <link rel="stylesheet" href="/project4/resources/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="/project4/resources/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="/project4/resources/css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="/project4/resources/css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="/project4/resources/css/jquery-ui.min.css" type="text/css">
+    <link rel="stylesheet" href="/project4/resources/css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="/project4/resources/css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="/project4/resources/css/style.css" type="text/css">
     
     
             <!-- Js Plugins -->
-    <script src="/resources/js/jquery-3.3.1.min.js"></script>
-    <script src="/resources/js/bootstrap.min.js"></script>
-    <script src="/resources/js/jquery.nice-select.min.js"></script>
-    <script src="/resources/js/jquery-ui.min.js"></script>
-    <script src="/resources/js/jquery.slicknav.js"></script>
-    <script src="/resources/js/mixitup.min.js"></script>
-    <script src="/resources/js/owl.carousel.min.js"></script>
-    <script src="/resources/js/main.js"></script>
+    <script src="/project4/resources/js/jquery-3.3.1.min.js"></script>
+    <script src="/project4/resources/js/bootstrap.min.js"></script>
+    <script src="/project4/resources/js/jquery.nice-select.min.js"></script>
+    <script src="/project4/resources/js/jquery-ui.min.js"></script>
+    <script src="/project4/resources/js/jquery.slicknav.js"></script>
+    <script src="/project4/resources/js/mixitup.min.js"></script>
+    <script src="/project4/resources/js/owl.carousel.min.js"></script>
+    <script src="/project4/resources/js/main.js"></script>
 
         <!-- Bootstrap Core CSS -->
-    <link href="/resources/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/project4/resources/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- MetisMenu CSS -->
-    <link href="/resources/vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
+    <link href="/project4/resources/vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
 
     <!-- DataTables CSS -->
-    <link href="/resources/vendor/datatables-plugins/dataTables.bootstrap.css" rel="stylesheet">
+    <link href="/project4/resources/vendor/datatables-plugins/dataTables.bootstrap.css" rel="stylesheet">
 
     <!-- DataTables Responsive CSS -->
-    <link href="/resources/vendor/datatables-responsive/dataTables.responsive.css" rel="stylesheet">
+    <link href="/project4/resources/vendor/datatables-responsive/dataTables.responsive.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="/resources/dist/css/sb-admin-2.css" rel="stylesheet">
+    <link href="/project4/resources/dist/css/sb-admin-2.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="/resources/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="/project4/resources/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     
     
 </head>
