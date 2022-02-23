@@ -6,7 +6,7 @@
 <script type="text/javascript"
 	src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
 
-<%@ include file="../includes/header.jsp"%>
+<%@ include file="../yjincludes/header.jsp"%>
 <style>
 input[id="cb1"]+label {
 	display: inline-block;
@@ -155,4 +155,4 @@ input[id="cb1"] {
 
 
 
-<%@ include file="../includes/footer.jsp"%>
+<%@ include file="../yjincludes/footer.jsp"%>

@@ -3,7 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
-<%@ include file="../includes/header.jsp"%>
+<%@ include file="../yjincludes/header.jsp"%>
 
 <script type="text/javascript">
 	$(document).ready(
@@ -64,7 +64,7 @@
 <br>
 <br>
 <br>
-<%@ include file="../includes/footer.jsp"%>
+<%@ include file="../yjincludes/footer.jsp"%>
 
 
 
