@@ -12,6 +12,8 @@ public class EatTogether {
 	private String content;
 	private String loc;
 	private int meetcnt;
+	private Date meetdate;
+	private String meetdateS;
 	private String meetage;
 	private String meetgender;
 	private String paytype;
@@ -20,7 +22,8 @@ public class EatTogether {
 		// TODO Auto-generated constructor stub
 	}
 	public EatTogether(int eattokey, int boardkey, int userkey, String title, Date writedate, String writedateS,
-			String content, String loc, int meetcnt, String meetage, String meetgender, String paytype) {
+			String content, String loc, int meetcnt, Date meetdate, String meetdateS, String meetage, String meetgender,
+			String paytype) {
 		super();
 		this.eattokey = eattokey;
 		this.boardkey = boardkey;
@@ -31,6 +34,8 @@ public class EatTogether {
 		this.content = content;
 		this.loc = loc;
 		this.meetcnt = meetcnt;
+		this.meetdate = meetdate;
+		this.meetdateS = meetdateS;
 		this.meetage = meetage;
 		this.meetgender = meetgender;
 		this.paytype = paytype;
@@ -88,6 +93,18 @@ public class EatTogether {
 	}
 	public void setMeetcnt(int meetcnt) {
 		this.meetcnt = meetcnt;
+	}
+	public Date getMeetdate() {
+		return meetdate;
+	}
+	public void setMeetdate(Date meetdate) {
+		this.meetdate = meetdate;
+	}
+	public String getMeetdateS() {
+		return meetdateS;
+	}
+	public void setMeetdateS(String meetdateS) {
+		this.meetdateS = meetdateS;
 	}
 	public String getMeetage() {
 		return meetage;

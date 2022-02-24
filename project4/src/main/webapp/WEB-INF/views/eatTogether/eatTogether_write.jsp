@@ -29,6 +29,7 @@
 	    <link rel="stylesheet" href="res/css/style.css" type="text/css">
 	    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 		<script src="https://developers.google.com/web/ilt/pwa/working-with-the-fetch-api" type="text/javascript"></script>
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
 	    <script>
 	    	$(document).ready(function(){
 	    		$("#regBtn").click(function(){
@@ -59,7 +60,7 @@
 	            <div class="row">
 	                <div class="col-lg-3">
 	                    <div class="header__logo">
-	                        <a href="./index.html"><img src="project4/img/logo.png" alt=""></a>
+	                        <a href="./index.html"><img src="res/img/logo.png" alt=""></a>
 	                    </div>
 	                </div>
 	                <div class="col-lg-6">
@@ -86,7 +87,7 @@
 	    <!-- Header Section End -->
 	
 	    <!-- Breadcrumb Section Begin -->
-	    <section class="breadcrumb-section set-bg" data-setbg="project4/img/breadcrumb.jpg">
+	    <section class="breadcrumb-section set-bg" data-setbg="res/img/breadcrumb.jpg">
 	        <div class="container">
 	            <div class="row">
 	                <div class="col-lg-12 text-center">
@@ -134,6 +135,12 @@
 	                                                <input type="text" name="meetcnt" value="0">
 	                                            </div>
 	                                        </div>
+	                                    </div>
+	                                </div>
+	                                <div class="col-lg-12">
+	                                    <div class="eattogether__input">
+	                                        <p>모집날짜<span>*</span></p>
+	                                        <input type="date" name="meetdate">
 	                                    </div>
 	                                </div>
 	                                <div class="col-lg-12">
@@ -310,7 +317,7 @@
                         	</div>
                     	</div>
 	                </form>
-	                <button type="button" class="site-btn" id="regBtn">작성완료</button>
+	                <input type="button" class="site-btn" id="regBtn" value="작성완료"/>
 	            </div>
 	        </div>
 	    </section>
@@ -325,5 +332,6 @@
 	    <script src="res/js/jquery.slicknav.js"></script>
 	    <script src="res/js/mixitup.min.js"></script>
 	    <script src="res/js/owl.carousel.min.js"></script>
+	    <script src="res/js/main.js"></script>
 	</body>
 </html>

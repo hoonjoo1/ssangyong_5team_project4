@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<c:set var="path" value="${pageContext.request.contextPath }"/>
+<fmt:requestEncoding value="utf-8"/>   
 <!DOCTYPE html>
 <html>
 
@@ -23,6 +27,10 @@
 	    <link rel="stylesheet" href="res/css/owl.carousel.min.css" type="text/css">
 	    <link rel="stylesheet" href="res/css/slicknav.min.css" type="text/css">
 	    <link rel="stylesheet" href="res/css/style.css" type="text/css">
+	    <script src="http://code.jquery.com/jquery-latest.js"></script>
+	    <script>
+	    
+	    </script>
 	</head>
 	
 	<body>
@@ -34,47 +42,11 @@
 	
 	    <!-- Header Section Begin -->
 	    <header class="header">
-	        <div class="header__top">
-	            <div class="container">
-	                <div class="row">
-	                    <div class="col-lg-6">
-	                        <div class="header__top__left">
-	                            <ul>
-	                                <li><i class="fa fa-envelope"></i> hello@colorlib.com</li>
-	                                <li>Free Shipping for all Order of $99</li>
-	                            </ul>
-	                        </div>
-	                    </div>
-	                    <div class="col-lg-6">
-	                        <div class="header__top__right">
-	                            <div class="header__top__right__social">
-	                                <a href="#"><i class="fa fa-facebook"></i></a>
-	                                <a href="#"><i class="fa fa-twitter"></i></a>
-	                                <a href="#"><i class="fa fa-linkedin"></i></a>
-	                                <a href="#"><i class="fa fa-pinterest-p"></i></a>
-	                            </div>
-	                            <div class="header__top__right__language">
-	                                <img src="img/language.png" alt="">
-	                                <div>English</div>
-	                                <span class="arrow_carrot-down"></span>
-	                                <ul>
-	                                    <li><a href="#">Spanis</a></li>
-	                                    <li><a href="#">English</a></li>
-	                                </ul>
-	                            </div>
-	                            <div class="header__top__right__auth">
-	                                <a href="#"><i class="fa fa-user"></i> Login</a>
-	                            </div>
-	                        </div>
-	                    </div>
-	                </div>
-	            </div>
-	        </div>
 	        <div class="container">
 	            <div class="row">
 	                <div class="col-lg-3">
 	                    <div class="header__logo">
-	                        <a href="./index.html"><img src="img/logo.png" alt=""></a>
+	                        <a href="./index.html"><img src="res/img/logo.png" alt=""></a>
 	                    </div>
 	                </div>
 	                <div class="col-lg-6">
@@ -101,7 +73,7 @@
 	    <!-- Header Section End -->
 	
 	    <!-- Breadcrumb Section Begin -->
-	    <section class="breadcrumb-section set-bg" data-setbg="img/breadcrumb.jpg">
+	    <section class="breadcrumb-section set-bg" data-setbg="project4/img/breadcrumb.jpg">
 	        <div class="container">
 	            <div class="row">
 	                <div class="col-lg-12 text-center">
@@ -123,9 +95,9 @@
 	        <div class="container">
 	            <div class="eattogether__form">
 	                <h4>
-		                제목 더미텍스트입니다.
-		                <p>모임시간 : 2022-02-22</p>
-		                <p>연령무관 / 성별무관 / 더치페이</p>
+		                ${et.title}
+		                <p>모임시간 : <fmt:formatDate value="${et.meetdate}"/></p>
+		                <p>${et.meetage} / ${et.meetgender} / ${et.paytype}</p>
 	                </h4>
 	                
 	                <form action="#">
@@ -134,10 +106,10 @@
 	                            <div class="row">
 	                                <div class="col-lg-12">
 	                                    <div class="eattogether__input" style="border-bottom: 1px solid #e1e1e1;padding-bottom: 20px;margin-bottom: 25px;">
-	                                    	<p>내용</p>
-	                                        내용이 입력될 부분
+	                                        ${et.content}
 	                                    </div>
 	                                </div>
+	                                <!-- 
 	                                <br>
 	                                <div class="col-lg-12">
 	                                    <div class="eattogether__input" style="border-bottom: 1px solid #e1e1e1;padding-bottom: 20px;margin-bottom: 25px;">
@@ -178,8 +150,9 @@
 	                                    </div>
 	                                </div>
 	                            </div>
-	                            <button type="submit" class="site-btn">수정</button>
-	                            <button type="submit" class="site-btn">삭제</button>
+	                            -->
+	                            <button type="button" class="site-btn">수정</button>
+	                            <button type="button" class="site-btn">삭제</button>
                         	</div>
                     	</div>
 	                </form>
@@ -197,5 +170,6 @@
 	    <script src="res/js/jquery.slicknav.js"></script>
 	    <script src="res/js/mixitup.min.js"></script>
 	    <script src="res/js/owl.carousel.min.js"></script>
+	    <script src="res/js/main.js"></script>
 	</body>
 </html>

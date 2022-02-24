@@ -29,12 +29,16 @@
 	    <link rel="stylesheet" href="res/css/style.css" type="text/css">
 	    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 		<script src="https://developers.google.com/web/ilt/pwa/working-with-the-fetch-api" type="text/javascript"></script>
-		<script>
-		    $(document).ready(function(){
-				$("#writeBtn").click(function(){
-					location.href="${path}/et.do?method=insertFrm";
-				});
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<script type="text/javascript">
+		$(document).ready(function(){
+			$("#writeBtn").click(function(){
+				location.href="${path}/et.do?method=insertFrm";
 			});
+		});
+	    function detail(eattokey){
+	    	location.href="${path}/et.do?method=detail&eattokey="+eattokey;
+	    }
 	    </script>
 	</head>
 	
@@ -51,7 +55,7 @@
 	            <div class="row">
 	                <div class="col-lg-3">
 	                    <div class="header__logo">
-	                        <a href="./index.html"><img src="project4/img/logo.png" alt=""></a>
+	                        <a href="./index.html"><img src="res/img/logo.png" alt=""></a>
 	                    </div>
 	                </div>
 	                <div class="col-lg-6">
@@ -78,7 +82,7 @@
 	    <!-- Header Section End -->
 	
 	    <!-- Breadcrumb Section Begin -->
-	    <section class="breadcrumb-section set-bg" data-setbg="project4/img/breadcrumb.jpg">
+	    <section class="breadcrumb-section set-bg" data-setbg="res/img/breadcrumb.jpg">
 	        <div class="container">
 	            <div class="row">
 	                <div class="col-lg-12 text-center">
@@ -102,17 +106,17 @@
 	                <h4>같이 먹어요</h4>
 	                <div class="hero__search">
                         <div class="hero__search__form">
-                            <form action="#">
+                            <form method="post">
                                 <div class="hero__search__categories">
                                     제목
                                     <span class="arrow_carrot-down"></span>
                                 </div>
-                                <input type="text" placeholder="내용을 입력해주세요.">
+                                <input type="text" value="${et.title}" placeholder="내용을 입력해주세요.">
                                 <button type="submit" class="site-btn">검색</button>
                             </form>
                         </div>
                     </div>
-	                <form action="#">
+	                <form action="${path}/et.do?method=insertFrm" method="post">
 	                    <div class="shoping__cart__table">
 	                        <table>
 	                            <thead>
@@ -127,7 +131,7 @@
 	                            </thead>
 	                            <tbody>
 	                            	<c:forEach var="et" items="${etlist}">
-		                                <tr>
+		                                <tr ondblclick="detail(${et.eattokey})">
 		                                    <td>
 		                                        ${et.title}(0/${et.meetcnt})
 		                                    </td>
@@ -152,8 +156,9 @@
 	                        </table>
                          </div>
 	                </form>
+	                <input type="button" class="site-btn" id="writeBtn" value="게시글 작성"/>
 	            </div>
-	            <button type="button" class="site-btn" id="writeBtn">게시글 작성</button>
+			    
 	        </div>
 	    </section>
 	    <!-- Checkout Section End -->
@@ -167,5 +172,6 @@
 	    <script src="res/js/jquery.slicknav.js"></script>
 	    <script src="res/js/mixitup.min.js"></script>
 	    <script src="res/js/owl.carousel.min.js"></script>
+	    <script src="res/js/main.js"></script>
 	</body>
 </html>

@@ -2,8 +2,8 @@
 <!DOCTYPE mapper
 	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="project4.a03_dao.ETDao">
-	<select id="getETList" resultType="et" parameterType="et">
+<mapper namespace="project4.eatTogether.a03_dao.ETDao">
+	<select id="ETList" resultType="et" parameterType="et">
 		SELECT *
 		FROM Eattogether
 		WHERE 1=1 
@@ -19,7 +19,7 @@
 	</select>
 	
 	<insert id="insET" parameterType="et">
-		INSERT INTO Eattogether values(et_seq.nextval,66,1, #{title}, sysdate, #{content},#{loc},#{meetcnt},#{meetage},#{meetgender},#{paytype})
+		INSERT INTO Eattogether values(et_seq.nextval,66,1, #{title}, sysdate, #{content},#{loc},#{meetcnt},to_date(#{meetdate},'YYYY-MM-DD'),#{meetage},#{meetgender},#{paytype})
  	</insert>
  	
 	<update id ="uptET" parameterType="et">
@@ -28,6 +28,7 @@
 			   content = #{content},
 			   loc = #{loc},
 			   meetcnt = #{meetcnt},
+			   meetdate = to_date(#{meetdate},
 			   meetage = #{meetage},
 			   meetgender = #{meetgender},
 			   paytype = #{paytype}
@@ -38,5 +39,4 @@
 		DELETE FROM Eattogether 
 		WHERE eattokey=#{eattokey}
 	</delete>
-		
 </mapper>

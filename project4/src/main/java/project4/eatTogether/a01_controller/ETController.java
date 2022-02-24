@@ -15,23 +15,28 @@ public class ETController {
 	@Autowired
 	private ETService service;
 	
-	// http://localhost:8080/Proejct4_hj/et.do?method=list
+	// http://localhost:8080/project4/et.do?method=list
 	@RequestMapping(params="method=list")
-	public String getETList(EatTogether sch, Model d) {
-		d.addAttribute("etlist", service.getETList(sch));
-		return "\\eatTogether\\eatTogether_list";
+	public String ETList(EatTogether sch, Model d) {
+		d.addAttribute("etlist", service.ETList(sch));
+		return "eatTogether_list";
 	}
 	
-	// http://localhost:8080/Proejct4_hj/et.do?method=insertFrm
+	@RequestMapping(params="method=detail")
+	public String ETDetail(int eattokey, Model d) {
+		d.addAttribute("et",service.getET(eattokey));
+		return "eatTogether_detail";
+	}
+	
+	// http://localhost:8080/project4/et.do?method=insertFrm
 	@RequestMapping(params="method=insertFrm")
 	public String insETFrm() {
-		return "\\eatTogether\\eatTogether_write";
+		return "eatTogether_write";
 	}
 	
-	// http://localhost:8080/Proejct4_hj/et.do?method=insert
 	@RequestMapping(params="method=insert")
 	public String insET(EatTogether ins, Model d) {
 		service.insET(ins);
-		return "\\eatTogether\\eatTogether_write";
+		return "eatTogether_write";
 	}
 }

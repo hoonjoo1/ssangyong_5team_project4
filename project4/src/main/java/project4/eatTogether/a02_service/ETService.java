@@ -14,10 +14,9 @@ public class ETService {
 	@Autowired
 	private ETDao dao;
 	
-	public List<EatTogether> getETList(EatTogether sch){
-		return dao.getETList(sch);
+	public List<EatTogether> ETList(EatTogether sch){
+		return dao.ETList(sch);
 	}
-	
 	public void insET(EatTogether ins) {
 		dao.insET(ins);
 	}
