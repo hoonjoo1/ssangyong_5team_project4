@@ -1,21 +1,25 @@
 package com.yj.domain;
 
 import java.sql.*;
+import java.util.List;
 
 import lombok.Data;
 
 
 @Data
 public class UrVO {
-	int urkey;
-	int userkey;
-	int boardkey;
-	String title;
-	Date writeDate;
-	String writeDateS;
-	String content;
-	String oppoid;
-	double oppograde;
+	private int urkey;
+	private int userkey;
+	private int boardkey;
+	private String title;
+	private Date writeDate;
+	private String writeDateS;
+	private String content;
+	private String oppoid;
+	private double oppograde;
+	private List<UrAttachVO> attachList;
+	
+	
 
 	public UrVO() {
 		super();

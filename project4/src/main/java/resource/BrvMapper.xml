@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yj.mapper.BrvMapper">
+
+	<select id="list" resultType="com.yj.domain.BrvVO">
+		select * from brv
+	</select>
+
+	<select id="get" resultType="com.yj.domain.BrvVO"
+		parameterType="int">
+		select *
+		from Brv
+		where brvkey=#{brvkey}
+	</select>
+
+	<insert id="insert">
+		INSERT INTO Brv (BrvKEY,bristokey, USERKEY)
+		values(seq_Brv.nextval, #{bristokey}, #{userkey})
+	</insert>
+
+	<update id="update" parameterType="com.yj.domain.BrvVO">
+		update Brv
+		set
+		meetnum=#{meetnum}
+		where brvkey=#{brvkey}
+	</update>
+	<delete id="delete" parameterType="int">
+		delete
+		from Brv
+		where
+		brvkey=#{brvkey}
+	</delete>
+</mapper>

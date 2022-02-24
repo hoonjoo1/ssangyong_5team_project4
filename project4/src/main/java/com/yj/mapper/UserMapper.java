@@ -10,5 +10,7 @@ public interface UserMapper {
 	public void insert(UserVO vo);
 	public void update(UserVO vo);
 	public void delete(int userkey);
-	
+	public String logincheck(UserVO vo);
+	public int idCheck(String id);
+	public UserVO login(UserVO login);
 }

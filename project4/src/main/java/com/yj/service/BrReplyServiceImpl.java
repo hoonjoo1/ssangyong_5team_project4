@@ -2,7 +2,6 @@ package com.yj.service;
 
 import java.util.List;
 
-import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
 import com.yj.domain.BrReplyVO;
@@ -15,7 +14,6 @@ import lombok.extern.log4j.Log4j;
 @Service
 @Log4j
 @AllArgsConstructor
-@Primary
 public class BrReplyServiceImpl implements BrReplyService {
 
 	private BrReplyMapper mapper;

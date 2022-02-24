@@ -7,8 +7,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.yj.domain.Criteria;
-import com.yj.domain.PageDTO;
 import com.yj.domain.UrVO;
 import com.yj.service.UrService;
 
@@ -21,7 +19,7 @@ public class UrController {
 	@Setter(onMethod_ = @Autowired)
 	UrService service;
 
-	@GetMapping("/list.do")
+	@RequestMapping("/list.do")
 	public void list(Model d) {
 		d.addAttribute("psc", "리스트");
 		d.addAttribute("list", service.List());

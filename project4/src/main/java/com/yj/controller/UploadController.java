@@ -95,13 +95,14 @@ public class UploadController {
 		return false;
 	}
 
+	
+	
+	
 	@PostMapping(value = "/uploadAjaxAction", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
 	@ResponseBody
 	public ResponseEntity<List<AttachFileDTO>> uploadAjaxPost(MultipartFile[] uploadFile) {
-
 		List<AttachFileDTO> list = new ArrayList<>();
 		String uploadFolder = "C:\\upload";
-
 		String uploadFolderPath = getFolder();
 		// make folder --------
 		File uploadPath = new File(uploadFolder, uploadFolderPath);
