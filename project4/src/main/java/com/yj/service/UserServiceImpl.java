@@ -2,6 +2,8 @@ package com.yj.service;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -36,4 +38,22 @@ public class UserServiceImpl implements UserService {
 		mapper.delete(Userkey);
 	}
 
+	public String logincheck(UserVO vo, HttpSession session) {
+		String name = mapper.logincheck(vo);
+		if(name!=null) {
+			session.setAttribute("id", vo.getId());
+			session.setAttribute("password", vo.getPassword());
+		}
+		return name;
+	}
+	
+	@Override
+	public int idCheck(String id) {
+		return mapper.idCheck(id);
+	}
+
+	public UserVO login(UserVO login) {
+		return mapper.login(login);
+	}
+	
 }

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yj.mapper.UserMapper">
+
+	<select id="list" resultType="com.yj.domain.UserVO">
+		select * from users
+	</select>
+
+	<select id="get" resultType="com.yj.domain.UserVO"
+		parameterType="int">
+		select *
+		from
+		users
+		where userkey=#{userkey}
+	</select>
+
+	<insert id="insert">
+		INSERT INTO users
+		values(seq_users.nextval, #{name},
+		#{nickname}, #{id},#{password},
+		#{phonenum}, sysdate, #{loc}, #{grade})
+	</insert>
+
+	<update id="update" parameterType="com.yj.domain.UserVO">
+		update users
+		set
+		password=#{password},
+		nickname=#{nickname},
+		loc=#{loc},
+		phonenum=#{phonenum}
+		where userkey=#{userkey}
+	</update>
+
+	<delete id="delete" parameterType="int">
+		delete
+		from users
+		where
+		userkey=#{userkey}
+	</delete>
+
+	<select id="logincheck" parameterType="String"
+		resultType="String">
+		select name
+		from users
+		where
+		id=#{id}
+		and password=#{password}
+	</select>
+
+	<select id="idCheck" resultType="int">
+
+		select count(*) from users where id=#{id}
+
+	</select>
+	
+	<select id="login" parameterType="com.yj.domain.UserVO" resultType="com.yj.domain.UserVO">
+		select * 
+		from users
+		where id=#{id} and password=#{password}
+	</select>	
+
+</mapper>

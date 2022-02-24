@@ -3,7 +3,6 @@ package com.yj.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
 import com.yj.domain.BrVO;
@@ -12,7 +11,6 @@ import com.yj.mapper.BrMapper;
 import lombok.Setter;
 
 @Service
-@Primary
 public class BrServiceImpl implements BrService {
 
 	@Setter(onMethod_ = @Autowired)

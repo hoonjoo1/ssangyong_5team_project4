@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yj.mapper.BristoMapper">
+
+	<select id="list" resultType="com.yj.domain.BristoVO">
+		select * from Bristo
+	</select>
+
+
+
+
+
+	<select id="get" resultType="com.yj.domain.BristoVO"
+		parameterType="int">
+		select *
+		from Bristo
+		where bristokey=#{bristokey}
+	</select>
+
+	<insert id="insert" parameterType="com.yj.domain.BristoVO">
+		INSERT INTO Bristo 
+		values(
+		seq_bristo.nextval,
+		1,
+		#{name},
+		#{menu},
+		#{price},
+		#{loc},
+		#{parking},
+		#{eatalone},
+		#{babychair},
+		#{carryout},
+		#{delivery},
+		#{explain})
+	</insert>
+	
+	
+	
+	
+	<insert id="insertFileInfo" parameterType="com.yj.domain.FileInfo">
+		INSERT INTO fileInfo values(seq_bristo.nextval, #{pathinfo},
+			#{fname},sysdate,sysdate,#{etc})	
+	</insert>
+
+
+
+
+
+	<update id="update" parameterType="com.yj.domain.BristoVO">
+		update Bristo
+		set
+		name=#{name}
+		where bristokey=#{bristokey}
+	</update>
+	<delete id="delete" parameterType="int">
+		delete
+		from Bristo
+		where
+		bristokey=#{bristokey}
+	</delete>
+</mapper>

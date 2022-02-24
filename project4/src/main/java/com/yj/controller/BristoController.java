@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.stereotype.Repository;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -45,7 +46,7 @@ public class BristoController {
 		log.info("registerForm");
 	}
 
-	@GetMapping("/insert.do")
+	@PostMapping("/insert.do")
 	public String insert(BristoVO vo, Model d) {
 		d.addAttribute("psc", "insert");
 		service.insert(vo);
@@ -60,8 +61,9 @@ public class BristoController {
 	}
 
 	@GetMapping("/delete.do")
-	public void delete(int bristokey, Model d) {
+	public String delete(int bristokey, Model d) {
 		d.addAttribute("psc", "delete");
 		service.delete(bristokey);
+		return "redirect:/bristo/list.do";
 	}
 }

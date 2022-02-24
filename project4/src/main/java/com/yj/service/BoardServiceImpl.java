@@ -3,7 +3,6 @@ package com.yj.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -20,7 +19,6 @@ import lombok.extern.log4j.Log4j;
 @Log4j
 @Service
 @AllArgsConstructor
-@Primary
 public class BoardServiceImpl implements BoardService {
 	@Setter(onMethod_ = @Autowired)
 	private BoardMapper mapper;
