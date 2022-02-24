@@ -51,11 +51,11 @@ right:50px;
 }
 </style>
 
-<link rel="stylesheet" href="/project4/a00_com/bootstrap.min.css?a" >
-<link rel="stylesheet" href="/project4/a00_com/jquery-ui.css" >
-<script src="/project4/a00_com/jquery.min.js"></script>
-<script src="/project4/a00_com/bootstrap.min.js"></script>
-<script src="/project4/a00_com/jquery-ui.js"></script>
+<link rel="stylesheet" href="${path}/a00_com/bootstrap.min.css?after" >
+<link rel="stylesheet" href="${path}/a00_com/jquery-ui.css" >
+<script src="${path}/a00_com/jquery.min.js"></script>
+<script src="${path}/a00_com/bootstrap.min.js"></script>
+<script src="${path}/a00_com/jquery-ui.js"></script>
 <script type="text/javascript">
 
 			$(document).ready(function(){
@@ -87,13 +87,10 @@ right:50px;
 </head>
 
 <body>
-
-<%@ include file="../common/header.jsp"%>
-
-
 <div id="form1">
 	<div id="title">
 		<h1>식자재 공동구매</h1>
+		<h3>${users.id}</h3>
 	</div>
 	
 	<div id="boardList">
@@ -132,11 +129,8 @@ right:50px;
 </div>
 
 <div id="footer">
-<%@ include file="../common/footer.jsp"%>
+
 </div>
-
-
-
 
 </body>
 </html>

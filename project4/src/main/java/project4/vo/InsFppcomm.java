@@ -1,6 +1,7 @@
 package project4.vo;
 
 public class InsFppcomm {
+	private String id;
 	private int commentkey;
 	private int userkey;
 	private String commcontents;
@@ -48,6 +49,13 @@ public class InsFppcomm {
 	public void setFppkey(int fppkey) {
 		this.fppkey = fppkey;
 	}
+	public String getId() {
+		return id;
+	}
+	public void setId(String id) {
+		this.id = id;
+	}
+	
 	
 	
 	

@@ -17,6 +17,9 @@
 <title>Insert title here</title>
 
 <style>
+th,td{
+padding: 15px;
+}
 
 #form1{
 position:absolute;
@@ -249,6 +252,7 @@ height:200px;
 			<h5>댓글 작성</h5>
 			<textarea rows="5" cols="100%" name="commcontents"></textarea>
 			<input type="hidden" name="fppkey" value="${fppkey}">
+			<input type="hidden" name="id" value="${users.id}">
 			<button type="reset" class="btn btn-primary">초기화</button>
 			<button type="button" id="confirmbtn" class="btn btn-primary" data-toggle="modal" data-target="#mymodal">등록</button>
 		</div>

@@ -127,6 +127,7 @@ height:200px;
 <!-- 제목 -->
 	<div id="title">
 		제목 <input type="text" name="title" placeholder="제목을 입력해주세요" size="70">
+		<input type="hidden" name="id" value="${users.id}">
 	</div>
 <!-- 지역 -->
 	<div id="loc">

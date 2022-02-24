@@ -1,11 +1,14 @@
 package project4.vo;
 
 public class Foodpubpur {
+	private int cnt;
+	private int level;
 	private int foodpubpurkey;
 	private int boardkey;
 	private int userkey;
 	private int commentskey;
 	private String title;
+	private String id;
 	private String writedate;
 	private String content;
 	private String loc;
@@ -105,6 +108,26 @@ public class Foodpubpur {
 	public void setViewcnt(int viewcnt) {
 		this.viewcnt = viewcnt;
 	}
+	public int getCnt() {
+		return cnt;
+	}
+	public void setCnt(int cnt) {
+		this.cnt = cnt;
+	}
+	public int getLevel() {
+		return level;
+	}
+	public void setLevel(int level) {
+		this.level = level;
+	}
+	public String getId() {
+		return id;
+	}
+	public void setId(String id) {
+		this.id = id;
+	}
+	
+	
 	
 	
 }
