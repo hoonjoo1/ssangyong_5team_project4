@@ -149,6 +149,9 @@ height:200px;
 			$(document).ready(function(){
 				
 				var proc = "${proc}";
+				var sessNick = "${users.nickname}";
+				var nick = $("[name=nickname]").val();
+				
 				
 				if(proc!=""){
 					alert(proc);
@@ -157,6 +160,14 @@ height:200px;
 					if(proc=="삭제되었습니다"){
 						location.href= "${path}/boardlist.do"
 					}
+				}
+				
+				if(sessNick != nick){
+					$('#delbtn').hide();
+					$('#uptbtn').hide();
+				}else{
+					$('#delbtn').show();
+					$('#uptbtn').show();
 				}
 							
 				
@@ -181,8 +192,7 @@ height:200px;
 						location.href="${path}/delboard.do?fppkey="+$("[name=fppkey1]").val();						
 					}
 				});
-				
-					
+							
 			});	
 			
 			function goupt(fppkey){
@@ -202,6 +212,7 @@ height:200px;
 <c:forEach var="board" items="${blist}">
 <!-- 제목 -->
 	<div id="title">
+		<input type="hidden" name="nickname" value="${board.nickname}">
 		<h4 id="catname">${board.boardname}</h4>
 		<div class="updown"></div>
 		<h1 id="titname">${board.title}</h1>
