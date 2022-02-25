@@ -8,14 +8,19 @@
 		<typeAlias alias="boardList" type="project4.vo.BoardList"/>
 		<typeAlias alias="fcomm" type="project4.vo.Fppcomm"/>
 		<typeAlias alias="insfcomm" type="project4.vo.InsFppcomm"/>
+		<typeAlias alias="et" type="project4.vo.EatTogethermm"/>
 	</typeAliases>
 	
 	<mappers>
 		<mapper resource="resource/FoodpubpurMapper.xml"/>
 		<mapper resource="resource/UrMapper.xml"/>
+<<<<<<< HEAD
 		<mapper resource="resource/BrMapper.xml"/>
 		<mapper resource="resource/UserMapper.xml"/>
 		<mapper resource="resource/BristoMapper.xml"/>
+=======
+		<mapper resource="resource/ETMapper.xml"/>
+>>>>>>> branch 'main' of https://github.com/hoonjoo1/ssangyong_5team_project4.git
 	</mappers>
 
 </configuration>
