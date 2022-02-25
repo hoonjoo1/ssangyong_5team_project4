@@ -14,20 +14,21 @@ import lombok.Setter;
 import oracle.net.aso.l;
 
 @Controller
-@RequestMapping("/br/*")
 public class BrController {
 
 	@Setter(onMethod_ = @Autowired)
 	BrService service;
 
-	@GetMapping("/list.do")
-	public void list(Model d) {
+	@GetMapping("/brlist.do")
+	public String list(Model d) {
 		d.addAttribute("psc", "리스트");
 		d.addAttribute("list", service.list());
+		return "/br/list";
 	}
 
-	@GetMapping("/registerForm.do")
-	public void registerForm() {
+	@GetMapping("/brregisterForm.do")
+	public String registerForm() {
+			return "/br/registerForm";
 	}
 
 	@GetMapping("/get.do")

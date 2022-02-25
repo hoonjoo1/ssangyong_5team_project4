@@ -35,14 +35,9 @@
 			expression="org.springframework.stereotype.Repository" />
 	</context:component-scan>
 
-	<context:component-scan base-package="com.yj">
-		<context:include-filter type="annotation"
-			expression="org.springframework.stereotype.Controller" />
-		<context:include-filter type="annotation"
-			expression="org.springframework.stereotype.Service" />
-		<context:include-filter type="annotation"
-			expression="org.springframework.stereotype.Repository" />
-	</context:component-scan>
+	<context:component-scan base-package="com"></context:component-scan>
+	
+	
 	<!-- 컨테이너에 공통 DB 설정 정보 가져오기 -->
 	<context:property-placeholder
 		location="classpath:/resource/config" />
@@ -88,15 +83,9 @@
 	</bean>
 
 
-
-
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
 		<property name="basePackage" value="com.yj.mapper" />
 	</bean>
-
-
-
-
 
 
 
