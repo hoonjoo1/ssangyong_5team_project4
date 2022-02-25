@@ -59,6 +59,8 @@ right:50px;
 <script type="text/javascript">
 
 			$(document).ready(function(){
+				var id = "${users.id}";
+				
 				$('#confirmbtn').click(function(){
 					$('#mymodal').modal({
 						show: false
@@ -75,7 +77,11 @@ right:50px;
 				});
 				
 				$('#writebtn').click(function(){
-					location.href="${path}/groupwrite.do";	
+					if(id==""){
+						alert("로그인 해주세요!");
+					}else{
+						location.href="${path}/groupwrite.do";
+					}
 				});
 			});
 			
@@ -90,7 +96,6 @@ right:50px;
 <div id="form1">
 	<div id="title">
 		<h1>식자재 공동구매</h1>
-		<h3>${users.id}</h3>
 	</div>
 	
 	<div id="boardList">
