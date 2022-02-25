@@ -162,15 +162,17 @@ height:200px;
 					}
 				}
 				
+				/* 세션 없을 시 댓글 영역 hide*/
+				if(sessNick == ""){
+					$('#commentwrite').hide();	
+				}
+				
+				/* 작성자가 아닐 시 삭제, 수정*/
 				if(sessNick != nick){
 					$('#delbtn').hide();
 					$('#uptbtn').hide();
-				}else{
-					$('#delbtn').show();
-					$('#uptbtn').show();
 				}
-							
-				
+									
 				$('#confirmbtn').click(function(){
 					$('#mymodal').modal({
 						show: false
@@ -250,6 +252,11 @@ height:200px;
 					<th>${fcomm.nickname}</th>
 					<td>${fcomm.commcontent}</td>
 					<th>${fcomm.commdate}</th>
+					<td><button id="recomBtn" class="btn btn-primary">답글</button></td>
+					<!-- 작성자 미 일치시 삭제 버튼 비 활성화 -->
+					<c:if test="${fcomm.nickname == users.nickname}">
+						<td><button id="comdelBtn" class="btn btn-danger">삭제</button></td>
+					</c:if>
 					</tr>
 				</c:forEach>
 			</table>
