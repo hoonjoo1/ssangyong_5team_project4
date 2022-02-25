@@ -5,8 +5,10 @@ public class InsFppcomm {
 	private int commentkey;
 	private int userkey;
 	private String commcontents;
+	private String recommcontents;
 	private String commdate;
 	private int fppkey;
+	private int refno;
 	public InsFppcomm() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -54,6 +56,18 @@ public class InsFppcomm {
 	}
 	public void setId(String id) {
 		this.id = id;
+	}
+	public int getRefno() {
+		return refno;
+	}
+	public void setRefno(int refno) {
+		this.refno = refno;
+	}
+	public String getRecommcontents() {
+		return recommcontents;
+	}
+	public void setRecommcontents(String recommcontents) {
+		this.recommcontents = recommcontents;
 	}
 	
 	

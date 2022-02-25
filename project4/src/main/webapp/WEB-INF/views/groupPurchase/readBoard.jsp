@@ -119,13 +119,20 @@ height:200px;
 }
 
 #commentlisttb{
-overflow: auto;
+overflow-x:hidden;
+white-space:normal;
 position: absolute;
 width:100%;
 height:200px;
 }
 
 #commentwrite{
+position: absolute;
+top:900px;
+width:100%;
+}
+
+#recommentwrite{
 position: absolute;
 top:900px;
 width:100%;
@@ -147,6 +154,8 @@ height:200px;
 <script type="text/javascript">
 					
 			$(document).ready(function(){
+				
+				$("#recommentwrite").hide();
 				
 				var proc = "${proc}";
 				var sessNick = "${users.nickname}";
@@ -184,14 +193,27 @@ height:200px;
 					$('#mymodal').modal('hide');
 				});
 				
-				$('#submitbtn').click(function(){
-					$('form').submit();
-						
+				/*댓글 submit*/
+				$('#commsubmitbtn').click(function(){
+					$('#commform').submit();		
+				})
+				
+				/*답글 submit*/
+				$('#recommsubmitbtn').click(function(){
+					$('#recommform').submit();	
 				})
 				
 				$('#delbtn').click(function(){
 					if(confirm('삭제하시겠습니까?')){
 						location.href="${path}/delboard.do?fppkey="+$("[name=fppkey1]").val();						
+					}
+				});
+				
+								
+				$('#recancleBtn').click(function(){
+					if(confirm('답글 작성을 취소하시겠습니까?')){
+						$('#recommentwrite').hide();
+						$('#commentwrite').show();
 					}
 				});
 							
@@ -200,6 +222,16 @@ height:200px;
 			function goupt(fppkey){
 				if(confirm("수정하시겠습니까?")){
 					location.href="${path}/uptwrite.do?fppkey="+fppkey;
+				}
+			}
+			
+			function recomm(fcommkey){
+				if(confirm('답글을 작성하시겠습니까?')){
+					$('#recommentwrite').show();
+					$('#commentwrite').hide();
+					$('[name=recommcontents]').focus();
+					$('[name=refno]').val(fcommkey);
+					$('[name=recommcontents]').val("RE:"+ fcommkey);				
 				}
 			}
 								
@@ -244,15 +276,26 @@ height:200px;
 	
 	<div id="commentlist">
 		<h5>댓글 목록</h5>
-		<!-- 후에 for문으로 대체 -->
 		<div id="commentlisttb">
 			<table>
 				<c:forEach var="fcomm" items="${commlist}">
 					<tr>
-					<th>${fcomm.nickname}</th>
+					<th><input type="hidden" name="fcommkey" value="${fcomm.fcommkey}"></th>
+					<th>${fcomm.fcommkey}</th>
+					
+					<th style="text-align: left">
+					<c:forEach varStatus="sts" begin="1" end="${fcomm.level}">
+						&nbsp;&nbsp;
+    					<c:if test="${fcomm.level>1 and sts.last }">
+    					<img width="20" height="10" 
+    						src="${path}/a02_img/reply1.png"
+    					/>
+    				</c:if>
+    				</c:forEach>
+					${fcomm.nickname}</th>
 					<td>${fcomm.commcontent}</td>
 					<th>${fcomm.commdate}</th>
-					<td><button id="recomBtn" class="btn btn-primary">답글</button></td>
+					<td><button onclick="recomm(${fcomm.fcommkey})" class="btn btn-primary">답글</button></td>
 					<!-- 작성자 미 일치시 삭제 버튼 비 활성화 -->
 					<c:if test="${fcomm.nickname == users.nickname}">
 						<td><button id="comdelBtn" class="btn btn-danger">삭제</button></td>
@@ -264,7 +307,7 @@ height:200px;
 		
 	</div>
 	
-	<form method="post" action="${path}/insertcomm.do">
+	<form id="commform" method="post" action="${path}/insertcomm.do">
 		<div id="commentwrite">
 			<hr>
 			<h5>댓글 작성</h5>
@@ -272,7 +315,20 @@ height:200px;
 			<input type="hidden" name="fppkey" value="${fppkey}">
 			<input type="hidden" name="id" value="${users.id}">
 			<button type="reset" class="btn btn-primary">초기화</button>
-			<button type="button" id="confirmbtn" class="btn btn-primary" data-toggle="modal" data-target="#mymodal">등록</button>
+			<button type="button" id="confirmbtn" class="btn btn-primary" data-toggle="modal" data-target="#commmymodal">등록</button>
+		</div>
+	</form>
+	
+	<form id="recommform" method="post" action="${path}/insertrecomm.do">
+		<div id="recommentwrite">
+			<hr>
+			<h5>답글 작성</h5>
+			<textarea rows="5" cols="100%" name="recommcontents"></textarea>
+			<input type="hidden" name="fppkey" value="${fppkey}">
+			<input type="hidden" name="id" value="${users.id}">
+			<input type="hidden" name="refno">
+			<button type="button" id="recancleBtn" class="btn btn-primary">취소</button>
+			<button type="button" id="confirmbtn" class="btn btn-primary" data-toggle="modal" data-target="#recommmymodal">등록</button>
 		</div>
 	</form>
 
@@ -283,8 +339,8 @@ height:200px;
 </div>
 
 
-<!-- modal -->
-<div class="modal" id="mymodal">
+<!-- 댓글 modal -->
+<div class="modal" id="commmymodal">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -297,7 +353,28 @@ height:200px;
         <p>등록 하시겠습니까??</p>
       </div>
       <div class="modal-footer">
-        <button type="button" id="submitbtn" class="btn btn-primary">확인</button>
+        <button type="button" id="commsubmitbtn" class="btn btn-primary">확인</button>
+        <button type="button" id="closebtn" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 답글 modal -->
+<div class="modal" id="recommmymodal">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">답글등록</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true"></span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>등록 하시겠습니까??</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="recommsubmitbtn" class="btn btn-primary">확인</button>
         <button type="button" id="closebtn" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
       </div>
     </div>

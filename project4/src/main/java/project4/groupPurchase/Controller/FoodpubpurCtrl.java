@@ -18,7 +18,7 @@ public class FoodpubpurCtrl {
 	@RequestMapping("/boardlist.do")
 	public String groupboardlist(String search, Model d) {
 		d.addAttribute("boardlist",service.searchBdList(search));
-		return "groupPurchase/BoardList";
+		return "groupPurchase//BoardList";
 	}
 		
 	@RequestMapping("/groupread.do")
@@ -49,6 +49,14 @@ public class FoodpubpurCtrl {
 		
 		d.addAttribute("proc","작성 완료되었습니다");
 		service.insertcomm(ins);
+		return "groupPurchase//readBoard";
+	}
+	
+	@RequestMapping("/insertrecomm.do")
+	public String insertreComm(InsFppcomm ins, Model d) {
+		
+		d.addAttribute("proc","작성 완료되었습니다");
+		service.insertrecomm(ins);
 		return "groupPurchase//readBoard";
 	}
 	

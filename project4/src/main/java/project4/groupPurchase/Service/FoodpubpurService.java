@@ -42,6 +42,10 @@ public class FoodpubpurService {
 		dao.insertcomm(ins);
 	}
 	
+	public void insertrecomm(InsFppcomm ins) {
+		dao.insertrecomm(ins);
+	}
+	
 	public void delboard(int fppkey) {
 		dao.delboard(fppkey);
 	}

@@ -24,16 +24,24 @@
 	</update>
 
 	<select id="getCommList" resultType="fcomm" parameterType="int">
-		SELECT fc.FCOMMENTKEY commkey, fc.COMMCONTENTS commcontent ,fc.COMMDATE commdate , u.NICKNAME nickname
+		SELECT  rownum cnt,LEVEL,fc.FCOMMENTKEY fcommkey, fc.COMMCONTENTS commcontent ,fc.COMMDATE commdate , u.NICKNAME nickname
 		FROM FOODPUBPUR f, FPPCOMM fc , USERS u 
 		WHERE fc.fppkey = f.FOODPUBPURKEY
 		AND fc.USERKEY = u.USERKEY 
 		AND f.FOODPUBPURKEY = #{fppkey}
-		ORDER BY fc.FCOMMENTKEY desc
+		START WITH refno=0
+		CONNECT BY PRIOR fc.FCOMMENTKEY = fc.REFNO 
+		ORDER siblings BY fc.FCOMMENTKEY DESC
 	</select>
 	
 	<insert id="insertcomm" parameterType="insfcomm">
-		INSERT INTO fppcomm VALUES ((SELECT NVL(MAX(FCOMMENTKEY)+1,1) FROM fppcomm),(SELECT userkey FROM users WHERE id = #{id}),#{commcontents},to_char(sysdate,'YYYY-MM-DD'),#{fppkey})
+		INSERT INTO fppcomm VALUES ((SELECT NVL(MAX(FCOMMENTKEY)+1,1) FROM fppcomm),(SELECT userkey FROM users WHERE id = #{id}),#{commcontents},to_char(sysdate,'YYYY-MM-DD'),#{fppkey},0)
+	</insert>
+	
+	<insert id="insertrecomm" parameterType="insfcomm">
+		INSERT INTO fppcomm VALUES
+		 ((SELECT NVL(MAX(FCOMMENTKEY)+1,1) FROM fppcomm),(SELECT userkey FROM users WHERE id = #{id}),
+		 #{recommcontents},to_char(sysdate,'YYYY-MM-DD'),#{fppkey},#{refno})
 	</insert>
 	
 	<delete id="delboard" parameterType="int">
