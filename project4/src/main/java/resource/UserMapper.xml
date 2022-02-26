@@ -2,13 +2,13 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.yj.mapper.UserMapper">
+<mapper namespace="project4.mapper.UserMapper">
 
-	<select id="list" resultType="com.yj.domain.UserVO">
+	<select id="list" resultType="project4.domain.UserVO">
 		select * from users
 	</select>
 
-	<select id="get" resultType="com.yj.domain.UserVO"
+	<select id="get" resultType="project4.domain.UserVO"
 		parameterType="int">
 		select *
 		from
@@ -23,7 +23,7 @@
 		#{phonenum}, sysdate, #{loc}, #{grade})
 	</insert>
 
-	<update id="update" parameterType="com.yj.domain.UserVO">
+	<update id="update" parameterType="project4.domain.UserVO">
 		update users
 		set
 		password=#{password},
@@ -55,7 +55,7 @@
 
 	</select>
 	
-	<select id="login" parameterType="com.yj.domain.UserVO" resultType="com.yj.domain.UserVO">
+	<select id="login" parameterType="project4.domain.UserVO" resultType="project4.domain.UserVO">
 		select * 
 		from users
 		where id=#{id} and password=#{password}

@@ -3,7 +3,7 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.yj.mapper.BrReplyMapper">
+<mapper namespace="project4.mapper.BrReplyMapper">
 
 	<insert id="insert">
 		insert into br_reply (rno, bkey, reply, replyer)
@@ -11,7 +11,7 @@
 
 	</insert>
 
-	<select id="read" resultType="com.yj.domain.BrReplyVO">
+	<select id="read" resultType="project4.domain.BrReplyVO">
 
 		select * from br_reply where rno =
 		#{rno}
@@ -35,7 +35,7 @@
 
 
 	<select id="getListWithPaging"
-		resultType="com.yj.domain.BrReplyVO">
+		resultType="project4.domain.BrReplyVO">
 		select rno, bkey, reply, replyer, replyDate, updatedate
 		from br_reply
 		where bkey = #{bkey}

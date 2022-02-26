@@ -2,13 +2,13 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.yj.mapper.BrMapper">
+<mapper namespace="proejct4.mapper.BrMapper">
 
-	<select id="list" resultType="com.yj.domain.BrVO">
+	<select id="list" resultType="proejct4.domain.BrVO">
 		select * from br
 	</select>
 
-	<select id="get" resultType="com.yj.domain.BrVO"
+	<select id="get" resultType="proejct4.domain.BrVO"
 		parameterType="int">
 		select *
 		from br
@@ -20,7 +20,7 @@
 		values(seq_br.nextval, #{userkey}, #{title}, #{grade}, #{content})
 	</insert>
 
-	<update id="update" parameterType="com.yj.domain.BrVO">
+	<update id="update" parameterType="proejct4.domain.BrVO">
 		update br
 		set
 		title=#{title},

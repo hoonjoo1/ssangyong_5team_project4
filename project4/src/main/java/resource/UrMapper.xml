@@ -2,7 +2,7 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.yj.mapper.UrMapper">
+<mapper namespace="project4.mapper.UrMapper">
 
 	<sql id="criteria">
 		<trim prefix="(" suffix=") AND " prefixOverrides="OR">
@@ -27,7 +27,7 @@
 
 
 
-	<select id="getListWithPaging" resultType="com.yj.domain.UrVO"> 
+	<select id="getListWithPaging" resultType="project4.domain.UrVO"> 
 		<![CDATA[ select urkey
 		from ( 
 			select /*+INDEX_DESC(ur urkey) */ 
@@ -44,17 +44,17 @@
 
 
 
-	<select id="getList" resultType="com.yj.domain.UrVO">
+	<select id="getList" resultType="project4.domain.UrVO">
 		select * from ur
 	</select>
 
-	<select id="get" resultType="com.yj.domain.UrVO"
+	<select id="get" resultType="project4.domain.UrVO"
 		parameterType="int">
 		select * from ur
 		where urkey=#{urkey}
 	</select>
 
-	<insert id="register" parameterType="com.yj.domain.UrVO">
+	<insert id="register" parameterType="project4.domain.UrVO">
 		insert into ur
 		(urkey,userkey,boardkey,
 		title, content, oppoid, oppograde)
@@ -66,7 +66,7 @@
 
 	</insert>
 
-	<update id="update" parameterType="com.yj.domain.UrVO">
+	<update id="update" parameterType="project4.domain.UrVO">
 		update ur
 		set
 		title=#{title},

@@ -3,21 +3,33 @@
 "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 	<typeAliases>
-		<typeAlias alias="fpp" type="project4.vo.Foodpubpur"/>
-		<typeAlias alias="board" type="project4.vo.BoardInfo"/>
-		<typeAlias alias="boardList" type="project4.vo.BoardList"/>
-		<typeAlias alias="fcomm" type="project4.vo.Fppcomm"/>
-		<typeAlias alias="insfcomm" type="project4.vo.InsFppcomm"/>
-		<typeAlias alias="et" type="project4.vo.EatTogethermm"/>
+		<typeAlias alias="fpp" type="project4.vo.Foodpubpur" />
+		<typeAlias alias="board" type="project4.vo.BoardInfo" />
+		<typeAlias alias="boardList" type="project4.vo.BoardList" />
+		<typeAlias alias="fcomm" type="project4.vo.Fppcomm" />
+		<typeAlias alias="insfcomm" type="project4.vo.InsFppcomm" />
+		<typeAlias alias="et" type="project4.vo.EatTogether" />
+		<typeAlias alias="br" type="project4.mapper.BrVO" />
+		<typeAlias alias="bristo" type="project4.mapper.BristoVO" />
+		<typeAlias alias="brReply" type="project4.mapper.BrReplyVO" />
+		<typeAlias alias="busType" type="project4.mapper.BusTypeVO" />
 	</typeAliases>
-	
+
 	<mappers>
-		<mapper resource="resource/FoodpubpurMapper.xml"/>
-		<mapper resource="resource/UrMapper.xml"/>
-		<mapper resource="resource/BrMapper.xml"/>
-		<mapper resource="resource/UserMapper.xml"/>
-		<mapper resource="resource/BristoMapper.xml"/>
-		<mapper resource="resource/ETMapper.xml"/>
+		<mapper resource="resource/FoodpubpurMapper.xml" />
+		<mapper resource="resource/UrMapper.xml" />
+		<mapper resource="resource/BrMapper.xml" />
+		<mapper resource="resource/UserMapper.xml" />
+		<mapper resource="resource/BristoMapper.xml" />
+		<mapper resource="resource/BrReplyMapper.xml" />
+		<mapper resource="resource/BrvMapper.xml" />
+		<mapper resource="resource/BrvMapper.xml" />
+		<mapper resource="resource/MemberMapper.xml" />
+		<mapper resource="resource/ReplyMapper.xml" />
+		<mapper resource="resource/UrMapper.xml" />
+		<mapper resource="resource/UrAttachMapper.xml" />
+		<mapper resource="resource/UrReplyMapper.xml" />
+		<mapper resource="resource/UserReplyMapper.xml" />
 	</mappers>
 
 </configuration>

@@ -2,25 +2,21 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.yj.mapper.BristoMapper">
+<mapper namespace="projec4.mapper.BristoMapper">
 
-	<select id="list" resultType="com.yj.domain.BristoVO">
+	<select id="list" resultType="projec4.domain.BristoVO">
 		select * from Bristo
 	</select>
 
-
-
-
-
-	<select id="get" resultType="com.yj.domain.BristoVO"
+	<select id="get" resultType="projec4.domain.BristoVO"
 		parameterType="int">
 		select *
 		from Bristo
 		where bristokey=#{bristokey}
 	</select>
 
-	<insert id="insert" parameterType="com.yj.domain.BristoVO">
-		INSERT INTO Bristo 
+	<insert id="insert" parameterType="projec4.domain.BristoVO">
+		INSERT INTO Bristo
 		values(
 		seq_bristo.nextval,
 		1,
@@ -35,20 +31,22 @@
 		#{delivery},
 		#{explain})
 	</insert>
-	
-	
-	
-	
-	<insert id="insertFileInfo" parameterType="com.yj.domain.FileInfo">
-		INSERT INTO fileInfo values(seq_bristo.nextval, #{pathinfo},
-			#{fname},sysdate,sysdate,#{etc})	
+
+
+
+
+	<insert id="insertFileInfo"
+		parameterType="projec4.domain.FileInfo">
+		INSERT INTO fileInfo values(seq_bristo.nextval,
+		#{pathinfo},
+		#{fname},sysdate,sysdate,#{etc})
 	</insert>
 
 
 
 
 
-	<update id="update" parameterType="com.yj.domain.BristoVO">
+	<update id="update" parameterType="projec4.domain.BristoVO">
 		update Bristo
 		set
 		name=#{name}

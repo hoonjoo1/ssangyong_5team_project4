@@ -2,7 +2,7 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.yj.mapper.UrAttachMapper">
+<mapper namespace="project4.mapper.UrAttachMapper">
 
 	<insert id="insert">
 	insert into ur_attach (uuid, uploadpath, filename,
@@ -17,7 +17,7 @@
 
 	</delete>
 
-	<select id="findByurkey" resultType="com.yj.domain.UrAttachVO">
+	<select id="findByurkey" resultType="project4.domain.UrAttachVO">
 		select * from ur_attach where
 		urkey = #{urkey}
 	</select>
@@ -29,7 +29,7 @@
 	</delete>
 
 	<select id="getOldFiles"
-		resultType="com.yj.domain.UrAttachVO">
+		resultType="project4.domain.UrAttachVO">
 
 		select * from ur_attach where uploadpath = to_char(sysdate
 		-1 ,'yyyy\mm\dd')

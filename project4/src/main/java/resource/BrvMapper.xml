@@ -2,13 +2,13 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.yj.mapper.BrvMapper">
+<mapper namespace="project4.mapper.BrvMapper">
 
-	<select id="list" resultType="com.yj.domain.BrvVO">
+	<select id="list" resultType="project4.domain.BrvVO">
 		select * from brv
 	</select>
 
-	<select id="get" resultType="com.yj.domain.BrvVO"
+	<select id="get" resultType="project4.domain.BrvVO"
 		parameterType="int">
 		select *
 		from Brv
@@ -20,7 +20,7 @@
 		values(seq_Brv.nextval, #{bristokey}, #{userkey})
 	</insert>
 
-	<update id="update" parameterType="com.yj.domain.BrvVO">
+	<update id="update" parameterType="project4.domain.BrvVO">
 		update Brv
 		set
 		meetnum=#{meetnum}
