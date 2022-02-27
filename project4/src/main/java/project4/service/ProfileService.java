@@ -2,8 +2,10 @@ package project4.service;
 
 import java.util.List;
 
-import project4.domain.ProfileVO;
+import org.springframework.stereotype.Service;
 
+import project4.domain.ProfileVO;
+@Service
 public interface ProfileService {
 	public List<ProfileVO> list();
 	public void insert(ProfileVO vo);

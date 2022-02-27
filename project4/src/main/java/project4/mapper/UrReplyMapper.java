@@ -2,8 +2,10 @@ package project4.mapper;
 
 import java.util.List;
 
-import project4.domain.UrReplyVO;
+import org.springframework.stereotype.Repository;
 
+import project4.domain.UrReplyVO;
+@Repository
 public interface UrReplyMapper {
 	public int insert(UrReplyVO vo);
 

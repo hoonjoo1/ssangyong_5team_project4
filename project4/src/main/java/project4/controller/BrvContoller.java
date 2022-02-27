@@ -16,7 +16,7 @@ import project4.service.BrvService;
 @RequestMapping("/brv/*")
 public class BrvContoller {
 
-	@Setter(onMethod_ = { @Autowired })
+	@Autowired
 	BrvService service;
 
 	@GetMapping("/list.do")

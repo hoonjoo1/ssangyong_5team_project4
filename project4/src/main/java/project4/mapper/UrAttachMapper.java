@@ -2,8 +2,10 @@ package project4.mapper;
 
 import java.util.List;
 
-import project4.domain.UrAttachVO;
+import org.springframework.stereotype.Repository;
 
+import project4.domain.UrAttachVO;
+@Repository
 public interface UrAttachMapper {
 	public void insert(UrAttachVO vo);
 

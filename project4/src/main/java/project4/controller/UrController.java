@@ -12,38 +12,38 @@ import project4.domain.UrVO;
 import project4.service.UrService;
 
 @Controller
-@RequestMapping("/ur/*")
 public class UrController {
 
 	@Autowired
 	UrService service;
 
-	@RequestMapping("/list.do")
-	public void list(Model d) {
+	@RequestMapping("/urlist.do")
+	public String list(Model d) {
 		d.addAttribute("psc", "리스트");
 		d.addAttribute("list", service.List());
 		// d.addAttribute("pageMaker", new PageDTO(cri,123));
 		System.out.println("리스트");
+		return "/ur/list";
 	}
 
-	@GetMapping("/get.do")
+	@GetMapping("/urget.do")
 	public void get(@RequestParam("urkey") int urkey, Model d) {
 		d.addAttribute("psc", "조회");
 		d.addAttribute("ur", service.get(urkey));
 	}
 
-	@GetMapping("/registerForm.do")
+	@GetMapping("/urregisterForm.do")
 	public void registerForm() {
 	}
 
-	@GetMapping("/register.do")
+	@GetMapping("/urregister.do")
 	public String register(UrVO ins, Model d) {
 		d.addAttribute("psc", "생성");
 		service.register(ins);
 		return "redirect:/ur/list.do";
 	}
 
-	@GetMapping("/update.do")
+	@GetMapping("/urupdate.do")
 	public String update(UrVO upt, Model d) {
 		d.addAttribute("psc", "수정");
 		service.update(upt);
@@ -53,12 +53,12 @@ public class UrController {
 		return "redirect:/ur/list.do";
 	}
 
-	@GetMapping("/updateForm.do")
+	@GetMapping("/urupdateForm.do")
 	public void updateForm(@RequestParam("urkey") int urkey, Model d) {
 		d.addAttribute("ur", service.get(urkey));
 	}
 
-	@GetMapping("/delete.do")
+	@GetMapping("/urdelete.do")
 	public String del(@RequestParam("urkey") int urkey, Model d) {
 		d.addAttribute("psc", "삭제");
 		service.delete(urkey);

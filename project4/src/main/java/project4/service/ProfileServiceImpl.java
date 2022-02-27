@@ -11,7 +11,6 @@ import project4.domain.ProfileVO;
 import project4.mapper.ProfileMapper;
 
 @Service
-@Log4j
 public class ProfileServiceImpl implements ProfileService{
 	
 	@Setter(onMethod_ = {@Autowired})

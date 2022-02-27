@@ -17,10 +17,10 @@
 
 <!-- Font Icon -->
 <link rel="stylesheet"
-	href="/resources/user/fonts/material-icon/css/material-design-iconic-font.min.css">
+	href="/project4/resources/user/fonts/material-icon/css/material-design-iconic-font.min.css">
 
 <!-- Main css -->
-<link rel="stylesheet" href="/resources/user/css/style.css">
+<link rel="stylesheet" href="/project4/resources/user/css/style.css">
 
 <script>
 $(document).ready(function(){
@@ -40,7 +40,7 @@ $(document).ready(function(){
 		var idvalue = $("#id").val();
 		var pwvalue = $("#password").val();
 		
-	    alert("정말 로그인 하시겠습니까?");
+	    confirm("정말 로그인 하시겠습니까?");
 	    if(idvalue==""){
 			alert("아이디를 입력하시오.");
 		}
@@ -66,9 +66,9 @@ $(document).ready(function(){
 				<div class="signin-content">
 					<div class="signin-image">
 						<figure>
-							<img src="/resources/logoimage.png" alt="sing up image" style="width:100%; height: 100%">
+							<img src="/project4/resources/logoimage.png" alt="sing up image" style="width:100%; height: 100%">
 						</figure>
-						<a href="/user/insertForm.do" class="signup-image-link">회원 가입</a>
+						<a href="/userinsertForm.do" class="signup-image-link">회원 가입</a>
 					</div>
 
 					<div class="signin-form">
@@ -121,8 +121,8 @@ $(document).ready(function(){
 	</div>
 
 	<!-- JS -->
-	<script src="/resources/user/vendor/jquery/jquery.min.js"></script>
-	<script src="/resources/user/js/main.js"></script>
+	<script src="/project4/resources/user/vendor/jquery/jquery.min.js"></script>
+	<script src="/project4/resources/user/js/main.js"></script>
 </body>
 <!-- This templates was made by Colorlib (https://colorlib.com) -->
 </html>

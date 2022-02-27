@@ -15,7 +15,7 @@ import project4.mapper.BristoMapper;
 
 @Service
 public class BristoServiceImpl implements BristoService {
-	@Setter(onMethod_ = @Autowired)
+	@Autowired
 	BristoMapper mapper;
 
 	public List<BristoVO> list() {

@@ -17,9 +17,10 @@ public class BrController {
 	BrService service;
 
 	@GetMapping("/brlist.do")
-	public void list(Model d) {
+	public String list(Model d) {
 		d.addAttribute("psc", "리스트");
 		d.addAttribute("list", service.list());
+		return "br/list";
 	}
 
 	@GetMapping("/brregisterForm.do")

@@ -14,7 +14,7 @@ import project4.service.ProfileService;
 @RequestMapping("/profile/*")
 public class ProfileController {
 
-	@Setter(onMethod_ = { @Autowired })
+	@Autowired
 	ProfileService service;
 
 	@GetMapping("/list.do")

@@ -2,8 +2,10 @@ package project4.mapper;
 
 import java.util.List;
 
-import project4.domain.ProfileVO;
+import org.springframework.stereotype.Repository;
 
+import project4.domain.ProfileVO;
+@Repository
 public interface ProfileMapper {
 	public List<ProfileVO> list();
 	public void insert(ProfileVO vo);

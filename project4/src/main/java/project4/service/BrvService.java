@@ -2,8 +2,10 @@ package project4.service;
 
 import java.util.List;
 
-import project4.domain.BrvVO;
+import org.springframework.stereotype.Service;
 
+import project4.domain.BrvVO;
+@Service
 public interface BrvService {
 	public List<BrvVO> list();
 

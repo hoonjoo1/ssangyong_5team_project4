@@ -17,55 +17,54 @@ import project4.service.UserServiceImpl;
 
 @Controller
 @SessionAttributes("users")
-@RequestMapping("/user/*")
 public class UserController {
-	
-	@Setter(onMethod_ = @Autowired)
+
+	@Autowired
 	UserServiceImpl service;
 
 	@ModelAttribute("users")
 	public UserVO getUserVO() {
 		return new UserVO();
 	}
-	
-	
-	@GetMapping("/login.do")
-	public void login(Model d) {
+
+	@GetMapping("/userlogin.do")
+	public String login(Model d) {
 		d.addAttribute("psc", "로그인");
 		System.out.println("로그인 화면 창 (기본 GET");
+		return "user/login";
 	}
 
-	@RequestMapping("/login.do")
+	@RequestMapping("/userlogin.do")
 	public String logincheck(@ModelAttribute("users") UserVO vo, Model d) {
 		UserVO users = service.login(vo);
-		if(users!=null) {
-			d.addAttribute("msg","로그인 성공");
+		if (users != null) {
+			d.addAttribute("msg", "로그인 성공");
 			d.addAttribute("users", users);
 			System.out.println("로그인 성공");
-		}else {
-			d.addAttribute("msg","로그인 실패");
+		} else {
+			d.addAttribute("msg", "로그인 실패");
 			System.out.println("로그인실패");
 		}
 		return "forward:/main.do";
 	}
 
-	@GetMapping("/list.do")
+	@GetMapping("/userlist.do")
 	public void list(Model d) {
 		d.addAttribute("psc", "리스트");
 		d.addAttribute("list", service.list());
 	}
 
-	@GetMapping("/insertForm.do")
+	@GetMapping("/userinsertForm.do")
 	public void registerForm() {
 	}
 
-	@GetMapping("/mypage.do")
+	@GetMapping("/usermypage.do")
 	public String get(@RequestParam("userkey") int userkey, Model d) {
 		d.addAttribute("user", service.get(userkey));
 		return "user/mypage";
 	}
 
-	@GetMapping("/insert.do")
+	@GetMapping("/userinsert.do")
 	public String insert(UserVO vo, Model d) {
 		d.addAttribute("psc", "삽입");
 		service.insert(vo);
@@ -73,12 +72,12 @@ public class UserController {
 		return "redirect:/main.do";
 	}
 
-	@GetMapping("/updateForm.do")
+	@GetMapping("/userupdateForm.do")
 	public void updateForm(@RequestParam("userkey") int userkey, Model d) {
 		d.addAttribute("user", service.get(userkey));
 	}
 
-	@GetMapping("/update.do")
+	@GetMapping("/userupdate.do")
 	public String update(UserVO vo, Model d) {
 		d.addAttribute("psc", "수정");
 		service.update(vo);
@@ -88,7 +87,7 @@ public class UserController {
 		return "redirect:/user/list.do";
 	}
 
-	@GetMapping("/delete.do")
+	@GetMapping("/userdelete.do")
 	public String delete(@RequestParam("userkey") int userkey) {
 		service.delete(userkey);
 		System.out.println("삭제완료");
@@ -105,7 +104,7 @@ public class UserController {
 		if (result != 0) {
 			return "fail";
 		} else {
-			return "success"; 
+			return "success";
 
 		}
 

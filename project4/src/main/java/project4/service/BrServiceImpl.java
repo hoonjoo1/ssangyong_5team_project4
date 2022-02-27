@@ -12,7 +12,7 @@ import project4.mapper.BrMapper;
 @Service
 public class BrServiceImpl implements BrService {
 
-	@Setter(onMethod_ = @Autowired)
+	@Autowired
 	BrMapper mapper;
 
 	public List<BrVO> list() {

@@ -3,7 +3,7 @@
 	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >	
 	
-<mapper namespace="Project4_Board.groupPurchase.dao.FoodpubpurDao">
+<mapper namespace="project4.groupPurchase.Dao.FoodpubpurDao">
 	<insert id="insertWrite" parameterType="fpp">
 		INSERT INTO Foodpubpur VALUES((SELECT NVL(MAX(foodpubpurkey)+1,1) FROM FOODPUBPUR), 1, (SELECT userkey FROM users WHERE id = #{id}), 
 		#{title}, to_char(sysdate,'YYYY-MM-DD'), #{content},#{loc}, #{meetcnt},#{paytype},0,0)

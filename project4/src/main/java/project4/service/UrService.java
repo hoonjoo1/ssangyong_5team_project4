@@ -2,9 +2,12 @@ package project4.service;
 
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import project4.domain.Criteria;
 import project4.domain.UrVO;
 
+@Service
 public interface UrService {
 	public List<UrVO> List();
 	public UrVO get(int urkey);

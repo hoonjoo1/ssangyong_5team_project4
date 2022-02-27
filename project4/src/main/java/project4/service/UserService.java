@@ -4,8 +4,11 @@ import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
+import org.springframework.stereotype.Service;
+
 import project4.domain.UserVO;
 
+@Service
 public interface UserService {
 	public List<UserVO> list();
 	public UserVO get(int userkey);

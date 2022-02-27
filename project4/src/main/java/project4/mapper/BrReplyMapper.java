@@ -2,8 +2,10 @@ package project4.mapper;
 
 import java.util.List;
 
-import project4.domain.BrReplyVO;
+import org.springframework.stereotype.Repository;
 
+import project4.domain.BrReplyVO;
+@Repository
 public interface BrReplyMapper {
 	public int insert(BrReplyVO vo);
 

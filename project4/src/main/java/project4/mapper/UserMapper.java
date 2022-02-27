@@ -2,8 +2,10 @@ package project4.mapper;
 
 import java.util.List;
 
-import project4.domain.UserVO;
+import org.springframework.stereotype.Repository;
 
+import project4.domain.UserVO;
+@Repository
 public interface UserMapper {
 	public List<UserVO> list();
 	public UserVO get(int userkey);
