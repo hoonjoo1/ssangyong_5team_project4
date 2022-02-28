@@ -3,7 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
-<%@ include file="../yjincludes/header.jsp"%>
+<%@ include file="../common/header.jsp"%>
 <section class="product-details spad">
         <div class="container">
             <div class="row">
@@ -107,4 +107,4 @@
         </div>
         
     </section>
-<%@ include file="../yjincludes/footer.jsp"%>
+<%@ include file="../common/footer.jsp"%>

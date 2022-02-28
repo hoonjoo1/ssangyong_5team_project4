@@ -24,13 +24,15 @@ public class BristoController {
 	}
 
 	@GetMapping("/bristoget.do")
-	public void get(@RequestParam("bristokey") int bristokey, Model d) {
+	public String get(@RequestParam("bristokey") int bristokey, Model d) {
 		d.addAttribute("bristo", service.get(bristokey));
 		d.addAttribute("psc", "get");
+		return "bristo/get";
 	}
 
 	@GetMapping("/bristoregisterForm.do")
-	public void registerForm(Model model) {
+	public String registerForm(Model model) {
+		return "bristo/registerForm";
 	}
 
 	@PostMapping("/bristoinsert.do")

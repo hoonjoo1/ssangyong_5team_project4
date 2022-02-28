@@ -3,7 +3,23 @@
 <%
 request.setCharacterEncoding("utf-8");
 %>
-
+<link rel="apple-touch-icon" sizes="57x57" href="/project4/res/favicon/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/project4/res/favicon/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/project4/res/favicon/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/project4/res/favicon/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/project4/res/favicon/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/project4/res/favicon/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/project4/res/favicon/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/project4/res/favicon/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/project4/res/favicon/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="/project4/res/favicon/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/project4/res/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/project4/res/favicon/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/project4/res/favicon/favicon-16x16.png">
+<link rel="manifest" href="/project4/res/favicon/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/project4/res/favicon/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
 <!DOCTYPE html>
 <html>
 <head>
@@ -28,6 +44,7 @@ request.setCharacterEncoding("utf-8");
     <link rel="stylesheet" href="/project4/res/css/owl.carousel.min.css" type="text/css">
     <link rel="stylesheet" href="/project4/res/css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="/project4/res/css/style.css" type="text/css">
+    <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
 <style>
 
 /*---------------------
@@ -364,10 +381,10 @@ request.setCharacterEncoding("utf-8");
                     <div class="col-lg-6 col-md-6">
                         <div class="header__top__right">
                             <div class="header__top__right__social">
-                                <a href="">로그인</a>
+                                <a href="/project4/login.do">로그인</a>
                                 <a href="">아이디/비밀번호 찾기</a>
                                 <a href="">회원가입</a>
-                                <a href="">마이페이지</a>
+                                <a href="/project4/mypage.do">마이페이지</a>
                                 <a href="">고객센터</a>
                             </div>
                         </div>
@@ -379,17 +396,17 @@ request.setCharacterEncoding("utf-8");
             <div class="row">
                 <div class="col-lg-3">
                     <div class="header__logo">
-                        <a href="./index.html"><img src="/project4/res/logoimage.png" alt=""></a>
+                        <a href="/project4/main.do"><img src="/project4/res/logoimage.png" alt=""></a>
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <nav class="header__menu">
                         <ul>
-                            <li class="active"><a href="./index.html">식당예약</a>
+                            <li class="active"><a href="/project4/bristolist.do">식당예약</a>
                                 <ul class="header__menu__dropdown">
-                                  <li><a href="./shop-details.html">추천 맛집</a></li>
-                                  <li><a href="./shoping-cart.html">식당 리뷰</a></li>
-                                  <li><a href="./checkout.html">유저 리뷰</a></li>
+                                  <li><a href="/project4/bristolist.do">추천 맛집</a></li>
+                                  <li><a href="/project4/brlist.do">식당 리뷰</a></li>
+                                  <li><a href="/project4/urlist.do">유저 리뷰</a></li>
                                 </ul>
                             </li>
                             <li><a href="./shop-grid.html">같이 먹어요</a>
