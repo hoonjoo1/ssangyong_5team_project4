@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="project4.mapper.BrReplyMapper">
+
+	<insert id="insert">
+		insert into br_reply (rno, bkey, reply, replyer)
+		values (seq_reply.nextval, #{bkey}, #{reply}, #{replyer})
+
+	</insert>
+
+	<select id="read" resultType="project4.domain.BrReplyVO">
+
+		select * from br_reply where rno =
+		#{rno}
+
+	</select>
+
+
+	<delete id="delete">
+
+		delete from br_reply where rno = #{rno}
+
+	</delete>
+
+	<update id="update">
+
+		update br_reply set reply = #{reply},updatedate =
+		sysdate
+		where rno = #{rno}
+
+	</update>
+
+
+	<select id="getListWithPaging" resultType="project4.domain.BrReplyVO">
+		select rno, bkey,
+		reply, replyer, replyDate, updatedate
+		from br_reply
+		where bkey = #{bkey}
+		order by rno asc
+	</select>
+
+
+	<select id="getCountBybkey" resultType="int">
+<![CDATA[
+select count(rno) from br_reply where bkey = #{bkey}
+]]>
+	</select>
+</mapper>

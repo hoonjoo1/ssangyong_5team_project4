@@ -58,7 +58,8 @@ input[id="cb1"] {
 							<p>
 								음식점 분류<span>*</span>
 							</p>
-							<input type="number" name="bustypekey" value="1" readonly="readonly">
+							<input type="number" name="bustypekey" value="1"
+								readonly="readonly">
 						</div>
 					</div>
 					<div class="col-lg-6">
@@ -75,8 +76,7 @@ input[id="cb1"] {
 					<div class="col-lg-6">
 						<div class="checkout__input">
 							<p>주차여부</p>
-							<div
-								style="width: 150px;  display: flex;">
+							<div style="width: 150px; display: flex;">
 								O<input type="radio" name="parking" value="가능" style="flex: 1">
 								X<input type="radio" name="parking" value="불가능" style="flex: 1">
 							</div>
@@ -85,8 +85,7 @@ input[id="cb1"] {
 					<div class="col-lg-6">
 						<div class="checkout__input">
 							<p>혼밥여부</p>
-							<div
-								style="width: 150px;  display: flex;">
+							<div style="width: 150px; display: flex;">
 								O<input type="radio" name="eatalone" value="가능" style="flex: 1">
 								X<input type="radio" name="eatalone" value="불가능" style="flex: 1">
 							</div>
@@ -95,18 +94,17 @@ input[id="cb1"] {
 					<div class="col-lg-6">
 						<div class="checkout__input">
 							<p>아기의자</p>
-							<div
-								style="width: 150px;  display: flex;">
+							<div style="width: 150px; display: flex;">
 								O<input type="radio" name="babychair" value="가능" style="flex: 1">
-								X<input type="radio" name="babychair" value="불가능" style="flex: 1">
+								X<input type="radio" name="babychair" value="불가능"
+									style="flex: 1">
 							</div>
 						</div>
 					</div>
 					<div class="col-lg-6">
 						<div class="checkout__input">
 							<p>테이크아웃</p>
-							<div
-								style="width: 150px;  display: flex;">
+							<div style="width: 150px; display: flex;">
 								O<input type="radio" name="carryout" value="가능" style="flex: 1">
 								X<input type="radio" name="carryout" value="불가능" style="flex: 1">
 							</div>
@@ -115,8 +113,7 @@ input[id="cb1"] {
 					<div class="col-lg-6">
 						<div class="checkout__input">
 							<p>배달</p>
-							<div
-								style="width: 150px;  display: flex;">
+							<div style="width: 150px; display: flex;">
 								O<input type="radio" name="delivery" value="가능" style="flex: 1">
 								X<input type="radio" name="delivery" value="불가능" style="flex: 1">
 							</div>
@@ -129,8 +126,7 @@ input[id="cb1"] {
 
 					<div class="col-lg-6" style="margin-bottom: -20px">
 						<div class="checkout__input">
-							<div
-								style="width: 300px;  display: flex;">
+							<div style="width: 300px; display: flex;">
 								<input type="file" name="filename">
 							</div>
 						</div>
@@ -141,6 +137,37 @@ input[id="cb1"] {
 				</div>
 			</div>
 		</div>
+
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="panel panel-default">
+
+					<div class="panel-heading">File Attach</div>
+					<!-- /.panel-heading -->
+					<div class="panel-body">
+						<div class="form-group uploadDiv">
+							<input type="file" name='uploadFile' multiple>
+						</div>
+
+						<div class='uploadResult'>
+							<ul>
+
+							</ul>
+						</div>
+
+
+					</div>
+					<!--  end panel-body -->
+
+				</div>
+				<!--  end panel-body -->
+			</div>
+			<!-- end panel -->
+		</div>
+		<!-- /.row -->
+
+
+
 
 		<input type="hidden" value="1" name="userkey"> <br> <input
 			type="submit" class="site-btn" value="제출하기"> <input
@@ -153,6 +180,9 @@ input[id="cb1"] {
 <br>
 <br>
 
+<script>
 
+
+</script>
 
 <%@ include file="../yjincludes/footer.jsp"%>

@@ -17,6 +17,7 @@
 		<mapper resource="resource/FoodpubpurMapper.xml" />
 		<mapper resource="resource/UrMapper.xml" />
 		<mapper resource="resource/BristoMapper.xml" />
+		<mapper resource="resource/BristoAttachMapper.xml" />
 		<mapper resource="resource/BrMapper.xml" />
 		<mapper resource="resource/UserMapper.xml" />
 	</mappers>

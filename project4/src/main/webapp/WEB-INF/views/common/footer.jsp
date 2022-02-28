@@ -28,6 +28,7 @@ request.setCharacterEncoding("utf-8");
     <link rel="stylesheet" href="/project4/res/css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="/project4/res/css/style.css" type="text/css">
 <style>
+<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
 
 /*---------------------
   Footer
@@ -381,7 +382,7 @@ request.setCharacterEncoding("utf-8");
   Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with 
   <img src="https://img.icons8.com/ios-filled/16/000000/hearts.png"/>by <a href="https://colorlib.com" target="_blank">Colorlib</a>
   <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p></div>
-                        <div class="footer__copyright__payment"><img src="/project4/res/views/img/payment-item.png" alt=""></div>
+                        <div class="footer__copyright__payment"><img src="/project4/res/img/payment-item.png" alt=""></div>
                     </div>
                 </div>
             </div>
