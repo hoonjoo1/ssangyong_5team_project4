@@ -10,6 +10,7 @@
 		<typeAlias alias="insfcomm" type="project4.vo.InsFppcomm" />
 		<typeAlias alias="et" type="project4.vo.EatTogether" />
 		<typeAlias alias="fileInfo" type="project4.domain.FileInfo" />
+		<typeAlias alias="fppfileInfo" type="project4.vo.FppFileInfo" />
 	</typeAliases>
 
 	<mappers>

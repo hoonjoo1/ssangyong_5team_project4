@@ -78,4 +78,13 @@
 	order by fppkey desc
 	</select>
 	
+	<insert id="insertFppFileInfo" parameterType="fppfileInfo">
+		INSERT INTO FPPFILEINFO values(fpp_seq.currval, #{pathinfo},
+			#{fname},sysdate,sysdate,#{etc})
+	</insert>
+	
+	<select id="getFileInfo" parameterType="int" resultType="string">
+		select fname from FPPFILEINFO where fno = #{fno}
+	</select>
+	
 </mapper>

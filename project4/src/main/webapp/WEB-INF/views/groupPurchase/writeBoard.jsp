@@ -70,19 +70,20 @@ width:100%;
 top:250px;
 }
 
-/* 버튼 */
-#btn{
-position:absolute;
+.fileCls{
+position: relative;
 top:950px;
-left:1000px;
 }
 
-#footer{
-position: absolute;;
-top:1200px;
-width:100%;
+/* 버튼 */
+#btn{
+position:relative;
+top:1300px;
+width:200px;
 height:200px;
+left:500px;
 }
+
 </style>
 
 <link rel="stylesheet" href="${path}/a00_com/bootstrap.min.css?after" >
@@ -114,14 +115,19 @@ height:200px;
 				
 				$('#submitbtn').click(function(){
 					$('form').submit();
-				})
+				});
+				
+				$("#addFile").click(function(){
+					console.log("추가");
+					$("form").append($(".fileCls").eq(-1).clone());
+				});
 			});	
 			
 </script>
 </head>
 
 <body>
-<form method="post" action="${path}/insertfpp.do">
+<form method="post" enctype="multipart/form-data" action="${path}/insertfpp.do">
 <!-- form DIV -->
 <div id="form1">
 <!-- 제목 -->
@@ -155,23 +161,28 @@ height:200px;
 <!-- 내용 -->
 	<div id="content">
 		<label class="form-label mt-4">내용</label>
-		<textarea class="form-control" name="content" placeholder="내용을 입력해주세요" id="exampleTextarea" rows="25"></textarea>
-	</div>
-	
-<!-- 버튼 -->
-	<div id="btn">
+		<textarea class="form-control" name="content" placeholder="내용을 입력해주세요" id="exampleTextarea" rows="25"></textarea>	
+</div>
+
+<div class="input-group mb-3 fileCls">
+		<div class="input-group-prepend">
+			<span class="input-group-text"
+				id="addFile"
+			>첨부 파일(추가)</span>
+		</div>
+		 <div class="form-group">
+      		<input class="form-control" name="report" type="file" id="formFile" multiple="multiple">
+    	</div>
+		
+</div>
+  
+  <div id="btn">
 		<button type="button" id="canclebtn" class="btn btn-primary">취소</button>
 		<button type="button" id="confirmbtn" class="btn btn-primary" data-toggle="modal" data-target="#mymodal">작성완료</button>
-	</div>
-	
-</div>
+  </div>
 
 
 </form>
-
-<div id="footer">
-
-</div>
 
 <!-- modal -->
 <div class="modal" id="mymodal">

@@ -1,5 +1,9 @@
 package project4.vo;
 
+import java.util.ArrayList;
+
+import org.springframework.web.multipart.MultipartFile;
+
 public class BoardInfo {
 	private String nickname;
 	private String title;
@@ -10,6 +14,8 @@ public class BoardInfo {
 	private String paytype;
 	private int viewcnt;
 	private String boardname;
+	private MultipartFile[] report;
+	private ArrayList<String> fnames;
 	public BoardInfo() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -80,6 +86,18 @@ public class BoardInfo {
 	}
 	public void setBoardname(String boardname) {
 		this.boardname = boardname;
+	}
+	public MultipartFile[] getReport() {
+		return report;
+	}
+	public void setReport(MultipartFile[] report) {
+		this.report = report;
+	}
+	public ArrayList<String> getFnames() {
+		return fnames;
+	}
+	public void setFnames(ArrayList<String> fnames) {
+		this.fnames = fnames;
 	}
 	
 	

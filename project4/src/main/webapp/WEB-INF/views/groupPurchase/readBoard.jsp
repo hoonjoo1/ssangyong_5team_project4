@@ -111,9 +111,17 @@ position: relative;
 top:300px;
 }
 
+#filelist{
+position: absolute;
+top: 630px;
+width:100%;
+height:150px;
+overflow: auto;
+}
+
 #commentlist{
 position:absolute;
-top:680px;
+top:800px;
 width:100%;
 height:200px;
 }
@@ -128,7 +136,7 @@ height:200px;
 
 #commentwrite{
 position: absolute;
-top:900px;
+top:1100px;
 width:100%;
 }
 
@@ -140,7 +148,7 @@ width:100%;
 
 #footer{
 position: absolute;;
-top:1300px;
+top:1500px;
 width:100%;
 height:200px;
 }
@@ -243,7 +251,6 @@ height:200px;
 
 <input type="hidden" name="fppkey1" value="${fppkey}">
 
-<c:forEach var="board" items="${blist}">
 <!-- 제목 -->
 	<div id="title">
 		<input type="hidden" name="nickname" value="${board.nickname}">
@@ -271,10 +278,22 @@ height:200px;
 	<div id="content">
 		<p>${board.content}</p>
 		<hr id="conhr">
+		
 	</div>
-</c:forEach>
+	
+	<div id="filelist">
+		<h5>첨부파일</h5>
+        <c:forEach var="fname" items="${board.fnames}">
+			<label>${fname}</label><br>
+		</c:forEach>
+    </div>
+	
+
+	
+	
 	
 	<div id="commentlist">
+		<hr>
 		<h5>댓글 목록</h5>
 		<div id="commentlisttb">
 			<table>

@@ -23,7 +23,7 @@ public class FoodpubpurCtrl {
 		
 	@RequestMapping("/groupread.do")
 	public String groupread(int fppkey,Model d) {
-		d.addAttribute("blist",service.getRead(fppkey));
+		d.addAttribute("board",service.getRead(fppkey));
 		service.uptViewcnt(fppkey);
 		d.addAttribute("commlist",service.getCommList(fppkey));
 		d.addAttribute("fppkey", fppkey);
@@ -40,7 +40,7 @@ public class FoodpubpurCtrl {
 	public String insertFoodpubpur(Foodpubpur ins, Model d) {
 		
 		d.addAttribute("proc","작성 완료되었습니다");
-		service.insertFoodpubpur(ins);
+		d.addAttribute("msg", service.insertFoodpubpur(ins));
 		return "groupPurchase//writeBoard";
 	}
 	

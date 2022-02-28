@@ -1,5 +1,9 @@
 package project4.vo;
 
+import java.util.ArrayList;
+
+import org.springframework.web.multipart.MultipartFile;
+
 public class Foodpubpur {
 	private int cnt;
 	private int level;
@@ -16,6 +20,9 @@ public class Foodpubpur {
 	private String paytype;
 	private int parentsnum;
 	private int viewcnt;
+	private MultipartFile[] report;
+	private ArrayList<String> fnames;
+
 	public Foodpubpur() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -125,6 +132,18 @@ public class Foodpubpur {
 	}
 	public void setId(String id) {
 		this.id = id;
+	}
+	public MultipartFile[] getReport() {
+		return report;
+	}
+	public void setReport(MultipartFile[] report) {
+		this.report = report;
+	}
+	public ArrayList<String> getFnames() {
+		return fnames;
+	}
+	public void setFnames(ArrayList<String> fnames) {
+		this.fnames = fnames;
 	}
 	
 	
