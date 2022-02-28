@@ -87,4 +87,8 @@
 		select fname from FPPFILEINFO where fno = #{fno}
 	</select>
 	
+	<delete id="delcomm" parameterType="int">
+		DELETE FROM FPPCOMM WHERE fcommentkey = #{fcommkey}
+	</delete>
+	
 </mapper>

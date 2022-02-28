@@ -25,6 +25,8 @@ public interface FoodpubpurDao {
 	 public ArrayList<Fppcomm> getCommList(int fppkey);
 	//댓글 등록
 	 public void insertcomm(InsFppcomm ins);
+	//댓글 삭제
+	 public void delcomm(int fcommkey); 
 	//게시글 삭제
 	 public void delboard(int fppkey);
 	//게시글 수정

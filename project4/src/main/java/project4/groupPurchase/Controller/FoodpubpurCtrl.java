@@ -79,4 +79,11 @@ public class FoodpubpurCtrl {
 		service.uptboard(upt);
 		return "groupPurchase//uptBoard";
 	}
+	
+	@RequestMapping("/delfppcomm.do")
+	public String delcomm(int fcommkey, Model d) {
+		d.addAttribute("proc","댓글이 삭제되었습니다");
+		service.delcomm(fcommkey);
+		return "groupPurchase//readBoard";
+	}
 }

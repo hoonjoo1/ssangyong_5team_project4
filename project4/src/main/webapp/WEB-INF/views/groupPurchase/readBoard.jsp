@@ -224,6 +224,12 @@ height:200px;
 						$('#commentwrite').show();
 					}
 				});
+				
+				$('#comdelBtn').click(function(){
+					if(confirm('댓글을 삭제하시겠습니까?')){
+						location.href="${path}/delfppcomm.do?fcommkey="+$("[name=fcommkey]").val();
+					}
+				});
 							
 			});	
 			

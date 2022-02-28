@@ -101,4 +101,8 @@ public class FoodpubpurService {
 		return dao.searchBdList(search);
 	}
 	
+	public void delcomm(int fcommkey) {
+		dao.delcomm(fcommkey);
+	}
+	
 }
