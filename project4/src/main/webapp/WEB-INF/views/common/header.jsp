@@ -16,7 +16,6 @@ request.setCharacterEncoding("utf-8");
 
 <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet">
-<script src="/project4/res/a00_com/jquery-3.6.0.js" type="text/javascript"></script>
 <link rel="stylesheet" type="text/css"
 	href="#"><!-- css 파일 경로  -->
  <!-- Css Styles -->
@@ -380,7 +379,7 @@ request.setCharacterEncoding("utf-8");
             <div class="row">
                 <div class="col-lg-3">
                     <div class="header__logo">
-                        <a href="./index.html"><img src="logoimage.png" alt=""></a>
+                        <a href="./index.html"><img src="/project4/res/logoimage.png" alt=""></a>
                     </div>
                 </div>
                 <div class="col-lg-6">

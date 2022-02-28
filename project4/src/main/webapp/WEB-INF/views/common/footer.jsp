@@ -16,7 +16,6 @@ request.setCharacterEncoding("utf-8");
 
 <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet">
-<script src="/project4/res/a00_com/jquery-3.6.0.js" type="text/javascript"></script>
 <link rel="stylesheet" type="text/css"
 	href="#"><!-- css 파일 경로  -->
  <!-- Css Styles -->
@@ -331,7 +330,7 @@ request.setCharacterEncoding("utf-8");
                 <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="footer__about">
                         <div class="footer__about__logo">
-                            <a href="./index.html"><img src="img/logoimage.png" alt=""></a>
+                            <a href="./index.html"><img src="/project4/res/logoimage.png" alt=""></a>
                         </div>
                         <ul>
                             <li>Address: 서울시 강남구 테헤란로</li>

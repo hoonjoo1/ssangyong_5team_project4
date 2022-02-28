@@ -3,7 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
-<%@ include file="../includes/header.jsp"%>
+<%@ include file="../common/header.jsp"%>
 
 <script type="text/javascript">
 </script>
@@ -48,4 +48,4 @@
 <br>
 
 
-<%@ include file="../includes/footer.jsp"%>
+<%@ include file="../common/footer.jsp"%>
