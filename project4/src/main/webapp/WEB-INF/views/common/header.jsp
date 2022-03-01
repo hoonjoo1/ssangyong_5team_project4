@@ -460,9 +460,9 @@ request.setCharacterEncoding("utf-8");
 				<div class="col-lg-3">
 					<div class="header__cart">
 						<ul>
-							<li><a href="#"><img
+							<li><a href="/project4/paylist.do"><img
 									src="https://img.icons8.com/ios-filled/20/000000/hearts.png" /><span>1</span></a></li>
-							<li><a href="#"><img
+							<li><a href="/project4/cartlist.do"><img
 									src="https://img.icons8.com/external-vitaliy-gorbachev-fill-vitaly-gorbachev/20/000000/external-bag-ecommerce-vitaliy-gorbachev-fill-vitaly-gorbachev-1.png" /><span>3</span></a></li>
 						</ul>
 					</div>

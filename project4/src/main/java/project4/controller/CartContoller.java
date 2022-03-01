@@ -29,7 +29,9 @@ public class CartContoller {
 	}
 
 	@GetMapping("/cartget.do")
-	public void get() {
+	public String get(Model d, int cartkey) {
+		d.addAttribute("cart", service.get(cartkey));
+		return "cart/get";
 
 	}
 
@@ -40,9 +42,9 @@ public class CartContoller {
 
 	}
 
-	@GetMapping("/delete.do")
-	public void delete() {
-
+	@GetMapping("/cartdelete.do")
+	public String delete() {
+		return "forward:/cartlist.do";
 	}
 
 }

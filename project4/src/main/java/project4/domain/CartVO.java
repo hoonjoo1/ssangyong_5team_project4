@@ -7,7 +7,7 @@ import lombok.Data;
 
 @Data
 public class CartVO {
-	private int carkey;
+	private int cartkey;
 	private int cnt;
 	private Date visitetime;
 	private String visitetimeS;

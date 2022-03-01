@@ -6,7 +6,7 @@
 <script type="text/javascript"
 	src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
 
-<%@ include file="../includes/header.jsp"%>
+<%@ include file="../common/header.jsp"%>
 
 <!DOCTYPE html>
 <html lang="zxx">
@@ -49,7 +49,7 @@ $(document).ready(function(){
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <div class="breadcrumb__text">
-                        <h2>예약 조회</h2>
+                        <h2>예약 조회[장바구니 조회]</h2>
                         <div class="breadcrumb__option">
                             <a href="./index.html">Home</a>
                             <span>식당예약 내역 확인</span>
@@ -78,13 +78,13 @@ $(document).ready(function(){
                                 <div class="col-lg-6">
                                     <div class="checkout__input">
                                         <p>대표자<span>*</span></p>
-                                        <input type="text" disabled="disabled">
+                                        <input type="text" disabled="disabled" value="${cart.cartkey}">
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="checkout__input">
                                         <p>동승 인원<span>*</span></p>
-                                        <input type="number" disabled="disabled">
+                                        <input type="number" disabled="disabled" value="${cart.cnt}">
                                     </div>
                                 </div>
                             </div>
@@ -105,13 +105,13 @@ $(document).ready(function(){
                                 <div class="col-lg-6">
                                     <div class="checkout__input">
                                         <p>Phone<span>*</span></p>
-                                        <input type="text">
+                                        <input type="text" value="${cart.phone}">
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="checkout__input">
                                         <p>Email<span>*</span></p>
-                                        <input type="text">
+                                        <input type="text" value="${cart.email}">
                                     </div>
                                 </div>
                             </div>
@@ -195,4 +195,4 @@ $(document).ready(function(){
 
 
 
-<%@ include file="../includes/footer.jsp"%>
+<%@ include file="../common/footer.jsp"%>

@@ -50,10 +50,24 @@ input[id="cb1"] {
 					<div class="section-title related-blog-title">
 						<h2>나의 장바구니 내역</h2>
 					</div>
-				</div>
-			</div>
 
+
+				</div>
+
+			</div>
 			<div class="row">
+				<div class="col-lg-4 col-md-4 col-sm-6">
+					<br> <br>
+					<button class="site-btn"
+						onclick="location.href='/project4/paylist.do'">나의 결제 정보</button>
+					<br> <br>
+					<button class="site-btn" onclick="location.href='/project4/payregisterForm.do'">결제하기</button>
+					<br> <br>
+					<button class="site-btn"
+						onclick="location.href='/project4/cartdelete.do?cartkey='">삭제하기</button>
+
+				</div>
+
 				<c:forEach items="${list }" var="list">
 
 					<div class="col-lg-4 col-md-4 col-sm-6">
@@ -67,9 +81,10 @@ input[id="cb1"] {
 								onclick="location.href='/cart/get.do'">
 								<ul>
 									<li><i class="fa fa-calendar-o"></i> ${list.visitetime }</li>
+									<li><i class="fa fa-calendar-o"></i> 장바구니 번호 : ${list.cartkey }</li>
 								</ul>
 								<h5>
-									<a href="#">${list.menu }</a>
+									<a href="/project4/cartget.do?cartkey=${list.cartkey }">${list.menu }</a>
 								</h5>
 								<p>{list.message}</p>
 
