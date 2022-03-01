@@ -2,54 +2,31 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="project4.mapper.BristoMapper">
+<mapper namespace="project4.mapper.BristoAttachMapper">
 
-	<select id="list" resultType="project4.domain.BristoVO">
-		select * from Bristo
-	</select>
 
-	<select id="get" resultType="project4.domain.BristoVO"
-		parameterType="int">
-		select *
-		from Bristo
-		where bristokey=#{bristokey}
-	</select>
-
-	<insert id="insert" parameterType="project4.domain.BristoVO">
-		INSERT INTO Bristo
+	<insert id="insert"
+		parameterType="project4.domain.BristoAttachVO">
+		INSERT INTO bristo_attach
 		values(
-		seq_bristo.nextval,
-		1,
-		#{name},
-		#{menu},
-		#{price},
-		#{loc},
-		#{parking},
-		#{eatalone},
-		#{babychair},
-		#{carryout},
-		#{delivery},
-		#{explain})
-	</insert>
-
-	<insert id="insertFileInfo" parameterType="fileInfo">
-		INSERT INTO fileInfo
-		values(seq_bristo.nextval,
-		#{pathinfo},
-		#{fname},sysdate,sysdate,#{etc})
+		#{uuid},
+		#{uploadPath},
+		#{fileName},
+		#{filetype},
+		#{bristokey}
+		)
 	</insert>
 
 
-	<update id="update" parameterType="project4.domain.BristoVO">
-		update Bristo
-		set
-		name=#{name}
-		where bristokey=#{bristokey}
-	</update>
 	<delete id="delete" parameterType="int">
 		delete
-		from Bristo
+		from bristo_attach
 		where
 		bristokey=#{bristokey}
 	</delete>
+
+	<select id="findByBno"
+		resultType="project4.domain.BristoAttachVO">
+		select * from bristo_attach where bristokey=#{bristokey}
+	</select>
 </mapper>

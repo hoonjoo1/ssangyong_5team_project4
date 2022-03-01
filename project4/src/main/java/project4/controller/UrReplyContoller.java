@@ -19,14 +19,13 @@ import lombok.extern.log4j.Log4j;
 import project4.domain.UrReplyVO;
 import project4.service.UrReplyService;
 
-@RequestMapping("/urReplies/")
 @RestController
 @Log4j
 @AllArgsConstructor
 public class UrReplyContoller {
 	private UrReplyService service;
 
-	@PostMapping(value = "/new", consumes = "application/json", produces = { MediaType.TEXT_PLAIN_VALUE })
+	@PostMapping(value = "urReplies/new", consumes = "application/json", produces = { MediaType.TEXT_PLAIN_VALUE })
 	public ResponseEntity<String> create(@RequestBody UrReplyVO vo) {
 		log.info("UrReplyVO: " + vo);
 		int insertCount = service.register(vo);
@@ -35,7 +34,7 @@ public class UrReplyContoller {
 				: new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
 	}
 
-	@GetMapping(value = "/{rno}", produces = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_UTF8_VALUE })
+	@GetMapping(value = "urReplies/{rno}", produces = { MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_UTF8_VALUE })
 	public ResponseEntity<UrReplyVO> get(@PathVariable("rno") int rno) {
 
 		log.info("get: " + rno);
@@ -55,14 +54,14 @@ public class UrReplyContoller {
 
 	}
 
-	@DeleteMapping(value = "/{rno}", produces = { MediaType.TEXT_PLAIN_VALUE })
+	@DeleteMapping(value = "urReplies/{rno}", produces = { MediaType.TEXT_PLAIN_VALUE })
 	public ResponseEntity<String> remove(@PathVariable("rno") int rno) {
 		log.info("remove: " + rno);
 		return service.remove(rno) == 1 ? new ResponseEntity<>("success", HttpStatus.OK)
 				: new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
 	}
 
-	@GetMapping(value = "/pages/{urkey}", produces = { MediaType.APPLICATION_XML_VALUE,
+	@GetMapping(value = "/project4/urReplies/pages/{urkey}", produces = { MediaType.APPLICATION_XML_VALUE,
 			MediaType.APPLICATION_JSON_UTF8_VALUE })
 	public ResponseEntity<List<UrReplyVO>> getList(@PathVariable("urkey") int urkey) {
 

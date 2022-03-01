@@ -27,20 +27,22 @@ public class UrController {
 	}
 
 	@GetMapping("/urget.do")
-	public void get(@RequestParam("urkey") int urkey, Model d) {
+	public String get(@RequestParam("urkey") int urkey, Model d) {
 		d.addAttribute("psc", "조회");
 		d.addAttribute("ur", service.get(urkey));
+		return "/ur/get";
 	}
 
 	@GetMapping("/urregisterForm.do")
-	public void registerForm() {
+	public String registerForm() {
+		return "ur/registerForm";
 	}
 
 	@GetMapping("/urregister.do")
 	public String register(UrVO ins, Model d) {
 		d.addAttribute("psc", "생성");
 		service.register(ins);
-		return "redirect:/ur/list.do";
+		return "redirect:/urlist.do";
 	}
 
 	@GetMapping("/urupdate.do")
@@ -50,12 +52,13 @@ public class UrController {
 		System.out.println("urkey" + upt.getUrkey());
 		System.out.println("title" + upt.getTitle());
 		System.out.println("수정완료");
-		return "redirect:/ur/list.do";
+		return "redirect:/urlist.do";
 	}
 
 	@GetMapping("/urupdateForm.do")
-	public void updateForm(@RequestParam("urkey") int urkey, Model d) {
+	public String updateForm(@RequestParam("urkey") int urkey, Model d) {
 		d.addAttribute("ur", service.get(urkey));
+		return "ur/updateForm";
 	}
 
 	@GetMapping("/urdelete.do")
@@ -63,7 +66,7 @@ public class UrController {
 		d.addAttribute("psc", "삭제");
 		service.delete(urkey);
 		System.out.println("삭제완료");
-		return "redirect:/ur/list.do";
+		return "redirect:/urlist.do";
 	}
 
 }

@@ -6,7 +6,7 @@ var replyService = (function() {
 		console.log("add reply...............");
 		$.ajax({
 			type: 'post',
-			url: '/urReplies/new',
+			url: '/project4/urReplies/new',
 			data: JSON.stringify(reply),
 			contentType: "application/json; charset=utf-8",
 			success: function(result, status, xhr) {
@@ -26,7 +26,7 @@ var replyService = (function() {
 	
 			var urkey = param.urkey;
 	
-			$.getJSON("/urReplies/pages/" + urkey + ".json",
+			$.getJSON("/project4/urReplies/pages/" + urkey + ".json",
 					function(data) {
 						if (callback) {
 							callback(data);

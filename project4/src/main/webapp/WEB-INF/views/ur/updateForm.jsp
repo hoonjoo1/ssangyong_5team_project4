@@ -3,13 +3,13 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
-<%@ include file="../yjincludes/header.jsp"%>
+<%@ include file="../common/header.jsp"%>
 <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 <link rel="icon" href="/favicon.ico" type="image/x-icon">
 
 
 <div class="checkout__form" style="width: 50%; margin: 0 auto;">
-	<form action="/ur/update.do">
+	<form action="/project4/urupdate.do">
 		<h4>유저 리뷰 수정</h4>
 		<div class="row">
 			<div class="col-lg-8 col-md-6">
@@ -56,7 +56,8 @@
 			</div>
 		</div>
 		<input type="hidden" value="${ur.urkey }" name="urkey"> <br> 
-		<button class="site-btn" onclick="location.href='/ur/list.do'">목록으로</button>
+		<button class="site-btn" onclick="location.href='/project4/urlist.do'">목록으로</button>
+		<button class="site-btn" onclick="location.href='/project4/urlist.do'">목록으로</button>
 		<input type="submit" value="수정하기" class="site-btn">
 	</form>
 	<br>
@@ -69,4 +70,4 @@
 
 
 
-<%@ include file="../yjincludes/footer.jsp"%>
+<%@ include file="../common/footer.jsp"%>

@@ -30,52 +30,28 @@ import org.springframework.web.multipart.MultipartFile;
 
 import lombok.extern.log4j.Log4j;
 import net.coobird.thumbnailator.Thumbnailator;
-import project4.domain.AttachFileDTO;
+import project4.domain.BristoAttachVO;
 
 @Controller
 @Log4j
-public class UploadController {
-	@GetMapping("/uploadForm")
-	public void uploadForm() {
-		log.info("upload form");
-	}
+public class BristoUploadController {
 
-	@PostMapping("/uploadFormAction")
-	public void uploadFormPost(MultipartFile[] uploadFile, Model model) {
-
-		String uploadFolder = "C:\\upload";
-
-		for (MultipartFile multipartFile : uploadFile) {
-
-			log.info("-------------------------------------");
-			log.info("Upload File Name: " + multipartFile.getOriginalFilename());
-			log.info("Upload File Size: " + multipartFile.getSize());
-
-			File saveFile = new File(uploadFolder, multipartFile.getOriginalFilename());
-
-			try {
-				multipartFile.transferTo(saveFile);
-			} catch (Exception e) {
-				log.error(e.getMessage());
-			} // end catch
-		} // end for
-
+	@PostMapping("/uploadAjax")
+	public void uploadAjax2() {
+		log.info("upload ajax");
+		System.out.println("fasdfas");
 	}
 
 	@GetMapping("/uploadAjax")
 	public void uploadAjax() {
-
 		log.info("upload ajax");
+		System.out.println("fasdfas");
 	}
 
 	private String getFolder() {
-
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-
 		Date date = new Date();
-
 		String str = sdf.format(date);
-
 		return str.replace("-", File.separator);
 	}
 
@@ -96,11 +72,10 @@ public class UploadController {
 
 	
 	
-	
 	@PostMapping(value = "/uploadAjaxAction", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
 	@ResponseBody
-	public ResponseEntity<List<AttachFileDTO>> uploadAjaxPost(MultipartFile[] uploadFile) {
-		List<AttachFileDTO> list = new ArrayList<>();
+	public ResponseEntity<List<BristoAttachVO>> uploadAjaxPost(MultipartFile[] uploadFile) {
+		List<BristoAttachVO> list = new ArrayList<>();
 		String uploadFolder = "C:\\upload";
 		String uploadFolderPath = getFolder();
 		// make folder --------
@@ -113,7 +88,7 @@ public class UploadController {
 
 		for (MultipartFile multipartFile : uploadFile) {
 
-			AttachFileDTO attachDTO = new AttachFileDTO();
+			BristoAttachVO attachDTO = new BristoAttachVO();
 
 			String uploadFileName = multipartFile.getOriginalFilename();
 
@@ -178,7 +153,7 @@ public class UploadController {
 		return result;
 	}
 
-	@GetMapping(value = "/download", produces = MediaType.APPLICATION_OCTET_STREAM_VALUE)
+	@GetMapping(value = "/BristoDownload", produces = MediaType.APPLICATION_OCTET_STREAM_VALUE)
 	@ResponseBody
 	public ResponseEntity<Resource> downloadFile(@RequestHeader("User-Agent") String userAgent, String fileName) {
 

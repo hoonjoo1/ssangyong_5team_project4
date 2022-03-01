@@ -5,7 +5,7 @@
 
 <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 <link rel="icon" href="/favicon.ico" type="image/x-icon">
-<%@ include file="../yjincludes/header.jsp"%>
+<%@ include file="../common/header.jsp"%>
 <div class="checkout__form" style="width: 50%; margin: 0 auto;">
 	<h4>유저 리뷰 상세</h4>
 	<div class="row">
@@ -47,10 +47,10 @@
 		</div>
 	</div>
 	<button class="site-btn"
-		onclick="location.href='/ur/updateForm.do?urkey='+${ur.urkey}">수정하기</button>
+		onclick="location.href='/project4/urupdateForm.do?urkey='+${ur.urkey}">수정하기</button>
 	<button class="site-btn"
-		onclick="location.href='/ur/delete.do?urkey='+${ur.urkey}">삭제하기</button>
-	<button class="site-btn" onclick="location.href='/ur/list.do'">목록으로</button>
+		onclick="location.href='/project4/urdelete.do?urkey='+${ur.urkey}">삭제하기</button>
+	<button class="site-btn" onclick="location.href='/project4/urlist.do'">목록으로</button>
 	<br>
 </div>
 <br>
@@ -152,7 +152,7 @@
 
 
 
-<script type="text/javascript" src="/resources/js/urReply.js"></script>
+<script type="text/javascript" src="/project4/resources/js/urReply.js"></script>
 
 
 <script>
@@ -357,4 +357,4 @@ $(document).ready(function () {
 
 
 
-<%@ include file="../yjincludes/footer.jsp"%>
+<%@ include file="../common/footer.jsp"%>

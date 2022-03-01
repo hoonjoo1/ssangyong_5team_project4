@@ -24,12 +24,14 @@ public class BrController {
 	}
 
 	@GetMapping("/brregisterForm.do")
-	public void registerForm() {
+	public String registerForm() {
+		return "br/registerForm";
 	}
 
 	@GetMapping("/brget.do")
-	public void get(@RequestParam("bkey") int bkey, Model d) {
+	public String get(@RequestParam("bkey") int bkey, Model d) {
 		d.addAttribute("br", service.get(bkey));
+		return "br/get";
 	}
 
 	@GetMapping("/brregister.do")
@@ -37,12 +39,13 @@ public class BrController {
 		d.addAttribute("psc", "삽입");
 		service.insert(vo);
 		System.out.println("등록완료");
-		return "redirect:/br/list.do";
+		return "redirect:/brlist.do";
 	}
 
 	@GetMapping("/brupdateForm.do")
-	public void updateForm(@RequestParam("bkey") int bkey, Model d) {
+	public String updateForm(@RequestParam("bkey") int bkey, Model d) {
 		d.addAttribute("br", service.get(bkey));
+		return "br/updateForm";
 	}
 
 	@GetMapping("/brupdate.do")
@@ -50,17 +53,17 @@ public class BrController {
 		d.addAttribute("psc", "수정");
 		service.update(vo);
 		System.out.println("수정완료");
-		System.out.println("grade"+vo.getGrade());
-		System.out.println("title"+vo.getTitle());
-		System.out.println("beky"+vo.getBkey());
-		
-		return "redirect:/br/list.do";
+		System.out.println("grade" + vo.getGrade());
+		System.out.println("title" + vo.getTitle());
+		System.out.println("beky" + vo.getBkey());
+
+		return "redirect:/brlist.do";
 	}
 
 	@GetMapping("/brdelete.do")
 	public String delete(@RequestParam("bkey") int bkey) {
 		service.delete(bkey);
 		System.out.println("삭제완료");
-		return "redirect:/br/list.do";
+		return "redirect:/brlist.do";
 	}
 }

@@ -38,7 +38,7 @@
 	<tfoot>
 		<tr>
 			<td colspan="3"><button class="btn btn-success" type="button"
-					onclick="location.href='/br/registerForm.do'">등록하기</button></td>
+					onclick="location.href='/project4/brregisterForm.do'">등록하기</button></td>
 		</tr>
 	</tfoot>
 </table>

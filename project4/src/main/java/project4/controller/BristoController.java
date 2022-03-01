@@ -22,6 +22,12 @@ public class BristoController {
 		d.addAttribute("psc", "list");
 		return "bristo/list";
 	}
+	@PostMapping("/bristolist.do")
+	public String list2(Model d) {
+		d.addAttribute("list", service.list());
+		d.addAttribute("psc", "list");
+		return "redirect:bristo/list";
+	}
 
 	@GetMapping("/bristoget.do")
 	public String get(@RequestParam("bristokey") int bristokey, Model d) {
@@ -39,7 +45,7 @@ public class BristoController {
 	public String insert(BristoVO vo, Model d) {
 		d.addAttribute("psc", "insert");
 		service.insert(vo);
-		return "redirect:/bristo/list.do";
+		return "redirect:/bristolist.do";
 	}
 
 	@GetMapping("/bristoupdate.do")
@@ -53,6 +59,6 @@ public class BristoController {
 	public String delete(int bristokey, Model d) {
 		d.addAttribute("psc", "delete");
 		service.delete(bristokey);
-		return "redirect:/bristo/list.do";
+		return "redirect:/bristolist.do";
 	}
 }

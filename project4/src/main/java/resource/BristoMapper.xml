@@ -32,12 +32,6 @@
 		#{explain})
 	</insert>
 
-	<insert id="insertFileInfo" parameterType="fileInfo">
-		INSERT INTO fileInfo
-		values(seq_bristo.nextval,
-		#{pathinfo},
-		#{fname},sysdate,sysdate,#{etc})
-	</insert>
 
 
 	<update id="update" parameterType="project4.domain.BristoVO">
