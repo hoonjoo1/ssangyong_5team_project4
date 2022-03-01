@@ -3,57 +3,84 @@
 <%
 request.setCharacterEncoding("utf-8");
 %>
-<link rel="apple-touch-icon" sizes="57x57" href="/project4/res/favicon/apple-icon-57x57.png">
-<link rel="apple-touch-icon" sizes="60x60" href="/project4/res/favicon/apple-icon-60x60.png">
-<link rel="apple-touch-icon" sizes="72x72" href="/project4/res/favicon/apple-icon-72x72.png">
-<link rel="apple-touch-icon" sizes="76x76" href="/project4/res/favicon/apple-icon-76x76.png">
-<link rel="apple-touch-icon" sizes="114x114" href="/project4/res/favicon/apple-icon-114x114.png">
-<link rel="apple-touch-icon" sizes="120x120" href="/project4/res/favicon/apple-icon-120x120.png">
-<link rel="apple-touch-icon" sizes="144x144" href="/project4/res/favicon/apple-icon-144x144.png">
-<link rel="apple-touch-icon" sizes="152x152" href="/project4/res/favicon/apple-icon-152x152.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/project4/res/favicon/apple-icon-180x180.png">
-<link rel="icon" type="image/png" sizes="192x192"  href="/project4/res/favicon/android-icon-192x192.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/project4/res/favicon/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="96x96" href="/project4/res/favicon/favicon-96x96.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/project4/res/favicon/favicon-16x16.png">
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<c:set var="path" value="${pageContext.request.contextPath }" />
+<link rel="apple-touch-icon" sizes="57x57"
+	href="/project4/res/favicon/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60"
+	href="/project4/res/favicon/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72"
+	href="/project4/res/favicon/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76"
+	href="/project4/res/favicon/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114"
+	href="/project4/res/favicon/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120"
+	href="/project4/res/favicon/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144"
+	href="/project4/res/favicon/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152"
+	href="/project4/res/favicon/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180"
+	href="/project4/res/favicon/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"
+	href="/project4/res/favicon/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32"
+	href="/project4/res/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96"
+	href="/project4/res/favicon/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16"
+	href="/project4/res/favicon/favicon-16x16.png">
 <link rel="manifest" href="/project4/res/favicon/manifest.json">
 <meta name="msapplication-TileColor" content="#ffffff">
-<meta name="msapplication-TileImage" content="/project4/res/favicon/ms-icon-144x144.png">
+<meta name="msapplication-TileImage"
+	content="/project4/res/favicon/ms-icon-144x144.png">
 <meta name="theme-color" content="#ffffff">
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-    <meta name="description" content="Ogani Template">
-    <meta name="keywords" content="Ogani, unica, creative, html">
-    <meta name="port" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="description" content="Ogani Template">
+<meta name="keywords" content="Ogani, unica, creative, html">
+<meta name="port" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
 <title>우리끼니 | 같이 식사하실래요?</title>
 
 <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" type="text/css"
-	href="#"><!-- css 파일 경로  -->
- <!-- Css Styles -->
-  <!-- Css Styles -->
-    <link rel="stylesheet" href="/project4/res/css/bootstrap.min.css" type="text/css">
-    <link rel="stylesheet" href="/project4/res/css/font-awesome.min.css" type="text/css">
-    <link rel="stylesheet" href="/project4/res/css/elegant-icons.css" type="text/css">
-    <link rel="stylesheet" href="/project4/res/css/nice-select.css" type="text/css">
-    <link rel="stylesheet" href="/project4/res/css/jquery-ui.min.css" type="text/css">
-    <link rel="stylesheet" href="/project4/res/css/owl.carousel.min.css" type="text/css">
-    <link rel="stylesheet" href="/project4/res/css/slicknav.min.css" type="text/css">
-    <link rel="stylesheet" href="/project4/res/css/style.css" type="text/css">
-    <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+<link
+	href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap"
+	rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="#">
+<!-- css 파일 경로  -->
+<!-- Css Styles -->
+<!-- Css Styles -->
+<link rel="stylesheet" href="/project4/res/css/bootstrap.min.css"
+	type="text/css">
+<link rel="stylesheet" href="/project4/res/css/font-awesome.min.css"
+	type="text/css">
+<link rel="stylesheet" href="/project4/res/css/elegant-icons.css"
+	type="text/css">
+<link rel="stylesheet" href="/project4/res/css/nice-select.css"
+	type="text/css">
+<link rel="stylesheet" href="/project4/res/css/jquery-ui.min.css"
+	type="text/css">
+<link rel="stylesheet" href="/project4/res/css/owl.carousel.min.css"
+	type="text/css">
+<link rel="stylesheet" href="/project4/res/css/slicknav.min.css"
+	type="text/css">
+<link rel="stylesheet" href="/project4/res/css/style.css"
+	type="text/css">
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <style>
 
 /*---------------------
   Header
 -----------------------*/
-
 .header__top {
 	background: #f5f5f5;
 }
+
 .header__top__left {
 	padding: 10px 0 10px;
 }
@@ -208,8 +235,8 @@ request.setCharacterEncoding("utf-8");
 }
 
 .header__logo {
-	width:30%;
-	height:30%;
+	width: 30%;
+	height: 30%;
 	padding: 15px 0;
 }
 
@@ -363,77 +390,90 @@ request.setCharacterEncoding("utf-8");
 <body>
 
 
-	
 
-     <!-- Header Section Begin -->
-    <header class="header">
-        <div class="header__top">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6 col-md-6">
-                        <div class="header__top__left">
-                            <ul>
-                                <li><img src="https://img.icons8.com/ios-glyphs/15/000000/secured-letter--v1.png"/>ourmeal@gmail.com</li>
-                                <li>Shall we eat together?</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6">
-                        <div class="header__top__right">
-                            <div class="header__top__right__social">
-                                <a href="/project4/login.do">로그인</a>
-                                <a href="">아이디/비밀번호 찾기</a>
-                                <a href="">회원가입</a>
-                                <a href="/project4/mypage.do">마이페이지</a>
-                                <a href="">고객센터</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3">
-                    <div class="header__logo">
-                        <a href="/project4/main.do"><img src="/project4/res/logoimage.png" alt=""></a>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <nav class="header__menu">
-                        <ul>
-                            <li class="active"><a href="/project4/bristolist.do">식당예약</a>
-                                <ul class="header__menu__dropdown">
-                                  <li><a href="/project4/bristolist.do">추천 맛집</a></li>
-                                  <li><a href="/project4/brlist.do">식당 리뷰</a></li>
-                                  <li><a href="/project4/urlist.do">유저 리뷰</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="./shop-grid.html">같이 먹어요</a>
-                                <ul class="header__menu__dropdown">
-                                  <li><a href="./shop-details.html">지역별</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="./blog.html">식재료 공동구매</a></li>
-                            <li><a href="./contact.html">배달 같이 받아요</a></li>
-                        </ul>
-                    </nav>
-                </div>
-                <div class="col-lg-3">
-                    <div class="header__cart">
-                        <ul>
-                            <li><a href="#"><img src="https://img.icons8.com/ios-filled/20/000000/hearts.png"/><span>1</span></a></li>
-                            <li><a href="#"><img src="https://img.icons8.com/external-vitaliy-gorbachev-fill-vitaly-gorbachev/20/000000/external-bag-ecommerce-vitaliy-gorbachev-fill-vitaly-gorbachev-1.png"/><span>3</span></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="humberger__open">
-                <i class="fa fa-bars"></i>
-            </div>
-        </div>
-    </header>
-    <!-- Header Section End -->
+
+	<!-- Header Section Begin -->
+	<header class="header">
+		<div class="header__top">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-6 col-md-6">
+						<div class="header__top__left">
+							<ul>
+								<li><img
+									src="https://img.icons8.com/ios-glyphs/15/000000/secured-letter--v1.png" />ourmeal@gmail.com</li>
+								<li>Shall we eat together?</li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-lg-6 col-md-6">
+						<div class="header__top__right">
+							<div class="header__top__right__social">
+								<c:if test="${not empty users.id}">
+									<a href="#">${users.name} 님 로그인중</a><br>
+								</c:if>
+
+								<c:if test="${ empty users.id}">
+									<a href="/project4/login.do">로그인</a>
+								</c:if>
+
+
+
+								<a href="">아이디/비밀번호 찾기</a> <a href="/project4/userinsertForm.do">회원가입</a> <a
+									href="/project4/usermypage.do?userkey=${users.userkey }">마이페이지</a> <a href="">고객센터</a>
+
+								<c:if test="${not empty users.id}">
+									<a href="/project4/logout.do">로그아웃</a>
+								</c:if>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-3">
+					<div class="header__logo">
+						<a href="/project4/main.do"><img
+							src="/project4/res/logoimage.png" alt=""></a>
+					</div>
+				</div>
+				<div class="col-lg-6">
+					<nav class="header__menu">
+						<ul>
+							<li class="active"><a href="/project4/bristolist.do">식당예약</a>
+								<ul class="header__menu__dropdown">
+									<li><a href="/project4/bristolist.do">추천 맛집</a></li>
+									<li><a href="/project4/brlist.do">식당 리뷰</a></li>
+									<li><a href="/project4/urlist.do">유저 리뷰</a></li>
+								</ul></li>
+							<li><a href="./shop-grid.html">같이 먹어요</a>
+								<ul class="header__menu__dropdown">
+									<li><a href="./shop-details.html">지역별</a></li>
+								</ul></li>
+							<li><a href="./blog.html">식재료 공동구매</a></li>
+							<li><a href="./contact.html">배달 같이 받아요</a></li>
+						</ul>
+					</nav>
+				</div>
+				<div class="col-lg-3">
+					<div class="header__cart">
+						<ul>
+							<li><a href="#"><img
+									src="https://img.icons8.com/ios-filled/20/000000/hearts.png" /><span>1</span></a></li>
+							<li><a href="#"><img
+									src="https://img.icons8.com/external-vitaliy-gorbachev-fill-vitaly-gorbachev/20/000000/external-bag-ecommerce-vitaliy-gorbachev-fill-vitaly-gorbachev-1.png" /><span>3</span></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="humberger__open">
+				<i class="fa fa-bars"></i>
+			</div>
+		</div>
+	</header>
+	<!-- Header Section End -->
 
 </body>
 </html>

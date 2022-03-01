@@ -61,7 +61,7 @@ public class UrReplyContoller {
 				: new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
 	}
 
-	@GetMapping(value = "/project4/urReplies/pages/{urkey}", produces = { MediaType.APPLICATION_XML_VALUE,
+	@GetMapping(value = "/urReplies/pages/{urkey}", produces = { MediaType.APPLICATION_XML_VALUE,
 			MediaType.APPLICATION_JSON_UTF8_VALUE })
 	public ResponseEntity<List<UrReplyVO>> getList(@PathVariable("urkey") int urkey) {
 

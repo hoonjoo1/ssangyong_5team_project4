@@ -13,9 +13,17 @@ $(document).ready(function(){
 		var hasSession="${users.name}";
 		console.log("세션이름:"+hasSession);
 		console.log(hasSession);
-		if(hasSession!=""){ // session값이 없을 때..
-			$("#statue").text("로그아웃");
-		}	
+		
+		var psc = "${psc}";
+		if(psc=="수정"){
+			alert("회원 정보가 수정되었습니다.")
+		}
+		if(psc=="sucess"){
+			alert("로그인성공")
+		}
+		
+		
+		
 })
 
 

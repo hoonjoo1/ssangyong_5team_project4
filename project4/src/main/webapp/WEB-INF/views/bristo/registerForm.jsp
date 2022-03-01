@@ -329,6 +329,9 @@ input[id="cb1"] {
 
 											}
 
+											
+											location.href="'/project4/uploadAjaxAction'";
+											
 											$.ajax({
 												url : '/uploadAjaxAction',
 												processData : false,

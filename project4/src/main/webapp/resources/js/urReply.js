@@ -26,7 +26,7 @@ var replyService = (function() {
 	
 			var urkey = param.urkey;
 	
-			$.getJSON("/project4/urReplies/pages/" + urkey + ".json",
+			$.getJSON("/urReplies/pages/" + urkey + ".json",
 					function(data) {
 						if (callback) {
 							callback(data);

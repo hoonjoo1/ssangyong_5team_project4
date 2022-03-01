@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -27,7 +28,7 @@ public class UserController {
 		return new UserVO();
 	}
 
-	@GetMapping("/userlogin.do")
+	@GetMapping("/login.do")
 	public String login(Model d) {
 		d.addAttribute("psc", "로그인");
 		System.out.println("로그인 화면 창 (기본 GET");
@@ -38,16 +39,30 @@ public class UserController {
 	public String logincheck(@ModelAttribute("users") UserVO vo, Model d) {
 		UserVO users = service.login(vo);
 		if (users != null) {
-			d.addAttribute("msg", "로그인 성공");
+			d.addAttribute("psc", "sucess");
 			d.addAttribute("users", users);
 			System.out.println("로그인 성공");
 		} else {
-			d.addAttribute("msg", "로그인 실패");
+			d.addAttribute("psc", "fail");
+			d.addAttribute("users", new UserVO(9999));
 			System.out.println("로그인실패");
+			return "/user/login";
 		}
 		return "forward:/main.do";
 	}
 
+	
+	@RequestMapping("/logout.do")
+	public String logout(@ModelAttribute("users") UserVO vo, Model d) {
+		UserVO users = new UserVO(999);
+		d.addAttribute("users", users);
+		return "forward:/main.do";
+	}
+	
+	
+	
+	
+	
 	@GetMapping("/userlist.do")
 	public void list(Model d) {
 		d.addAttribute("psc", "리스트");
@@ -55,7 +70,8 @@ public class UserController {
 	}
 
 	@GetMapping("/userinsertForm.do")
-	public void registerForm() {
+	public String registerForm() {
+		return "user/insertForm";
 	}
 
 	@GetMapping("/usermypage.do")
@@ -72,19 +88,19 @@ public class UserController {
 		return "redirect:/main.do";
 	}
 
-	@GetMapping("/userupdateForm.do")
+	@RequestMapping("/userupdateForm.do")
 	public void updateForm(@RequestParam("userkey") int userkey, Model d) {
 		d.addAttribute("user", service.get(userkey));
 	}
 
-	@GetMapping("/userupdate.do")
+	@RequestMapping("/userupdate.do")
 	public String update(UserVO vo, Model d) {
 		d.addAttribute("psc", "수정");
 		service.update(vo);
 		System.out.println("수정완료");
 		System.out.println("password" + vo.getPassword());
-
-		return "redirect:/user/list.do";
+		
+		return "redirect:/main.do";
 	}
 
 	@GetMapping("/userdelete.do")

@@ -11,7 +11,7 @@
 				<div class="product__details__pic">
 					<div class="product__details__pic__item">
 						<img class="product__details__pic__item--large"
-							src="/resources/logoimage.png" alt="">
+							src="/project4/resources/logoimage.png" alt="">
 					</div>
 					<div
 						class="product__details__pic__slider owl-carousel owl-loaded owl-drag">
@@ -105,7 +105,7 @@
 					<a href="#" class="primary-btn"
 						onclick="location.href='/project4/bristolist.do'">목록으로</a> <a href="#"
 						class="primary-btn"
-						onclick="location.href='/project4//cartregisterForm.do?bristokey='+${bristo.bristokey}">식당예약</a>
+						onclick="location.href='/project4/cartregisterForm.do?bristokey='+${bristo.bristokey}">식당예약</a>
 					<a href="#" class="primary-btn"
 						onclick="location.href='/project4/bristodelete.do?bristokey='+${bristo.bristokey}">삭제</a>
 					<h3>${bristo.name }</h3>

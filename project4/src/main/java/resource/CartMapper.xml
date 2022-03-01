@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="project4.mapper.CartMapper">
+
+	<select id="list" resultType="project4.domain.CartVO">
+		select * from cart
+	</select>
+
+	<select id="get" resultType="project4.domain.CartVO"
+		parameterType="int">
+		select *
+		from
+		cart
+		where userkey=#{userkey}
+	</select>
+
+	<insert id="insert">
+		INSERT INTO cart
+		values(
+		seq_cart.nextval,
+		1,
+		sysdate,
+		'af',
+		'af',
+		'afds',
+		'afs',
+		1,
+		5002)
+	</insert>
+
+
+	<delete id="delete" parameterType="int">
+		delete
+		from cart
+		where
+		cartkey=#{cartkey}
+	</delete>
+
+</mapper>

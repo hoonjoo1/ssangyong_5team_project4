@@ -27,10 +27,9 @@ $(document).ready(function(){
 	var formObj = $("form")
 	var psc="${psc}";
 	
-
-	
 	if(psc=="fail"){
-		alert("로그인 실패")
+		alert("로그인 실패");
+		
 	}
 	
 	
@@ -73,7 +72,7 @@ $(document).ready(function(){
 
 					<div class="signin-form">
 						<h2 class="form-title">로그인</h2>
-						<form class="register-form" id="login-form" action="/user/logincheck.do" >
+						<form class="register-form" id="login-form" action="/project4/userlogin.do" method="post">
 							<div class="form-group">
 								<label for="your_name"><i
 									class="zmdi zmdi-account material-icons-name"></i></label> <input

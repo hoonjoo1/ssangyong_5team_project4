@@ -1,37 +1,48 @@
 package project4.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-@RequestMapping("/cart/*")
+import oracle.net.aso.d;
+import project4.domain.CartVO;
+import project4.service.CartService;
+import project4.service.CartServiceImpl;
+
 @Controller
 public class CartContoller {
 
-	@GetMapping("/registerForm.do")
-	public void registerForm() {
-		
-	}
-	
-	@GetMapping("/list.do")
-	public void list() {
-		
+	@Autowired
+	CartServiceImpl service;
+
+	@RequestMapping("/cartregisterForm.do")
+	public String registerForm() {
+		return "/cart/registerForm";
 	}
 
-	@GetMapping("/get.do")
+	@GetMapping("/cartlist.do")
+	public String list(Model d) {
+		d.addAttribute("list", service.list());
+		return "cart/list";
+	}
+
+	@GetMapping("/cartget.do")
 	public void get() {
-		
+
 	}
 
-	@GetMapping("/insert.do")
-	public void insert() {
-		
+	@GetMapping("/cartinsert.do")
+	public String insert(CartVO vo) {
+		service.insert(vo);
+		return "forward:/cartlist.do";
+
 	}
+
 	@GetMapping("/delete.do")
 	public void delete() {
-		
+
 	}
-	
-	
-	
+
 }

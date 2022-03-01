@@ -28,6 +28,7 @@
 		set
 		password=#{password},
 		nickname=#{nickname},
+		name=#{name},
 		loc=#{loc},
 		phonenum=#{phonenum}
 		where userkey=#{userkey}

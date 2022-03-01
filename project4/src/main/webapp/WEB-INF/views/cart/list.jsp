@@ -6,7 +6,7 @@
 <script type="text/javascript"
 	src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
 
-<%@ include file="../includes/header.jsp"%>
+<%@ include file="../common/header.jsp"%>
 
 <!DOCTYPE html>
 <html lang="zxx">
@@ -41,6 +41,8 @@ input[id="cb1"] {
 
 <body>
 
+
+
 	<section class="related-blog spad">
 		<div class="container">
 			<div class="row">
@@ -52,162 +54,37 @@ input[id="cb1"] {
 			</div>
 
 			<div class="row">
-				<div class="col-lg-4 col-md-4 col-sm-6">
-					<div class="blog__item">
-						<div class="blog__item__pic">
-							<input type="checkbox" id="cb1"> <label for="cb1"></label>
-							<img src="/resources/logoimage.png" alt=""
-								onclick="location.href='/cart/get.do'">
-						</div>
-						<div class="blog__item__text"
-							onclick="location.href='/cart/get.do'">
-							<ul>
-								<li><i class="fa fa-calendar-o"></i> May 4,2019</li>
-								<li><i class="fa fa-comment-o"></i> 5</li>
-							</ul>
-							<h5>
-								<a href="#">Cooking tips make cooking simple</a>
-							</h5>
-							<p>Sed quia non numquam modi tempora indunt ut labore et
-								dolore magnam aliquam quaerat</p>
+				<c:forEach items="${list }" var="list">
 
+					<div class="col-lg-4 col-md-4 col-sm-6">
+						<div class="blog__item">
+							<div class="blog__item__pic">
+								<input type="checkbox" id="cb1"> <label for="cb1"></label>
+								<img src="/resources/logoimage.png" alt=""
+									onclick="location.href='/cart/get.do'">
+							</div>
+							<div class="blog__item__text"
+								onclick="location.href='/cart/get.do'">
+								<ul>
+									<li><i class="fa fa-calendar-o"></i> ${list.visitetime }</li>
+								</ul>
+								<h5>
+									<a href="#">${list.menu }</a>
+								</h5>
+								<p>{list.message}</p>
+
+							</div>
 						</div>
 					</div>
-				</div>
 
-
-				<div class="col-lg-4 col-md-4 col-sm-6">
-					<div class="blog__item">
-						<div class="blog__item__pic">
-							<input type="checkbox" id="cb1"> <label for="cb1"></label>
-							<img src="/resources/logoimage.png" alt=""
-								onclick="location.href='/cart/get.do'">
-						</div>
-						<div class="blog__item__text"
-							onclick="location.href='/cart/get.do'">
-							<ul>
-								<li><i class="fa fa-calendar-o"></i> May 4,2019</li>
-								<li><i class="fa fa-comment-o"></i> 5</li>
-							</ul>
-							<h5>
-								<a href="#">Cooking tips make cooking simple</a>
-							</h5>
-							<p>Sed quia non numquam modi tempora indunt ut labore et
-								dolore magnam aliquam quaerat</p>
-
-						</div>
-					</div>
-				</div>
-
-
-				<div class="col-lg-4 col-md-4 col-sm-6">
-					<div class="blog__item">
-						<div class="blog__item__pic">
-							<input type="checkbox" id="cb1"> <label for="cb1"></label>
-							<img src="/resources/logoimage.png" alt=""
-								onclick="location.href='/cart/get.do'">
-						</div>
-						<div class="blog__item__text"
-							onclick="location.href='/cart/get.do'">
-							<ul>
-								<li><i class="fa fa-calendar-o"></i> May 4,2019</li>
-								<li><i class="fa fa-comment-o"></i> 5</li>
-							</ul>
-							<h5>
-								<a href="#">Cooking tips make cooking simple</a>
-							</h5>
-							<p>Sed quia non numquam modi tempora indunt ut labore et
-								dolore magnam aliquam quaerat</p>
-
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-4 col-sm-6">
-					<div class="blog__item">
-						<div class="blog__item__pic">
-							<input type="checkbox" id="cb1"> <label for="cb1"></label>
-							<img src="/resources/logoimage.png" alt=""
-								onclick="location.href='/cart/get.do'">
-						</div>
-						<div class="blog__item__text"
-							onclick="location.href='/cart/get.do'">
-							<ul>
-								<li><i class="fa fa-calendar-o"></i> May 4,2019</li>
-								<li><i class="fa fa-comment-o"></i> 5</li>
-							</ul>
-							<h5>
-								<a href="#">Cooking tips make cooking simple</a>
-							</h5>
-							<p>Sed quia non numquam modi tempora indunt ut labore et
-								dolore magnam aliquam quaerat</p>
-
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-4 col-sm-6">
-					<div class="blog__item">
-						<div class="blog__item__pic">
-							<input type="checkbox" id="cb1"> <label for="cb1"></label>
-							<img src="/resources/logoimage.png" alt=""
-								onclick="location.href='/cart/get.do'">
-						</div>
-						<div class="blog__item__text"
-							onclick="location.href='/cart/get.do'">
-							<ul>
-								<li><i class="fa fa-calendar-o"></i> May 4,2019</li>
-								<li><i class="fa fa-comment-o"></i> 5</li>
-							</ul>
-							<h5>
-								<a href="#">Cooking tips make cooking simple</a>
-							</h5>
-							<p>Sed quia non numquam modi tempora indunt ut labore et
-								dolore magnam aliquam quaerat</p>
-
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-4 col-sm-6">
-					<div class="blog__item">
-						<div class="blog__item__pic">
-							<input type="checkbox" id="cb1"> <label for="cb1"></label>
-							<img src="/resources/logoimage.png" alt=""
-								onclick="location.href='/cart/get.do'">
-						</div>
-						<div class="blog__item__text"
-							onclick="location.href='/cart/get.do'">
-							<ul>
-								<li><i class="fa fa-calendar-o"></i> May 4,2019</li>
-								<li><i class="fa fa-comment-o"></i> 5</li>
-							</ul>
-							<h5>
-								<a href="#">Cooking tips make cooking simple</a>
-							</h5>
-							<p>Sed quia non numquam modi tempora indunt ut labore et
-								dolore magnam aliquam quaerat</p>
-
-						</div>
-					</div>
-				</div>
-
-
-
-
-
-
-
-
-
+				</c:forEach>
 			</div>
-
-
 		</div>
 	</section>
-
-
 </body>
 
 </html>
 
 
 
-<%@ include file="../includes/footer.jsp"%>
+<%@ include file="../common/footer.jsp"%>

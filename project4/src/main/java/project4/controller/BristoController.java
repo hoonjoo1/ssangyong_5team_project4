@@ -26,7 +26,7 @@ public class BristoController {
 	public String list2(Model d) {
 		d.addAttribute("list", service.list());
 		d.addAttribute("psc", "list");
-		return "redirect:bristo/list";
+		return "redirect:bristolist.do";
 	}
 
 	@GetMapping("/bristoget.do")
