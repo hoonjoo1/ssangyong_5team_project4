@@ -248,6 +248,12 @@ height:200px;
 					$('[name=recommcontents]').val("RE:"+ fcommkey);				
 				}
 			}
+			
+			function downFile(fname){
+				if(confirm("다운로드할 파일:"+fname)){
+					location.href="${path}/download.do?fname="+fname;
+				}
+			}
 								
 </script>
 </head>
@@ -290,7 +296,7 @@ height:200px;
 	<div id="filelist">
 		<h5>첨부파일</h5>
         <c:forEach var="fname" items="${board.fnames}">
-			<label>${fname}</label><br>
+			<label onclick="downFile('${fname}')">${fname}</label><br>
 		</c:forEach>
     </div>
 	
