@@ -34,8 +34,10 @@
 				<div class="featured__item">
 					<div class="featured__item__pic set-bg"
 						data-setbg="img/featured/feature-1.jpg"
-						style="background-image: url('/project4/resources/logoimage.png');"
+						style="background-image: url('C:universe.jpg');"
+					
 						onclick="location.href='/project4/bristoget.do?bristokey=${list.bristokey}'">
+							<img src="/project4/display?fileName="+fileuploadPath/>
 						<ul class="featured__item__pic__hover">
 							<li><a href="#"><i class="fa fa-heart"></i></a></li>
 							<li><a href="#"><i class="fa fa-retweet"></i></a></li>

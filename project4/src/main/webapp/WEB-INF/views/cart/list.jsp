@@ -20,7 +20,7 @@
 <title>Ogani | Template</title>
 
 <style>
-input[id="cb1"]+label {
+input[id="cb1"] {
 	display: inline-block;
 	width: 50px;
 	height: 50px;
@@ -33,11 +33,16 @@ input[id="cb1"]:checked+label {
 	background-color: #666666;
 }
 
-input[id="cb1"] {
-	display: none;
-}
 </style>
+
+<script>
+$(document)unctionipt>
+	$("#delete").click(function(){
+	})
+</script>
 </head>
+
+
 
 <body>
 
@@ -61,11 +66,10 @@ input[id="cb1"] {
 					<button class="site-btn"
 						onclick="location.href='/project4/paylist.do'">나의 결제 정보</button>
 					<br> <br>
-					<button class="site-btn" onclick="location.href='/project4/payregisterForm.do'">결제하기</button>
-					<br> <br>
 					<button class="site-btn"
-						onclick="location.href='/project4/cartdelete.do?cartkey='">삭제하기</button>
-
+						onclick="location.href='/project4/payregisterForm.do'">결제하기</button>
+					<br> <br>
+					<button class="site-btn" id="delete">삭제하기</button>
 				</div>
 
 				<c:forEach items="${list }" var="list">
@@ -73,15 +77,16 @@ input[id="cb1"] {
 					<div class="col-lg-4 col-md-4 col-sm-6">
 						<div class="blog__item">
 							<div class="blog__item__pic">
-								<input type="checkbox" id="cb1"> <label for="cb1"></label>
-								<img src="/resources/logoimage.png" alt=""
-									onclick="location.href='/cart/get.do'">
+								<input type="checkbox" id="cb1" name="cartkey" value="${list.cartkey}"> <label for="cb1"></label>
+								<img src="/project4/resources/logoimage.png" alt=""
+									onclick="location.href='/project4/cartget.do?cartkey='+${list.cartkey}">
 							</div>
 							<div class="blog__item__text"
 								onclick="location.href='/cart/get.do'">
 								<ul>
 									<li><i class="fa fa-calendar-o"></i> ${list.visitetime }</li>
-									<li><i class="fa fa-calendar-o"></i> 장바구니 번호 : ${list.cartkey }</li>
+									<li><i class="fa fa-calendar-o"></i> 장바구니 번호 :
+										${list.cartkey }</li>
 								</ul>
 								<h5>
 									<a href="/project4/cartget.do?cartkey=${list.cartkey }">${list.menu }</a>

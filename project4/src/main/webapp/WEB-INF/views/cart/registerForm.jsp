@@ -79,8 +79,7 @@
 								<p>
 									방문시간<span>*</span>
 								</p>
-								<input type="date" name="visitetime3"> <input type="time"
-									name="visitetime2">
+								<input type="date"> <input type="time">
 							</div>
 							<div class="checkout__input">
 								<p>
@@ -93,7 +92,7 @@
 								<p>
 									남기고 싶은 말<span>*</span>
 								</p>
-								<input type="text">
+								<input type="text" name="message">
 							</div>
 							<div class="row">
 								<div class="col-lg-6">
@@ -183,7 +182,7 @@
 						</div>
 					</div>
 					<input type="hidden" name="userkey" value="${users.userkey }">
-					<input type="hidden" name="bristokey" value="1">
+					<input type="hidden" name="bristokey" value="5040">
 				</form>
 			</div>
 		</div>

@@ -45,6 +45,8 @@ public class BristoController {
 	public String insert(BristoVO vo, Model d) {
 		d.addAttribute("psc", "insert");
 		service.insert(vo);
+		
+		
 		return "redirect:/bristolist.do";
 	}
 

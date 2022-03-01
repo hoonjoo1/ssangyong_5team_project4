@@ -20,14 +20,15 @@
 		INSERT INTO cart
 		values(
 		seq_cart.nextval,
-		1,
+		#{cnt},
 		sysdate,
-		'af',
-		'af',
-		'afds',
-		'afs',
-		1,
-		5002);
+		#{menu},
+		#{message},
+		#{phone},
+		#{email},
+		#{userkey},
+		5040
+		)
 	</insert>
 
 

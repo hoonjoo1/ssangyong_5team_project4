@@ -7,14 +7,9 @@
 
 	<insert id="insert"
 		parameterType="project4.domain.BristoAttachVO">
-		INSERT INTO bristo_attach
-		values(
-		#{uuid},
-		#{uploadPath},
-		#{fileName},
-		#{filetype},
-		#{bristokey}
-		)
+
+
+		INSERT INTO BRISTO_ATTACH values('1','1','1',1,1);
 	</insert>
 
 

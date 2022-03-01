@@ -142,8 +142,7 @@ public class BristoUploadController {
 
 		log.info("fileName: " + fileName);
 
-		File file = new File("c:\\upload\\" + fileName);
-
+		File file = new File("C:\\a01_javaexp\\z01_upload\\" + fileName);
 		log.info("file: " + file);
 
 		ResponseEntity<byte[]> result = null;
@@ -160,6 +159,12 @@ public class BristoUploadController {
 		return result;
 	}
 
+	
+	
+	
+	
+	
+	
 	@GetMapping(value = "/BristoDownload", produces = MediaType.APPLICATION_OCTET_STREAM_VALUE)
 	@ResponseBody
 	public ResponseEntity<Resource> downloadFile(@RequestHeader("User-Agent") String userAgent, String fileName) {

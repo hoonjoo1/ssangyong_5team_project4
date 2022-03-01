@@ -3,6 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+<c:set var="path" value="${pageContext.request.contextPath }"/>
 <script type="text/javascript"
 	src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
@@ -79,7 +80,7 @@ input[id="cb1"] {
 
 
 <div class="checkout__form" style="width: 50%; margin: 0 auto;">
-	<form action="/project4/bristoinsert.do" method="post">
+<form method="post" enctype="multipart/form-data" action="/project4/bristoinsert.do">
 		<h4>식당 등록</h4>
 		<div class="row">
 			<div class="col-lg-8 col-md-6">
@@ -195,7 +196,7 @@ input[id="cb1"] {
 					<!-- /.panel-heading -->
 					<div class="panel-body">
 						<div class="form-group uploadDiv">
-							<input type="file" name='uploadFile' multiple>
+							<input type="file" name="report" multiple>
 						</div>
 
 						<div class='uploadResult'>
@@ -227,12 +228,12 @@ input[id="cb1"] {
 <br>
 
 <script>
+/*
 	$(document)
 			.ready(
 					function(e) {
 						var formObj = $("form[role='form']");
-
-						$("button[type='submit']")
+					$("button[type='submit']")
 								.on(
 										"click",
 										function(e) {
@@ -290,6 +291,14 @@ input[id="cb1"] {
 
 										});
 
+						
+						
+						
+						
+						
+						
+						
+						
 						var regex = new RegExp("(.*?)\.(exe|sh|zip|alz)$");
 						var maxSize = 5242880; //5MB
 
@@ -307,6 +316,10 @@ input[id="cb1"] {
 							return true;
 						}
 
+						
+						
+						
+						
 						$("input[type='file']")
 								.change(
 										function(e) {
@@ -330,10 +343,10 @@ input[id="cb1"] {
 											}
 
 											
-											location.href="'/project4/uploadAjaxAction'";
+											
 											
 											$.ajax({
-												url : '/uploadAjaxAction',
+												url : '/project4/uploadAjaxAction',
 												processData : false,
 												contentType : false,
 												data : formData,
@@ -346,8 +359,14 @@ input[id="cb1"] {
 												}
 											}); //$.ajax
 
+
 										});
 
+						
+						
+						
+						
+						
 						function showUploadResult(uploadResultArr) {
 
 							if (!uploadResultArr || uploadResultArr.length == 0) {
@@ -436,6 +455,8 @@ input[id="cb1"] {
 						});
 
 					});
+	
+	*/
 </script>
 
 <%@ include file="../common/footer.jsp"%>
