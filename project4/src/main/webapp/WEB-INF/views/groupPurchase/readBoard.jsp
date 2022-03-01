@@ -41,8 +41,8 @@ border: 1px solid black;
 width: 0.1px;
 height: 50px;
 position: absolute;
-top:30px;
-left:180px;
+top:40px;
+left:210px;
 }
 
 #catname{
@@ -53,8 +53,8 @@ top:50px;
 
 #titname{
 position: absolute;
-left:200px;
-top:40px;
+left:230px;
+top:20px;
 }
 
 #nickname{
@@ -259,8 +259,9 @@ height:200px;
 </head>
 
 <body>
-<div id="form1">
 
+<%@ include file="../common/header.jsp"%>
+<div id="form1">
 <input type="hidden" name="fppkey1" value="${fppkey}">
 
 <!-- 제목 -->
@@ -366,7 +367,7 @@ height:200px;
 </div>
 
 <div id="footer">
-
+<%@ include file="../common/footer.jsp"%>
 </div>
 
 

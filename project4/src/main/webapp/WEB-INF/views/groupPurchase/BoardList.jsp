@@ -93,6 +93,9 @@ right:50px;
 </head>
 
 <body>
+
+<%@ include file="../common/header.jsp"%> 
+
 <div id="form1">
 	<div id="title">
 		<h1>식자재 공동구매</h1>
@@ -134,7 +137,7 @@ right:50px;
 </div>
 
 <div id="footer">
-
+<%@ include file="../common/footer.jsp"%>
 </div>
 
 </body>

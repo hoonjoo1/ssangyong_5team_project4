@@ -84,6 +84,13 @@ height:200px;
 left:500px;
 }
 
+#footer{
+position: absolute;;
+top:1800px;
+width:100%;
+height:200px;
+}
+
 </style>
 
 <link rel="stylesheet" href="${path}/a00_com/bootstrap.min.css?after" >
@@ -121,12 +128,19 @@ left:500px;
 					console.log("추가");
 					$("form").append($(".fileCls").eq(-1).clone());
 				});
+				
+				$("#canclebtn").click(function(){
+					if(confirm('글 작성을 취소 하시겠습니까?')){
+						location.href="${path}/boardlist.do"
+					}
+				});
 			});	
 			
 </script>
 </head>
 
 <body>
+<%@ include file="../common/header.jsp"%> 
 <form method="post" enctype="multipart/form-data" action="${path}/insertfpp.do">
 <!-- form DIV -->
 <div id="form1">
@@ -181,8 +195,13 @@ left:500px;
 		<button type="button" id="confirmbtn" class="btn btn-primary" data-toggle="modal" data-target="#mymodal">작성완료</button>
   </div>
 
-
 </form>
+
+</div>
+
+<div id="footer">
+<%@ include file="../common/footer.jsp"%>
+</div>
 
 <!-- modal -->
 <div class="modal" id="mymodal">

@@ -115,12 +115,19 @@ height:200px;
 				$('#submitbtn').click(function(){
 					$('form').submit();
 				})
+				
+				$("#canclebtn").click(function(){
+					if(confirm('글 수정을 취소 하시겠습니까?')){
+						history.go(-1);
+					}
+				});
 			});	
 			
 </script>
 </head>
 
 <body>
+<%@ include file="../common/header.jsp"%> 
 <form method="post" action="${path}/uptboard.do">
 <!-- form DIV -->
 <div id="form1">
@@ -171,7 +178,7 @@ height:200px;
 </form>
 
 <div id="footer">
-
+<%@ include file="../common/footer.jsp"%>
 </div>
 
 <!-- modal -->
