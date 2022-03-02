@@ -140,7 +140,6 @@ height:200px;
 </head>
 
 <body>
-<%@ include file="../common/header.jsp"%> 
 <form method="post" enctype="multipart/form-data" action="${path}/insertfpp.do">
 <!-- form DIV -->
 <div id="form1">
@@ -200,7 +199,6 @@ height:200px;
 </div>
 
 <div id="footer">
-<%@ include file="../common/footer.jsp"%>
 </div>
 
 <!-- modal -->

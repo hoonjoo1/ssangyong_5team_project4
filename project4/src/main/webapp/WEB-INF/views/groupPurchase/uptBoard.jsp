@@ -127,7 +127,6 @@ height:200px;
 </head>
 
 <body>
-<%@ include file="../common/header.jsp"%> 
 <form method="post" action="${path}/uptboard.do">
 <!-- form DIV -->
 <div id="form1">
@@ -178,7 +177,6 @@ height:200px;
 </form>
 
 <div id="footer">
-<%@ include file="../common/footer.jsp"%>
 </div>
 
 <!-- modal -->
