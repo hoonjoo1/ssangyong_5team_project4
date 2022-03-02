@@ -69,7 +69,7 @@ public class UserController {
 		d.addAttribute("list", service.list());
 	}
 
-	@GetMapping("/userinsertForm.do")
+	@RequestMapping("/userinsertForm.do")
 	public String registerForm() {
 		return "user/insertForm";
 	}
@@ -104,10 +104,12 @@ public class UserController {
 	}
 
 	@GetMapping("/userdelete.do")
-	public String delete(@RequestParam("userkey") int userkey) {
+	public String delete(@RequestParam("userkey") int userkey, Model d) {
 		service.delete(userkey);
 		System.out.println("삭제완료");
-		return "redirect:/user/list.do";
+		UserVO users = new UserVO(999);
+		d.addAttribute("users", users);
+		return "redirect:/main.do";
 	}
 
 	// 아이디 중복 검사

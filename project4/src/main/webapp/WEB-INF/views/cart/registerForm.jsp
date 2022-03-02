@@ -5,7 +5,7 @@
 <link rel="icon" href="data:;base64,iVBORw0KGgo=">
 <script type="text/javascript"
 	src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
-
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <%@ include file="../common/header.jsp"%>
 
 <!DOCTYPE html>
@@ -20,8 +20,26 @@
 <title>Ogani | Template</title>
 
 </head>
-
+<script>
+$(document).ready(function(){
+		var vm = new Vue({
+			el:".container",
+			data:{msg:"여러가지 기능 메서드 computed", num01:0, num02:0},
+			methods:{
+				sum:function(){
+					console.log("첫번째수:"+this.num01);
+					console.log("두번째수:"+this.num02);
+					var tot = Number(this.num01) +Number(this.num02);
+					return tot;
+				}
+			}
+		});	
+	});
+</script>
 <body>
+
+
+
 
 	<!-- Breadcrumb Section Begin -->
 	<section class="breadcrumb-section set-bg"

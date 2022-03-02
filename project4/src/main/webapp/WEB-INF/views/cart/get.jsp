@@ -3,8 +3,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <link rel="icon" href="data:;base64,iVBORw0KGgo=">
-<script type="text/javascript"
-	src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
+
+<script src="https://developers.google.com/web/ilt/pwa/working-with-the-fetch-api" type="text/javascript"></script>
 
 <%@ include file="../common/header.jsp"%>
 
@@ -25,7 +25,7 @@
 $(document).ready(function(){
 	$(".site-btn").click(function(e){
 		e.preventDefault();
-		alert("이미 예약 되었습니다.");
+		alert("리스트로 이동합니다.");
 	})
 	
 	$(".btn-danger").click(function(e){
@@ -34,9 +34,6 @@ $(document).ready(function(){
 	$(".btn-warning").click(function(e){
 		confirm("결제 창으로 이동하시겠습니까?")
 	})
-
-	
-	
 })
 </script>
 
@@ -175,9 +172,9 @@ $(document).ready(function(){
                                         <span class="checkmark"></span>
                                     </label>
                                 </div>
-                                <button type="submit" class="site-btn">예약 하기</button>
+                                <button type="submit" class="site-btn" onclick="location.href='/project4/cartlist.do'">리스트로</button>
                                 <button type="button" class="btn btn-danger">예약 취소</button>
-                                <button type="button" class="btn btn-warning" onclick="location.href='/pay/registerForm.do'">결제하기</button>
+                                <button type="button" class="btn btn-warning" onclick="location.href='/project4//payregisterForm.do'">예약하기</button>
                             </div>
                         </div>
                     </div>

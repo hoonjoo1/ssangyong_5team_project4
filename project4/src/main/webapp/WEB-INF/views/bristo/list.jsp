@@ -11,7 +11,8 @@
 	<div class="row">
 		<div class="col-lg-12">
 			<div class="section-title">
-				<a href="/project4/bristoregisterForm.do" class="primary-btn">식당 추가</a>
+				<a href="/project4/bristoregisterForm.do" class="primary-btn">식당
+					추가</a>
 
 				<h2>Bristo(식당들)</h2>
 			</div>
@@ -34,10 +35,8 @@
 				<div class="featured__item">
 					<div class="featured__item__pic set-bg"
 						data-setbg="img/featured/feature-1.jpg"
-						style="background-image: url('C:universe.jpg');"
-					
+						style="background-image: url('/project4/res/logoimage.png');"
 						onclick="location.href='/project4/bristoget.do?bristokey=${list.bristokey}'">
-							<img src="/project4/display?fileName="+fileuploadPath/>
 						<ul class="featured__item__pic__hover">
 							<li><a href="#"><i class="fa fa-heart"></i></a></li>
 							<li><a href="#"><i class="fa fa-retweet"></i></a></li>
@@ -46,7 +45,8 @@
 					</div>
 					<div class="featured__item__text">
 						<h6>
-							<a href="/projec4/bristoget.do?bristokey=${list.bristokey }" style="font-size: 20px; font-weight: bolder;">${list.name }</a>
+							<a href="/projec4/bristoget.do?bristokey=${list.bristokey }"
+								style="font-size: 20px; font-weight: bolder;">${list.name }</a>
 						</h6>
 						<h5></h5>
 					</div>

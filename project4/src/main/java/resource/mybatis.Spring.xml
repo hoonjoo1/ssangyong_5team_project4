@@ -21,6 +21,7 @@
 		<mapper resource="resource/BrMapper.xml" />
 		<mapper resource="resource/UserMapper.xml" />
 		<mapper resource="resource/CartMapper.xml" />
+		<mapper resource="resource/PayMapper.xml" />
 	</mappers>
 
 </configuration>

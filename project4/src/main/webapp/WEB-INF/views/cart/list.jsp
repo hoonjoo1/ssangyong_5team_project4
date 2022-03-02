@@ -32,12 +32,18 @@ input[id="cb1"] {
 input[id="cb1"]:checked+label {
 	background-color: #666666;
 }
-
 </style>
 
 <script>
-$(document)unctionipt>
-	$("#delete").click(function(){
+	$(document).ready(function(){
+
+		var cartkey = $('input:checkbox[id="cb1"]').val();
+
+		$("#delete").click(function() {
+			confirm("정말 삭제하시겠습니까?")
+			location.href="/project4/cartdelete.do?cartkey="+cartkey;
+		 })
+		
 	})
 </script>
 </head>
@@ -77,8 +83,9 @@ $(document)unctionipt>
 					<div class="col-lg-4 col-md-4 col-sm-6">
 						<div class="blog__item">
 							<div class="blog__item__pic">
-								<input type="checkbox" id="cb1" name="cartkey" value="${list.cartkey}"> <label for="cb1"></label>
-								<img src="/project4/resources/logoimage.png" alt=""
+								<input type="checkbox" id="cb1" name="cartkey"
+									value="${list.cartkey}"> <label for="cb1"></label> <img
+									src="/project4/resources/logoimage.png" alt=""
 									onclick="location.href='/project4/cartget.do?cartkey='+${list.cartkey}">
 							</div>
 							<div class="blog__item__text"

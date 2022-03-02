@@ -2,24 +2,24 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="project4.mapper.CartMapper">
+<mapper namespace="project4.mapper.PayMapper">
 
-	<select id="list" resultType="project4.domain.CartVO">
-		select * from cart
+	<select id="list" resultType="project4.domain.PayVO">
+		select * from Pay
 	</select>
 
-	<select id="get" resultType="project4.domain.CartVO"
+	<select id="get" resultType="project4.domain.PayVO"
 		parameterType="int">
 		select *
 		from
-		cart
-		where cartkey=#{cartkey}
+		Pay
+		where paykey=#{paykey}
 	</select>
 
 	<insert id="insert">
-		INSERT INTO cart
+		INSERT INTO Pay
 		values(
-		seq_cart.nextval,
+		seq_pay.nextval,
 		#{cnt},
 		sysdate,
 		#{menu},
@@ -34,9 +34,9 @@
 
 	<delete id="delete" parameterType="int">
 		delete
-		from cart
+		from Pay
 		where
-		cartkey=#{cartkey}
+		paykey=#{paykey}
 	</delete>
 
 </mapper>

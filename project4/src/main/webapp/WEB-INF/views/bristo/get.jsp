@@ -107,15 +107,15 @@
 						class="primary-btn"
 						onclick="location.href='/project4/cartregisterForm.do?bristokey='+${bristo.bristokey}">식당예약</a>
 					<a href="#" class="primary-btn"
-						onclick="location.href='/project4/bristodelete.do?bristokey='+${bristo.bristokey}">삭제</a>
+						onclick="location.href='/project4/bristodelete.do?bristokey='+${bristo.bristokey}">삭제</a><br>
 					<h3>${bristo.name }</h3>
 					<div class="product__details__rating">
 						<i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
 							class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-							class="fa fa-star-half-o"></i> <span>(18 reviews)</span>
+							class="fa fa-star-half-o"></i> <span></span>
 					</div>
-					<div class="product__details__price">jstl price</div>
-					<p>jstl content</p>
+					<div class="product__details__price">${bristo.menu }</div>
+					<p>추천합니다.</p>
 					<div class="product__details__quantity">
 						<div class="quantity">
 							<div class="pro-qty">
@@ -124,7 +124,7 @@
 							</div>
 						</div>
 					</div>
-					<a href="#" class="primary-btn">ADD TO CARD</a> <a href="#"
+					<a href="#" class="primary-btn">추가하기</a> <a href="#"
 						class="heart-icon"><span class="icon_heart_alt"></span></a>
 					<ul>
 						<li><b>지역</b> <span>${bristo.loc }</span></li>
@@ -161,22 +161,16 @@
 						<div class="tab-pane active" id="tabs-1" role="tabpanel">
 							<div class="product__details__tab__desc">
 								<h6>Products Infomation</h6>
-								<p>jstl content</p>
-								<p>jstl content</p>
 							</div>
 						</div>
 						<div class="tab-pane" id="tabs-2" role="tabpanel">
 							<div class="product__details__tab__desc">
 								<h6>Products Infomation</h6>
-								<p>jstl content</p>
-								<p>jstl content</p>
 							</div>
 						</div>
 						<div class="tab-pane" id="tabs-3" role="tabpanel">
 							<div class="product__details__tab__desc">
 								<h6>Products Infomation</h6>
-								<p>jstl content</p>
-								<p>jstl content</p>
 							</div>
 						</div>
 					</div>

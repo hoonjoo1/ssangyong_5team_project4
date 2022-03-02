@@ -6,7 +6,7 @@
 <script type="text/javascript"
 	src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
 
-<%@ include file="../includes/header.jsp"%>
+<%@ include file="../common/header.jsp"%>
 
 <!DOCTYPE html>
 <html lang="zxx">
@@ -18,7 +18,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <title>Ogani | Template</title>
-
+<script>
+$(document).ready(function(){
+	$(".shoping__cart__item__close").click(function(){
+		confirm("정말 삭제하시겠습니까?")
+	})
+})
+</script>
 
 </head>
 
@@ -57,80 +63,30 @@
 								</tr>
 							</thead>
 							<tbody>
-								<tr>
-									<td class="shoping__cart__item"><img
-										src="/resources/logoimage.png" alt="">
-										<h5>Vegetable’s Package</h5></td>
-									<td class="shoping__cart__price">$55.00</td>
-									<td class="shoping__cart__quantity">
-										<div class="quantity">
-											<div class="pro-qty">
-												<span class="dec qtybtn">-</span> <input type="text"
-													value="1"> <span class="inc qtybtn">+</span>
+
+								<c:forEach items="${list }" var="list">
+									<tr>
+										<td class="shoping__cart__item"><img
+											src="/project4/resources/logoimage.png" alt="">
+											<h5>${list.menu }</h5></td>
+										<td class="shoping__cart__price">$55.00</td>
+										<td class="shoping__cart__quantity">
+											<div class="quantity">
+												<div class="pro-qty">
+													<span class="dec qtybtn">-</span> <input type="text"
+														value="1"> <span class="inc qtybtn">+</span>
+												</div>
 											</div>
-										</div>
-									</td>
-									<td class="shoping__cart__total">$110.00</td>
-									<td class="shoping__cart__item__close"><span
-										class="icon_close"></span></td>
-								</tr>
+										</td>
+										<td class="shoping__cart__total">$110.00</td>
+										<td class="shoping__cart__item__close" onclick="location.href='/project4/paydelete.do?paykey='+${list.paykey}"><span
+											class="icon_close"></span></td>
+									</tr>
+								</c:forEach>
 
 
-								<tr>
-									<td class="shoping__cart__item"><img
-										src="/resources/logoimage.png" alt="">
-										<h5>Vegetable’s Package</h5></td>
-									<td class="shoping__cart__price">$55.00</td>
-									<td class="shoping__cart__quantity">
-										<div class="quantity">
-											<div class="pro-qty">
-												<span class="dec qtybtn">-</span> <input type="text"
-													value="1"> <span class="inc qtybtn">+</span>
-											</div>
-										</div>
-									</td>
-									<td class="shoping__cart__total">$110.00</td>
-									<td class="shoping__cart__item__close"><span
-										class="icon_close"></span></td>
-								</tr>
 
 
-								<tr>
-									<td class="shoping__cart__item"><img
-										src="/resources/logoimage.png" alt="">
-										<h5>Vegetable’s Package</h5></td>
-									<td class="shoping__cart__price">$55.00</td>
-									<td class="shoping__cart__quantity">
-										<div class="quantity">
-											<div class="pro-qty">
-												<span class="dec qtybtn">-</span> <input type="text"
-													value="1"> <span class="inc qtybtn">+</span>
-											</div>
-										</div>
-									</td>
-									<td class="shoping__cart__total">$110.00</td>
-									<td class="shoping__cart__item__close"><span
-										class="icon_close"></span></td>
-								</tr>
-
-
-								<tr>
-									<td class="shoping__cart__item"><img
-										src="/resources/logoimage.png" alt="">
-										<h5>Vegetable’s Package</h5></td>
-									<td class="shoping__cart__price">$55.00</td>
-									<td class="shoping__cart__quantity">
-										<div class="quantity">
-											<div class="pro-qty">
-												<span class="dec qtybtn">-</span> <input type="text"
-													value="1"> <span class="inc qtybtn">+</span>
-											</div>
-										</div>
-									</td>
-									<td class="shoping__cart__total">$110.00</td>
-									<td class="shoping__cart__item__close"><span
-										class="icon_close"></span></td>
-								</tr>
 
 
 
@@ -183,4 +139,4 @@
 
 
 
-<%@ include file="../includes/footer.jsp"%>
+<%@ include file="../common/footer.jsp"%>

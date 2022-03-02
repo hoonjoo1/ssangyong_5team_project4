@@ -43,7 +43,8 @@ public class CartContoller {
 	}
 
 	@GetMapping("/cartdelete.do")
-	public String delete() {
+	public String delete(int cartkey) {
+		service.delete(cartkey);
 		return "forward:/cartlist.do";
 	}
 

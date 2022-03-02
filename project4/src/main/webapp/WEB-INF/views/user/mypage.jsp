@@ -29,7 +29,9 @@
 						$("#delete")
 								.click(
 										function() {
-											location.href = "'/project4/userdelete.do?userkey='+${user.userkey}"
+											confirm("정말 회원 탈퇴 하시겠습니까?");
+											location.href = "/project4/userdelete.do?userkey="+${user.userkey}
+											alert("회원탈퇴가 완료되었습니다.")
 										})
 										
 										
@@ -113,7 +115,7 @@
 							<div class="form-group form-button">
 								<input type="submit" name="update" id="update"
 									class="form-submit" value="회원정보 수정" /> <input type="button"
-									name="delete" id="delete" class="form-submit" value="회원탈퇴" />
+									name="delete" id="delete" class="form-submit" value="회원탈퇴""  />
 							</div>
 
 

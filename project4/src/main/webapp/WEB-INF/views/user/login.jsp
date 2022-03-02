@@ -6,7 +6,7 @@
 
 <script type="text/javascript"
 	src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
-<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -65,19 +65,20 @@ $(document).ready(function(){
 				<div class="signin-content">
 					<div class="signin-image">
 						<figure>
-							<img src="/project4/resources/logoimage.png" alt="sing up image" style="width:100%; height: 100%">
+							<img src="/project4/resources/logoimage.png" alt="sing up image"
+								style="width: 100%; height: 100%">
 						</figure>
 						<a href="/userinsertForm.do" class="signup-image-link">회원 가입</a>
 					</div>
 
 					<div class="signin-form">
 						<h2 class="form-title">로그인</h2>
-						<form class="register-form" id="login-form" action="/project4/userlogin.do" method="post">
+						<form class="register-form" id="login-form"
+							action="/project4/userlogin.do" method="post">
 							<div class="form-group">
 								<label for="your_name"><i
 									class="zmdi zmdi-account material-icons-name"></i></label> <input
-									type="text" name="id" id="id"
-									placeholder="아이디" />
+									type="text" name="id" id="id" placeholder="아이디" />
 							</div>
 							<div class="form-group">
 								<label for="your_pass"><i class="zmdi zmdi-lock"></i></label> <input
@@ -92,15 +93,17 @@ $(document).ready(function(){
 							</div>
 							<div class="form-group form-button">
 								<input type="submit" name="signin" id="signin"
-									class="form-submit" value="로그인" />
+									class="form-submit" value="로그인" /> <input type="button"
+									name="signin" id="signin" class="form-submit" value="회원가입하기"
+									onclick="location.href='/project4/userinsertForm.do'" />
 							</div>
 						</form>
-						
-						
-						
-						
-						
-						
+
+
+
+
+
+
 						<div class="social-login">
 							<span class="social-label">간편 로그인</span>
 							<ul class="socials">
