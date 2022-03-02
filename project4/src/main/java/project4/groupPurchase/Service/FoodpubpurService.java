@@ -3,6 +3,7 @@ package project4.groupPurchase.Service;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -65,10 +66,6 @@ public class FoodpubpurService {
 		return b;
 	}
 	
-	public ArrayList<BoardList> getBoardList(){
-		return dao.getBoardList();
-	}
-	
 	public int uptViewcnt(int fppkey) {
 		return dao.uptViewcnt(fppkey);
 	}
@@ -99,6 +96,36 @@ public class FoodpubpurService {
 	
 	public ArrayList<BoardList> searchBdList(String search){
 		return dao.searchBdList(search);
+	}
+	
+	public List<BoardList> getBoardList(BoardList blst){
+		
+		blst.setCount(dao.totCnt(blst));
+		
+		if(blst.getPageSize()==0) {
+			blst.setPageSize(10);
+		}
+		
+		double totPage1 = blst.getCount()/(double)blst.getPageSize();
+		totPage1 = Math.ceil(totPage1); // 올림 처리..
+		int totPage = (int)(totPage1);
+		blst.setPageCount( totPage );
+		
+		if(blst.getCurPage()==0) {
+			blst.setCurPage(1);
+		}
+		
+		blst.setStart((blst.getCurPage()-1)*blst.getPageSize()+1);
+		blst.setEnd(blst.getCurPage()*blst.getPageSize());
+		blst.setBlockSize(5);
+	
+		int curBlockGrpNo = (int)Math.ceil(blst.getCurPage()/(double)blst.getBlockSize());
+		blst.setStartBlock((curBlockGrpNo-1)*blst.getBlockSize()+1);
+		
+		int endBlockGrpNo = curBlockGrpNo*blst.getBlockSize();
+		blst.setEndBlock(endBlockGrpNo>blst.getPageCount()?blst.getPageCount():endBlockGrpNo);
+		
+		return dao.getBoardList(blst);
 	}
 	
 	public void delcomm(int fcommkey) {

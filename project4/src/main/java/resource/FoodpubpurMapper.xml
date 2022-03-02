@@ -5,7 +5,7 @@
 	
 <mapper namespace="project4.groupPurchase.Dao.FoodpubpurDao">
 	<insert id="insertWrite" parameterType="fpp">
-		INSERT INTO Foodpubpur VALUES((SELECT NVL(MAX(foodpubpurkey)+1,1) FROM FOODPUBPUR), 1, (SELECT userkey FROM users WHERE id = #{id}), 
+		INSERT INTO Foodpubpur VALUES(fpp_seq.nextval, 1, (SELECT userkey FROM users WHERE id = #{id}), 
 		#{title}, to_char(sysdate,'YYYY-MM-DD'), #{content},#{loc}, #{meetcnt},#{paytype},0,0)
 	</insert>
 	
@@ -65,17 +65,25 @@
 	WHERE FOODPUBPURKEY = #{foodpubpurkey}
 	</update>
 	
-	<select id="searchBdList" parameterType="boardList" resultType="boardList">
+	<select id="searchBdList" parameterType="string" resultType="boardList">
 	SELECT f.FOODPUBPURKEY fppkey , f.TITLE title , f.LOC loc ,
 		f.WRITEDATE writedate , u.NICKNAME nickname, f.viewcnt
 	FROM FOODPUBPUR f , USERS u 
 	WHERE f.USERKEY = u.USERKEY
-	<if test = "value!=null and value!=''">
-	AND f.loc LIKE '%'||#{value}||'%'
-	OR f.title LIKE '%'||#{value}||'%'
-	OR u.nickname LIKE '%'||#{value}||'%'
-	</if>
+	AND f.loc LIKE '%'||#{sch}||'%'
 	order by fppkey desc
+	</select>
+	
+	<select id="getBoardList" parameterType="boardList" resultType="boardList">
+	SELECT*
+	FROM (
+		SELECT ROW_NUMBER() OVER (ORDER BY f.FOODPUBPURKEY desc ) AS cnt, f.FOODPUBPURKEY fppkey , f.TITLE title , f.LOC loc ,
+		f.WRITEDATE writedate , u.NICKNAME nickname, f.viewcnt
+		FROM FOODPUBPUR f , USERS u 
+		WHERE f.USERKEY = u.USERKEY
+		order by cnt asc )
+	where cnt BETWEEN #{start} AND #{end}
+	order by cnt
 	</select>
 	
 	<insert id="insertFppFileInfo" parameterType="fppfileInfo">
@@ -90,5 +98,14 @@
 	<delete id="delcomm" parameterType="int">
 		DELETE FROM FPPCOMM WHERE fcommentkey = #{fcommkey}
 	</delete>
+	
+	<select id="totCnt" parameterType="boardList" resultType="int">
+		select count(*)
+		from FOODPUBPUR
+		where 1=1
+		<if test = "sch!=null and sch!=''">
+		AND loc LIKE '%'||#{sch}||'%'
+		</if>
+	</select>
 	
 </mapper>

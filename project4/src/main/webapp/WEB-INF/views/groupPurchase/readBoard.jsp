@@ -14,7 +14,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>우리끼니</title>
 
 <style>
 th,td{
@@ -48,13 +48,13 @@ left:210px;
 #catname{
 color:green;
 position: absolute;
-top:50px;
+top:55px;
 }
 
 #titname{
 position: absolute;
 left:230px;
-top:20px;
+top:45px;
 }
 
 #nickname{
@@ -269,7 +269,7 @@ height:200px;
 		<input type="hidden" name="nickname" value="${board.nickname}">
 		<h4 id="catname">${board.boardname}</h4>
 		<div class="updown"></div>
-		<h4 id="titname">${board.title}</h4>
+		<h1 id="titname">${board.title}</h1>
 		<h5 id="nickname">${board.nickname}</h5>
 		<h5 id="date">작성일자 ${board.writedate}</h5>
 		<hr id="titlehr">
@@ -367,7 +367,7 @@ height:200px;
 </div>
 
 <div id="footer">
-<%@ include file="../common/footer.jsp"%>
+
 </div>
 
 

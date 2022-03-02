@@ -49,6 +49,18 @@ position: absolute;
 top:1000px;
 right:50px;
 }
+
+#paging{
+position: absolute;
+top:900px;
+right:500px;
+}
+
+#pagecnt{
+position: absolute;
+top:10px;
+right:20px;
+}
 </style>
 
 <link rel="stylesheet" href="${path}/a00_com/bootstrap.min.css?after" >
@@ -89,12 +101,17 @@ right:50px;
 				location.href="${path}/groupread.do?fppkey="+fppkey;
 			}
 			
+			function goPage(fppkey){
+				$("[name=curPage]").val(fppkey);
+				$("form").submit();
+			}	
+			
 </script>
 </head>
 
 <body>
 
-<%@ include file="../common/header.jsp"%> 
+<%@ include file="../common/header.jsp"%>
 
 <div id="form1">
 	<div id="title">
@@ -121,11 +138,29 @@ right:50px;
 				</c:forEach>
 			</tbody>
 		</table>
+
+		<ul class="pagination  justify-content-end" id="paging">
+	 	 	<li class="page-item"><a class="page-link" 
+	  		href="javascript:goPage(${boardList.startBlock!=1?boardList.startBlock-1:1})">Previous</a></li>
+	  		<c:forEach var="cnt" begin="${boardList.startBlock}" end="${boardList.endBlock}">
+	  			<li class="page-item ${cnt==boardList.curPage?'active':''}"> <!-- 클릭한 현재 페이지 번호 -->
+	  			<a class="page-link" href="javascript:goPage(${cnt})">${cnt}</a></li>
+	 		 </c:forEach>
+	 		 <li class="page-item"><a class="page-link" 
+	  			href="javascript:goPage(${boardList.endBlock!=boardList.pageCount?boardList.endBlock+1:boardList.endBlock})">Next</a></li>
+
+	   </ul>
+	   
+	</div>
+	
+	<div id="pagecnt">
+	   	 <h5>${boardList.count}건</h5>
 	</div>
 	
 	<form>
+		<input type="hidden" name="curPage" value="1"/>
 		<div id="search">
-			검색 <input type="text" name="search">
+			검색 <input type="text" name="sch">
 			<button class="btn btn-primary">검색</button>
 		</div>
 	</form>
@@ -137,7 +172,6 @@ right:50px;
 </div>
 
 <div id="footer">
-<%@ include file="../common/footer.jsp"%>
 </div>
 
 </body>

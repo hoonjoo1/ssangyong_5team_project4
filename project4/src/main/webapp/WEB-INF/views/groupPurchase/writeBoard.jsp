@@ -93,7 +93,7 @@ height:200px;
 
 </style>
 
-<link rel="stylesheet" href="${path}/a00_com/bootstrap.min.css?after" >
+<link rel="stylesheet" href="${path}/a00_com/bootstrap.min.css?after">
 <link rel="stylesheet" href="${path}/a00_com/jquery-ui.css" >
 <script src="${path}/a00_com/jquery.min.js"></script>
 <script src="${path}/a00_com/bootstrap.min.js"></script>
@@ -110,20 +110,11 @@ height:200px;
 				}
 				
 				$('#confirmbtn').click(function(){
-					$('#mymodal').modal({
-						show: false
-					});
-					
+					if(confirm('작성 하시겠습니까?')){
+						$('form').submit();
+					}
 				});
-				
-				$('#closebtn').click(function(){
-					$('#mymodal').modal('hide');
-				});
-				
-				$('#submitbtn').click(function(){
-					$('form').submit();
-				});
-				
+						
 				$("#addFile").click(function(){
 					console.log("추가");
 					$("form").append($(".fileCls").eq(-1).clone());
@@ -140,6 +131,9 @@ height:200px;
 </head>
 
 <body>
+
+<%@ include file="../common/header.jsp"%>
+
 <form method="post" enctype="multipart/form-data" action="${path}/insertfpp.do">
 <!-- form DIV -->
 <div id="form1">
@@ -175,7 +169,7 @@ height:200px;
 	<div id="content">
 		<label class="form-label mt-4">내용</label>
 		<textarea class="form-control" name="content" placeholder="내용을 입력해주세요" id="exampleTextarea" rows="25"></textarea>	
-</div>
+	</div>
 
 <div class="input-group mb-3 fileCls">
 		<div class="input-group-prepend">
@@ -191,36 +185,15 @@ height:200px;
   
   <div id="btn">
 		<button type="button" id="canclebtn" class="btn btn-primary">취소</button>
-		<button type="button" id="confirmbtn" class="btn btn-primary" data-toggle="modal" data-target="#mymodal">작성완료</button>
+		<button type="button" id="confirmbtn" class="btn btn-primary" data-toggle="modal" data-target="#modal">작성완료</button>
   </div>
 
-</form>
 
 </div>
+</form>
 
 <div id="footer">
 </div>
 
-<!-- modal -->
-<div class="modal" id="mymodal">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">작성완료</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true"></span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <p>작성완료 하시겠습니까?</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" id="submitbtn" class="btn btn-primary">확인</button>
-        <button type="button" id="closebtn" class="btn btn-secondary" data-bs-dismiss="modal">취소</button>
-      </div>
-    </div>
-  </div>
-</div>
-  
 </body>
 </html>

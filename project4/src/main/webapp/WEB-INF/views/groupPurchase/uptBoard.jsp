@@ -127,6 +127,9 @@ height:200px;
 </head>
 
 <body>
+
+<%@ include file="../common/header.jsp"%>
+
 <form method="post" action="${path}/uptboard.do">
 <!-- form DIV -->
 <div id="form1">

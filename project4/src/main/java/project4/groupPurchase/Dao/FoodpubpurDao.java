@@ -1,6 +1,7 @@
 package project4.groupPurchase.Dao;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
@@ -18,7 +19,7 @@ public interface FoodpubpurDao {
 	//글 조회
 	public BoardInfo getRead(int fppkey);
 	//게시판 조회
-	public ArrayList<BoardList> getBoardList();
+	public List<BoardList> getBoardList(BoardList blst);
 	//조회수 증가
 	public int uptViewcnt(int fppkey);
 	//댓글 조회
@@ -41,5 +42,7 @@ public interface FoodpubpurDao {
 	 public void insertFppFileInfo(FppFileInfo ins);
 	// 파일 리스트
 	 public ArrayList<String> getFileInfo(int fno);
+	// 총 게시물
+	 public int totCnt(BoardList blst);
 
 }

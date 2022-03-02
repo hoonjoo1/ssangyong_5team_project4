@@ -4,8 +4,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import project4.groupPurchase.Service.FoodpubpurService;
+import project4.vo.BoardList;
 import project4.vo.Foodpubpur;
 import project4.vo.InsFppcomm;
 
@@ -14,10 +16,16 @@ public class FoodpubpurCtrl {
 	
 	@Autowired
 	FoodpubpurService service;
-	
+		
 	@RequestMapping("/boardlist.do")
-	public String groupboardlist(String search, Model d) {
-		d.addAttribute("boardlist",service.searchBdList(search));
+	public String groupboardlist(BoardList blst, @RequestParam(name="sch",required=false) String search, Model d) {
+		System.out.println("search:"+search);
+		if(search != null && search != "") {
+			d.addAttribute("boardlist",service.searchBdList(search));
+		}else {
+			d.addAttribute("boardlist",service.getBoardList(blst));
+		}
+		
 		return "groupPurchase//BoardList";
 	}
 		
