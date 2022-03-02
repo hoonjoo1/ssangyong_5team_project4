@@ -71,6 +71,7 @@ request.setCharacterEncoding("utf-8");
 	type="text/css">
 <link rel="stylesheet" href="/project4/res/css/style.css"
 	type="text/css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"> 
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <style>
 
@@ -419,13 +420,23 @@ request.setCharacterEncoding("utf-8");
 
 
 
-								<a href="">아이디/비밀번호 찾기</a> <a href="/project4/userinsertForm.do">회원가입</a> <a
-									href="/project4/usermypage.do?userkey=${users.userkey }">마이페이지</a> <a href="">고객센터</a>
-
+                                 <a href="#"><img src="https://img.icons8.com/ios-filled/14/000000/lock.png"/>    로그인</a>
+                                <a href="/project4/userinsertForm.do"><img src="https://img.icons8.com/metro/14/000000/add-user-male.png"/>    회원가입</a>
+                                <a href="/project4/usermypage.do?userkey=${users.userkey }"><i class="fa fa-user"></i>    마이페이지</a>
+                                <a href="#"><img src="https://img.icons8.com/external-sbts2018-solid-sbts2018/14/000000/external-headphone-social-media-sbts2018-solid-sbts2018.png"/>    고객센터</a>
 								<c:if test="${not empty users.id}">
 									<a href="/project4/logout.do">로그아웃</a>
 								</c:if>
 							</div>
+							<div class="header__top__right__language">
+                                <img src="https://img.icons8.com/color/30/000000/south-korea.png"/>
+                                <div>Korean</div>
+                                <span class="arrow_carrot-down"></span>
+                                <ul>
+                                    <li><a href="#">Korean</a></li>
+                                    <li><a href="#">English</a></li>
+                                </ul>
+                      </div>
 						</div>
 					</div>
 				</div>
@@ -446,14 +457,13 @@ request.setCharacterEncoding("utf-8");
 								<ul class="header__menu__dropdown">
 									<li><a href="/project4/bristolist.do">추천 맛집</a></li>
 									<li><a href="/project4/brlist.do">식당 리뷰</a></li>
-									<li><a href="/project4/urlist.do">유저 리뷰</a></li>
 								</ul></li>
-							<li><a href="./shop-grid.html">같이 먹어요</a>
+							<li><a href="#">같이 먹어요</a>
 								<ul class="header__menu__dropdown">
-									<li><a href="./shop-details.html">지역별</a></li>
+									<li><a href="#">지역별</a></li>
 								</ul></li>
-							<li><a href="./blog.html">식재료 공동구매</a></li>
-							<li><a href="./contact.html">배달 같이 받아요</a></li>
+							<li><a href="#">식재료 공동구매</a></li>
+							<li><a href="/project4/urlist.do">유저리뷰</a></li>
 						</ul>
 					</nav>
 				</div>
