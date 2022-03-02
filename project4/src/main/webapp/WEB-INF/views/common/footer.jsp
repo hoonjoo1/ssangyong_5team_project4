@@ -344,9 +344,9 @@ request.setCharacterEncoding("utf-8");
                     <div class="footer__widget">
                         <h6>Useful Links</h6>
                         <ul>
-                            <li><a href="#">About Us</a></li>
-                            <li><a href="#">About Our Shop</a></li>
-                            <li><a href="#">Reservation infomation</a></li>
+                            <li><a href="/project4/main.do">About Us</a></li>
+                            <li><a href="/project4/bristolist.do">About Our Shop</a></li>
+                            <li><a href="/project4/bristolist.do">Reservation infomation</a></li>
                             <li><a href="#">Delivery infomation</a></li>
                             <li><a href="#">Privacy Policy</a></li>
                             <li><a href="#">Our Sitemap</a></li>
@@ -368,9 +368,9 @@ request.setCharacterEncoding("utf-8");
                             <button type="submit" class="site-btn">Subscribe</button>
                         </form>
                         <div class="footer__widget__social">
-                            <a href="#"><img src="https://img.icons8.com/material-outlined/16/000000/facebook-f.png"/></a>
-                            <a href="#"><img src="https://img.icons8.com/material-outlined/16/000000/instagram-new--v1.png"/></a>
-                            <a href="#"><img src="https://img.icons8.com/ios-glyphs/16/000000/twitter--v1.png"/></a>
+                            <a href="https://www.facebook.com/"><img src="https://img.icons8.com/material-outlined/16/000000/facebook-f.png"/></a>
+                            <a href="https://www.instagram.com/?hl=ko"><img src="https://img.icons8.com/material-outlined/16/000000/instagram-new--v1.png"/></a>
+                            <a href="https://twitter.com/i/flow/login"><img src="https://img.icons8.com/ios-glyphs/16/000000/twitter--v1.png"/></a>
                         </div>
                     </div>
                 </div>
