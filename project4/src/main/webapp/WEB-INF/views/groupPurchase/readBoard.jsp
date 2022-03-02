@@ -269,7 +269,7 @@ height:200px;
 		<input type="hidden" name="nickname" value="${board.nickname}">
 		<h4 id="catname">${board.boardname}</h4>
 		<div class="updown"></div>
-		<h1 id="titname">${board.title}</h1>
+		<h4 id="titname">${board.title}</h4>
 		<h5 id="nickname">${board.nickname}</h5>
 		<h5 id="date">작성일자 ${board.writedate}</h5>
 		<hr id="titlehr">
