@@ -77,7 +77,11 @@ right:50px;
 				});
 				
 				$('#writebtn').click(function(){
-					location.href="${path}/groupwrite.do";
+					if(id==""){
+						alert("로그인 해주세요!");
+					}else{
+						location.href="${path}/groupwrite.do";
+					}
 				});
 			});
 			
