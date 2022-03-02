@@ -7,7 +7,6 @@
 <script type="text/javascript"
 	src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
-<%@ include file="../common/header.jsp"%>
 
 
 <style>
@@ -78,7 +77,7 @@ input[id="cb1"] {
 <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 <link rel="icon" href="/favicon.ico" type="image/x-icon">
 
-
+<%@ include file="../common/header.jsp"%>
 <div class="checkout__form" style="width: 50%; margin: 0 auto;">
 <form method="post" enctype="multipart/form-data" action="/project4/bristoinsert.do">
 		<h4>식당 등록</h4>
@@ -196,7 +195,7 @@ input[id="cb1"] {
 					<!-- /.panel-heading -->
 					<div class="panel-body">
 						<div class="form-group uploadDiv">
-							<input type="file" name="report" multiple>
+							<input type="file" name="uploadFile" multiple>
 						</div>
 
 						<div class='uploadResult'>
@@ -346,7 +345,7 @@ input[id="cb1"] {
 											
 											
 											$.ajax({
-												url : '/project4/uploadAjaxAction',
+												url : '/project4/q',
 												processData : false,
 												contentType : false,
 												data : formData,
@@ -455,8 +454,6 @@ input[id="cb1"] {
 						});
 
 					});
-	
 	*/
 </script>
-
 <%@ include file="../common/footer.jsp"%>

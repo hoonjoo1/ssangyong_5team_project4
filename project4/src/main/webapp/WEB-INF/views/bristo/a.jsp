@@ -16,6 +16,16 @@
 <link rel="stylesheet" href="${path}/a00_com/bootstrap.min.css">
 <link rel="stylesheet" href="${path}/a00_com/jquery-ui.css">
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+<script>
+$(document).ready(function(){
+	$("#ggg").click(function(){
+		alert("ggg")
+	})
+	
+})
+</script>
+
 </head>
 
 <body>
@@ -26,6 +36,7 @@
 		$(document).ready(function() {
 
 			$("#uploadBtn").on("click", function(e) {
+				alert("gogogo")
 				var formData = new FormData();
 				var inputFile = $("input[name='uploadFile']");
 				var files = inputFile[0].files;
@@ -50,7 +61,7 @@
 	</div>
 
 	<div>
-		<input type="file" name="uploadFile" multiple>
+		<input type="file" name="uploadFile" multiple id="ggg">
 	</div>
 	<button id="uploadBtn">파일업로드</button>
 

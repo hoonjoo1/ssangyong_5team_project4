@@ -43,6 +43,11 @@ public class BristoUploadController {
 		log.info("upload ajax");
 		System.out.println("fasdfas");
 	}
+	@PostMapping("/q")
+	public void uploadAjax3() {
+		log.info("upload ajax");
+		System.out.println("fasdfas");
+	}
 
 	@GetMapping("/uploadAjax")
 	public void uploadAjax() {
