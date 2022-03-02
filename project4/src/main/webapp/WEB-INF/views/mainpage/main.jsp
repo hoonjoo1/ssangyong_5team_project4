@@ -21,14 +21,14 @@
 <link rel="stylesheet" type="text/css"
 	href="#"><!-- css 파일 경로  -->
  <!-- Css Styles -->
-    <link rel="stylesheet" href="/proj1/Resources/css/bootstrap.min.css" type="text/css">
-    <link rel="stylesheet" href="/proj1/Resources/css/font-awesome.min.css" type="text/css">
-    <link rel="stylesheet" href="/proj1/Resources/css/elegant-icons.css" type="text/css">
-    <link rel="stylesheet" href="/proj1/Resources/css/nice-select.css" type="text/css">
-    <link rel="stylesheet" href="/proj1/Resources/css/jquery-ui.min.css" type="text/css">
-    <link rel="stylesheet" href="/proj1/Resources/css/owl.carousel.min.css" type="text/css">
-    <link rel="stylesheet" href="/proj1/Resources/css/slicknav.min.css" type="text/css">
-    <link rel="stylesheet" href="/proj1/Resources/css/style.css" type="text/css">
+    <link rel="stylesheet" href="/project4/res/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="/project4/res/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="/project4/res/css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="/project4/res/css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="/project4/res/css/jquery-ui.min.css" type="text/css">
+    <link rel="stylesheet" href="/project4/res/css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="/project4/res/css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="/project4/res/css/style.css" type="text/css">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     
 </head>
@@ -49,7 +49,7 @@
 
    <!--  header 적용 -->
    
-   <jsp:include page="/views/common/hmheader.jsp">
+   <jsp:include page="../common/header.jsp">
 		<jsp:param name="name" value="header" />
 	</jsp:include>
 	
@@ -65,14 +65,13 @@
                             <span>전체 페이지</span>
                         </div>
                         <ul class="dropdwon-menu">
-                            <li><a href="#">식당예약</a></li>
-                            <li><a href="#">추천 맛집</a></li>
-                            <li><a href="#">식당 리뷰</a></li>
-                            <li><a href="#">유저 리뷰</a></li>
+                            <li><a href="/project4/bristolist.do">식당예약</a></li>
+                            <li><a href="/project4/bristolist.do">추천 맛집</a></li>
+                            <li><a href="/project4/brlist.do">식당 리뷰</a></li>
+                            <li><a href="/project4/urlist.do">유저 리뷰</a></li>
                             <li><a href="#">같이 먹어요</a></li>
                             <li><a href="#">지역별-같이 먹어요</a></li>
                             <li><a href="#">식재료 공동구매</a></li>
-                            <li><a href="#">배달 같이 받아요</a></li>
                         </ul>
                     </div>
                 </div>
@@ -117,7 +116,8 @@
                             <span>같이 식사하실래요?</span>
                             <h2>근처에 있다면 <br />같이 먹어요!</h2>
                             <p>Would like to join? </p>
-                            <a href="#" class="primary-btn">Reservation Now</a>
+                            <a href="/project4/bristolist.do" class="primary-btn">Reservation Now</a>
+                            <!-- reservation now 버튼 누르면 식당예약으로 href연결  -->
                         </div>
                     </div>
                 </div>
@@ -133,7 +133,7 @@
                 <div class="categories__slider owl-carousel">
                     <div class="col-lg-3">
                         <div class="categories__item set-bg" data-setbg="../img/cat-1.png">
-                            <h5><a href="#">식당 예약</a></h5>
+                            <h5><a href="/project4/bristolist.do">식당 예약</a></h5>
                         </div>
                     </div>
                     <div class="col-lg-3">
@@ -148,7 +148,7 @@
                     </div>
                     <div class="col-lg-3">
                         <div class="categories__item set-bg" data-setbg="../img/cat-4.png">
-                            <h5><a href="#">배달 같이 받아요</a></h5>
+                            <h5><a href="/project4/urlist.do">유저 리뷰</a></h5>
                         </div>
                     </div>
                 </div>
@@ -178,7 +178,7 @@
                                 <li><i class="fa fa-calendar-o"></i> February 5,2022</li>
                                 <li><i class="fa fa-comment-o"></i> 30</li>
                             </ul>
-                            <h5><a href="#">최근 등록한 식당</a></h5>
+                            <h5><a href="/project4/brlist.do">최근 등록한 식당</a></h5>
                             <p>우리끼니에 최근 등록된 식당정보를 확인해보세요! </p>
                         </div>
                     </div>
@@ -209,9 +209,9 @@
                                 <li><i class="fa fa-calendar-o"></i> February 16,2022</li>
                                 <li><i class="fa fa-comment-o"></i> 5</li>
                             </ul>
-                            <h5><a href="#">최근 업데이트 된 배달게시판</a></h5>
-                            <p>우리끼니에 최근 업데이트 된 "배달같이받아요"<br>
-                            정보를 확인해보세요! </p>
+                            <h5><a href="/project4/urlist.do">유저 리뷰</a></h5>
+                            <p>최근 같이 식사한 유저에 대한<br>
+                            리뷰를 남겨보세요! </p>
                         </div>
                     </div>
                 </div>
@@ -222,19 +222,19 @@
 
 
      <!-- 푸터 추가 -->
-     <jsp:include page="/views/common/footer.jsp">
+     <jsp:include page="../common/footer.jsp">
 		<jsp:param name="name" value="footer" />
 	</jsp:include>
 
     <!-- Js Plugins   -->
-    <script src="/proj1/Resources/js/jquery-3.3.1.min.js"></script>
-    <script src="/proj1/Resources/js/bootstrap.min.js"></script>
-    <script src="/proj1/Resources/js/jquery.nice-select.min.js"></script>
-    <script src="/proj1/Resources/js/jquery-ui.min.js"></script>
-    <script src="/proj1/Resources/js/jquery.slicknav.js"></script>
-    <script src="/proj1/Resources/js/mixitup.min.js"></script>
-    <script src="/proj1/Resources/js/owl.carousel.min.js"></script>
-    <script src="/proj1/Resources/js/main.js"></script>
+    <script src="/project4/res/js/jquery-3.3.1.min.js"></script>
+    <script src="/project4/res/js/bootstrap.min.js"></script>
+    <script src="/project4/res/js/jquery.nice-select.min.js"></script>
+    <script src="/project4/res/js/jquery-ui.min.js"></script>
+    <script src="/project4/res/js/jquery.slicknav.js"></script>
+    <script src="/project4/res/js/mixitup.min.js"></script>
+    <script src="/project4/res/js/owl.carousel.min.js"></script>
+    <script src="/project4/res/js/main.js"></script>
 
 
 
