@@ -69,9 +69,9 @@
                             <li><a href="/project4/bristolist.do">추천 맛집</a></li>
                             <li><a href="/project4/brlist.do">식당 리뷰</a></li>
                             <li><a href="/project4/urlist.do">유저 리뷰</a></li>
-                            <li><a href="#">같이 먹어요</a></li>
+                            <li><a href="/project4/et.do">같이 먹어요</a></li>
                             <li><a href="#">지역별-같이 먹어요</a></li>
-                            <li><a href="#">식재료 공동구매</a></li>
+                            <li><a href="/project4/boardlist.do">식재료 공동구매</a></li>
                         </ul>
                     </div>
                 </div>
@@ -111,7 +111,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="hero__item set-bg"><img src="../common/heroimg.jpg" style="width: 600px; height: 400px;">
+                    <div class="hero__item set-bg"><img src="/project4/res/heroimg.jpg" style="width: 600px; height: 400px;">
                         <div class="hero__text">
                             <span>같이 식사하실래요?</span>
                             <h2>근처에 있다면 <br />같이 먹어요!</h2>
@@ -132,22 +132,22 @@
             <div class="row">
                 <div class="categories__slider owl-carousel">
                     <div class="col-lg-3">
-                        <div class="categories__item set-bg" data-setbg="../img/cat-1.png">
+                        <div class="categories__item set-bg" data-setbg="/project4/res/cat-1.png">
                             <h5><a href="/project4/bristolist.do">식당 예약</a></h5>
                         </div>
                     </div>
                     <div class="col-lg-3">
-                        <div class="categories__item set-bg" data-setbg="../img/cat-2.png">
-                            <h5><a href="#">같이 먹어요</a></h5>
+                        <div class="categories__item set-bg" data-setbg="/project4/res/cat-2.png">
+                            <h5><a href="/project4/et.do">같이 먹어요</a></h5>
                         </div>
                     </div>
                     <div class="col-lg-3">
-                        <div class="categories__item set-bg" data-setbg="../img/cat-3.png">
-                            <h5><a href="#">식재료 공동구매</a></h5>
+                        <div class="categories__item set-bg" data-setbg="/project4/res/cat-3.png">
+                            <h5><a href="/project4/boardlist.do">식재료 공동구매</a></h5>
                         </div>
                     </div>
                     <div class="col-lg-3">
-                        <div class="categories__item set-bg" data-setbg="../img/cat-4.png">
+                        <div class="categories__item set-bg" data-setbg="/project4/res/cat-4.png">
                             <h5><a href="/project4/urlist.do">유저 리뷰</a></h5>
                         </div>
                     </div>
@@ -186,14 +186,14 @@
                 <div class="col-lg-4 col-md-4 col-sm-6">
                     <div class="blog__item">
                         <div class="blog__item__pic">
-                            <img src="../img/blog/purchase.jpg">
+                            <img src="/project4/res/purchase.jpg">
                         </div>
                         <div class="blog__item__text">
                             <ul>
                                 <li><i class="fa fa-calendar-o"></i> February 10,2022</li>
                                 <li><i class="fa fa-comment-o"></i> 10</li>
                             </ul>
-                            <h5><a href="#">최근 업데이트 공동구매</a></h5>
+                            <h5><a href="/project4/boardlist.do">최근 업데이트 공동구매</a></h5>
                             <p>우리끼니에 최근 업데이트 된 공동구매정보를<br>
                              확인해보세요! </p>
                         </div>
@@ -202,7 +202,7 @@
                 <div class="col-lg-4 col-md-4 col-sm-6">
                     <div class="blog__item">
                         <div class="blog__item__pic">
-                            <img src="../img/blog/deliever.jpg">
+                            <img src="/project4/res/user.jpg">
                         </div>
                         <div class="blog__item__text">
                             <ul>
