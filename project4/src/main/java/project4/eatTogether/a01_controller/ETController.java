@@ -27,7 +27,7 @@ public class ETController {
 		d.addAttribute("et",service.getET(eattokey));
 		return "eatTogether_detail";
 	}
-	
+	       
 	// http://localhost:8080/project4/et.do?method=insertFrm
 	@RequestMapping(params="method=insertFrm")
 	public String insETFrm() {
