@@ -82,24 +82,6 @@
 	    <!-- Header Section End -->
 	
 	    <!-- Breadcrumb Section Begin -->
-	    <section class="breadcrumb-section set-bg" data-setbg="res/img/breadcrumb.jpg">
-	        <div class="container">
-	            <div class="row">
-	                <div class="col-lg-12 text-center">
-	                    <div class="eattogether__text">
-	                        <h2>같이 먹어요</h2>
-	                        <div class="eattogether__option">
-	                            <a href="./index.html">Home</a>
-	                            <span>EatTogether</span>
-	                        </div>
-	                    </div>
-	                </div>
-	            </div>
-	        </div>
-	    </section>
-	    <!-- Breadcrumb Section End -->
-	    
-	    <!-- Checkout Section Begin -->
 	    <section class="checkout spad">
 	        <div class="container">
 	            <div class="eattogether__form">
@@ -122,6 +104,7 @@
 	                            <thead>
 	                                <tr>
 	                                    <th>제목</th>
+	                                    <th>모임지역</th>
 	                                    <th>모임연령</th>
 	                                    <th>모임성별</th>
 	                                    <th>지불방식</th>
@@ -134,6 +117,9 @@
 		                                <tr ondblclick="detail(${et.eattokey})">
 		                                    <td>
 		                                        ${et.title}(0/${et.meetcnt})
+		                                    </td>
+		                                     <td>
+		                                        ${et.loc}
 		                                    </td>
 		                                    <td>
 		                                        ${et.meetage}
@@ -158,7 +144,6 @@
 	                </form>
 	                <input type="button" class="site-btn" id="writeBtn" value="게시글 작성"/>
 	            </div>
-			    
 	        </div>
 	    </section>
 	    <!-- Checkout Section End -->

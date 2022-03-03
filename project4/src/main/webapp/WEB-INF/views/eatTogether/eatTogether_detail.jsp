@@ -29,6 +29,36 @@
 	    <link rel="stylesheet" href="res/css/style.css" type="text/css">
 	    <script src="http://code.jquery.com/jquery-latest.js"></script>
 	    <script>
+		    $(document).ready(function(){
+			    var msg = "${msg}";
+				if(msg!=""){
+					if(msg=="수정되었습니다."){
+						if(confirm(msg+"\n게시판으로 이동하시겠습니까?")){
+							location.href="${path}/et.do?method=list";
+						}	
+					}
+					if(msg=="삭제되었습니다."){
+						alert(msg+"\n게시판으로 이동됩니다.")
+						location.href="${path}/et.do?method=list";
+					}
+				}
+				
+				$("#goETList").click(function(){
+					location.href="${path}/et.do?method=list";
+				});
+				
+				$("#delBtn").click(function(){
+					if(confirm("삭제하시겠습니까?")){
+						location.href="${path}/et.do?method=delete&eattokey="+${et.eattokey};
+					}
+				});
+				
+				$("#uptBtn").click(function(){
+					if(confirm("수정하시겠습니까?")){
+						location.href="${path}/et.do?method=updateFrm&eattokey="+${et.eattokey};
+					}
+				});
+		    });
 	    
 	    </script>
 	</head>
@@ -77,10 +107,10 @@
 	        <div class="container">
 	            <div class="row">
 	                <div class="col-lg-12 text-center">
-	                    <div class="eattogether__text">
+	                    <div class="eattogether__text" id="goETList">
 	                        <h2>같이 먹어요</h2>
 	                        <div class="eattogether__option">
-	                            <a href="./index.html">Home</a>
+	                            <a>Home</a>
 	                            <span>EatTogether</span>
 	                        </div>
 	                    </div>
@@ -96,11 +126,13 @@
 	            <div class="eattogether__form">
 	                <h4>
 		                ${et.title}
+		                <hr>
 		                <p>모임시간 : <fmt:formatDate value="${et.meetdate}"/></p>
+		                <p>모임지역 : ${et.loc}</p>
 		                <p>${et.meetage} / ${et.meetgender} / ${et.paytype}</p>
 	                </h4>
 	                
-	                <form action="#">
+	                <form action="${path}/et.do?method=updateFrm&eattokey="+${et.eattokey}>
 	                    <div class="row">
 	                        <div class="col-lg-12 col-md-8">
 	                            <div class="row">
@@ -149,14 +181,14 @@
 	                                        </div>
 	                                    </div>
 	                                </div>
-	                            </div>
 	                            -->
-	                            <button type="button" class="site-btn">수정</button>
-	                            <button type="button" class="site-btn">삭제</button>
+	                            </div>
                         	</div>
                     	</div>
 	                </form>
 	            </div>
+	            <input type="button" value="수정" class="site-btn" id="uptBtn"/>
+	            <input type="button" value="삭제" class="site-btn" id="delBtn"/>
 	        </div>
 	    </section>
 	    <!-- Checkout Section End -->
