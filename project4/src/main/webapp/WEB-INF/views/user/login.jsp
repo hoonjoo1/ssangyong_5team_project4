@@ -105,15 +105,7 @@ $(document).ready(function(){
 
 
 						<div class="social-login">
-							<span class="social-label">간편 로그인</span>
-							<ul class="socials">
-								<li><a href="#"><i
-										class="display-flex-center zmdi zmdi-facebook"></i></a></li>
-								<li><a href="#"><i
-										class="display-flex-center zmdi zmdi-twitter"></i></a></li>
-								<li><a href="#"><i
-										class="display-flex-center zmdi zmdi-google"></i></a></li>
-							</ul>
+							<span class="social-label" onclick="location.href='/project4/main.do'">메인으로</span>
 						</div>
 					</div>
 				</div>

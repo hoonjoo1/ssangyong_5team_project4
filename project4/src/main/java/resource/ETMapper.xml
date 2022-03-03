@@ -6,37 +6,39 @@
 	<select id="ETList" resultType="et" parameterType="et">
 		SELECT *
 		FROM Eattogether
-		WHERE 1=1 
-		<if test="title!=null and title!=''"> 
-		AND title like '%'||#{title}||'%'
+		WHERE 1=1
+		<if test="title!=null and title!=''">
+			AND title like '%'||#{title}||'%'
 		</if>
 	</select>
-	
+
 	<select id="getET" parameterType="int" resultType="et">
-		SELECT * 
-		FROM Eattogether 
+		SELECT *
+		FROM Eattogether
 		WHERE eattokey=#{eattokey}
 	</select>
-	
+
 	<insert id="insET" parameterType="et">
-		INSERT INTO Eattogether values(et_seq.nextval,66,11, #{title}, sysdate, #{content},#{loc},#{meetcnt},(#{meetdate},'YYYY-MM-DD'),#{meetage},#{meetgender},#{paytype})
- 	</insert>
- 	
-	<update id ="uptET" parameterType="et">
+		INSERT INTO Eattogether
+		values(et_seq.nextval,66,1, #{title}, sysdate,
+		#{content},#{loc},#{meetcnt},sysdate,#{meetage},#{meetgender},#{paytype})
+	</insert>
+
+	<update id="uptET" parameterType="et">
 		UPDATE Eattogether
-		   SET title = #{title},
-			   content = #{content},
-			   loc = #{loc},
-			   meetcnt = #{meetcnt},
-			   meetdate = to_date(#{meetdateS},'YYYY-MM-DD'),
-			   meetage = #{meetage},
-			   meetgender = #{meetgender},
-			   paytype = #{paytype}
-		 WHERE eattokey = #{eattokey}	
+		SET title = #{title},
+		content = #{content},
+		loc = #{loc},
+		meetcnt = #{meetcnt},
+		meetdate = to_date(#{meetdateS},'YYYY-MM-DD'),
+		meetage = #{meetage},
+		meetgender = #{meetgender},
+		paytype = #{paytype}
+		WHERE eattokey = #{eattokey}
 	</update>
-	
+
 	<delete id="delET" parameterType="int">
-		DELETE FROM Eattogether 
+		DELETE FROM Eattogether
 		WHERE eattokey=#{eattokey}
 	</delete>
 </mapper>

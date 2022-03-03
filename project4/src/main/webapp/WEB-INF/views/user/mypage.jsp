@@ -93,11 +93,6 @@
 									value="${user.phonenum }" />
 							</div>
 
-							<div class="form-group">
-								<label for="name"><i
-									class="zmdi zmdi-account material-icons-name"></i></label> <input
-									type="date" id="birthday" placeholder="생일" />
-							</div>
 
 							<div class="form-group">
 								<label for="name"><i
@@ -116,6 +111,8 @@
 								<input type="submit" name="update" id="update"
 									class="form-submit" value="회원정보 수정" /> <input type="button"
 									name="delete" id="delete" class="form-submit" value="회원탈퇴""  />
+									<input type="button"
+									name="delete" id="delete" class="form-submit" value="메인으로" onclick="location.href='/project4/main.do'"  />
 							</div>
 
 

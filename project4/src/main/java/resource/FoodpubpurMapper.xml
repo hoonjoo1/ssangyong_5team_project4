@@ -5,9 +5,12 @@
 	
 <mapper namespace="project4.groupPurchase.Dao.FoodpubpurDao">
 	<insert id="insertWrite" parameterType="fpp">
-		INSERT INTO Foodpubpur VALUES(fpp_seq.nextval, 1, (SELECT userkey FROM users WHERE id = #{id}), 
+		INSERT INTO Foodpubpur VALUES(fpp_seq.nextval, 4, (SELECT userkey FROM users WHERE id = #{id}), 
 		#{title}, to_char(sysdate,'YYYY-MM-DD'), #{content},#{loc}, #{meetcnt},#{paytype},0,0)
 	</insert>
+	
+	
+	
 	
 	<select id="getRead" parameterType="int" resultType="board">
 		SELECT u.NICKNAME nickname, f.TITLE title, f.WRITEDATE writedate,

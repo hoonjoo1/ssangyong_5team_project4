@@ -59,7 +59,7 @@ input[id="cb1"]:checked+label {
 			<div class="row">
 				<div class="col-lg-12">
 					<div class="section-title related-blog-title">
-						<h2>나의 장바구니 내역</h2>
+						<h2>나의 예약 내역</h2>
 					</div>
 
 

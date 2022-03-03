@@ -181,7 +181,7 @@ $(document).ready(function(){
 										id="paypal"> <span class="checkmark"></span>
 									</label>
 								</div>
-								<button type="submit" class="site-btn">예약 하기</button>
+								<button type="submit" class="site-btn">결제 하기</button>
 							</div>
 						</div>
 					</div>

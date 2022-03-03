@@ -13,7 +13,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class HomeController {
 
 	@RequestMapping({ "/", "/main.do" })
-	public void main() {
+	public String main() {
+		return "/mainpage/main";
 	}
 
 	@RequestMapping(value = "/favicon.ico", method = RequestMethod.GET)

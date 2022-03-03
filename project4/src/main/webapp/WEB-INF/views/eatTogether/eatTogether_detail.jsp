@@ -8,9 +8,7 @@
 <html>
 
 	<head>
-	    <jsp:include page="../common/header.jsp">
-	      <jsp:param name="name" value="header" />
-	   </jsp:include> 
+	   <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 	    <script>
 		    $(document).ready(function(){
 			    var msg = "${msg}";
@@ -47,43 +45,10 @@
 	</head>
 	
 	<body>
-	    <!-- Page Preloder -->
-	    <div id="preloder">
-	        <div class="loader"></div>
-	    </div>
+	 <jsp:include page="../common/header.jsp">
+	      <jsp:param name="name" value="header" />
+	   </jsp:include> 
 	
-	
-	    <!-- Header Section Begin -->
-	    <header class="header">
-	        <div class="container">
-	            <div class="row">
-	                <div class="col-lg-3">
-	                    <div class="header__logo">
-	                        <a href="./index.html"><img src="res/img/logo.png" alt=""></a>
-	                    </div>
-	                </div>
-	                <div class="col-lg-6">
-	                    <nav class="header__menu">
-	                        <ul>
-	                            <li><a href="./index.html">Home</a></li>
-	                            <li class="active"><a href="./shop-grid.html">Shop</a></li>
-	                            <li><a href="#">Pages</a>
-	                                <ul class="header__menu__dropdown">
-	                                    <li><a href="./shop-details.html">Shop Details</a></li>
-	                                    <li><a href="./shoping-cart.html">Shoping Cart</a></li>
-	                                    <li><a href="./checkout.html">Check Out</a></li>
-	                                    <li><a href="./blog-details.html">Blog Details</a></li>
-	                                </ul>
-	                            </li>
-	                            <li><a href="./blog.html">Blog</a></li>
-	                            <li><a href="./contact.html">Contact</a></li>
-	                        </ul>
-	                    </nav>
-	                </div>
-	            </div>
-	        </div>
-	    </header>
-	    <!-- Header Section End -->
 	
 	    <!-- Breadcrumb Section Begin -->
 	    <section class="breadcrumb-section set-bg" data-setbg="project4/img/breadcrumb.jpg">
@@ -177,9 +142,5 @@
 	    <!-- Checkout Section End -->
 	
 	
-	    <!-- Js Plugins -->
-	    <jsp:include page="../common/footer.jsp">
-	      <jsp:param name="name" value="footer" />
-	   </jsp:include>
 	</body>
 </html>

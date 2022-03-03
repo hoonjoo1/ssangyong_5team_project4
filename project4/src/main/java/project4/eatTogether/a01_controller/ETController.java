@@ -57,6 +57,6 @@ public class ETController {
 	public String delET(int eattokey, Model d) {
 		service.delET(eattokey);
 		d.addAttribute("msg","삭제되었습니다.");
-		return "\\eatTogether\\eatTogether_detail";
+		return "forward:/et.do?method=list";
 	}
 }
