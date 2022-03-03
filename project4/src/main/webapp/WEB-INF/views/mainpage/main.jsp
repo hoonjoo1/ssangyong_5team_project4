@@ -69,7 +69,7 @@
                             <li><a href="/project4/bristolist.do">추천 맛집</a></li>
                             <li><a href="/project4/brlist.do">식당 리뷰</a></li>
                             <li><a href="/project4/urlist.do">유저 리뷰</a></li>
-                            <li><a href="/project4/et.do">같이 먹어요</a></li>
+                            <li><a href="/project4/et.do?method=list">같이 먹어요</a></li>
                             <li><a href="#">지역별-같이 먹어요</a></li>
                             <li><a href="/project4/boardlist.do">식재료 공동구매</a></li>
                         </ul>

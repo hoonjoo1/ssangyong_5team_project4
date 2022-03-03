@@ -331,7 +331,7 @@ request.setCharacterEncoding("utf-8");
                 <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="footer__about">
                         <div class="footer__about__logo">
-                            <a href="./index.html"><img src="/project4/res/logoimage.png" alt=""></a>
+                            <a href="/project4/main.do"><img src="/project4/res/logoimage.png" alt=""></a>
                         </div>
                         <ul>
                             <li>Address: 서울시 강남구 테헤란로</li>
