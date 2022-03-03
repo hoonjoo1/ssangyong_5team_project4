@@ -138,7 +138,7 @@
                     </div>
                     <div class="col-lg-3">
                         <div class="categories__item set-bg" data-setbg="/project4/res/cat-2.png">
-                            <h5><a href="/project4/et.do">같이 먹어요</a></h5>
+                            <h5><a href="/project4/et.do?method=list">같이 먹어요</a></h5>
                         </div>
                     </div>
                     <div class="col-lg-3">
