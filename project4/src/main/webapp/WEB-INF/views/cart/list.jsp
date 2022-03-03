@@ -98,7 +98,7 @@ input[id="cb1"]:checked+label {
 								<h5>
 									<a href="/project4/cartget.do?cartkey=${list.cartkey }">${list.menu }</a>
 								</h5>
-								<p>{list.message}</p>
+								<p>${list.message}</p>
 
 							</div>
 						</div>

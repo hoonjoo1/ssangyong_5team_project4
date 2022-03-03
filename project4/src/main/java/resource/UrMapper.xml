@@ -70,7 +70,7 @@
 		update ur
 		set
 		title=#{title},
-		oppograde=#{oppograde}
+		content=#{content}
 		where urkey=#{urkey}
 	</update>
 	<delete id="delete" parameterType="int">

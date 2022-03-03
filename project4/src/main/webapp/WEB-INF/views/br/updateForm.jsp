@@ -3,13 +3,13 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
-<%@ include file="../includes/header.jsp"%>
+<%@ include file="../common/header.jsp"%>
 <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 <link rel="icon" href="/favicon.ico" type="image/x-icon">
 
 
 <div class="checkout__form" style="width: 50%; margin: 0 auto;">
-	<form action="/br/update.do">
+	<form action="/project4/brupdate.do">
 		<h4>식당 리뷰 수정</h4>
 		<div class="row">
 			<div class="col-lg-8 col-md-6">
@@ -51,12 +51,12 @@
 					<p>
 						리뷰 내용<span>*</span>
 					</p>
-					<textarea rows="20" cols="82" >${br.content }"</textarea>
+					<textarea rows="20" cols="82" value="${br.content }" name="content">${br.content }"</textarea>
 				</div>
 			</div>
 		</div>
 		<input type="hidden" value="${br.bkey }" name="bkey"> <br> 
-		<button class="site-btn" onclick="location.href='/br/list.do'">목록으로</button>
+		<button class="site-btn" onclick="location.href='/project4/br/list.do'">목록으로</button>
 		<input type="submit" value="수정하기" class="site-btn">
 	</form>
 	<br>
@@ -69,4 +69,4 @@
 
 
 
-<%@ include file="../includes/footer.jsp"%>
+<%@ include file="../common/footer.jsp"%>

@@ -56,9 +56,9 @@ $(document).ready(function(){
 							<thead>
 								<tr>
 									<th class="shoping__product">결제 내역</th>
-									<th>Price</th>
-									<th>Quantity</th>
-									<th>Total</th>
+									<th>수량</th>
+									<th>연락처</th>
+									<th>메모</th>
 									<th></th>
 								</tr>
 							</thead>
@@ -69,16 +69,9 @@ $(document).ready(function(){
 										<td class="shoping__cart__item"><img
 											src="/project4/resources/logoimage.png" alt="">
 											<h5>${list.menu }</h5></td>
-										<td class="shoping__cart__price">$55.00</td>
-										<td class="shoping__cart__quantity">
-											<div class="quantity">
-												<div class="pro-qty">
-													<span class="dec qtybtn">-</span> <input type="text"
-														value="1"> <span class="inc qtybtn">+</span>
-												</div>
-											</div>
-										</td>
-										<td class="shoping__cart__total">$110.00</td>
+										<td class="shoping__cart__price">${list.cnt }</td>
+										<td class="shoping__cart__price">${list.phone }</td>
+										<td class="shoping__cart__total">${list.message }</td>
 										<td class="shoping__cart__item__close" onclick="location.href='/project4/paydelete.do?paykey='+${list.paykey}"><span
 											class="icon_close"></span></td>
 									</tr>

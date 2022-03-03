@@ -26,7 +26,8 @@
 		update br
 		set
 		title=#{title},
-		grade=#{grade}
+		grade=#{grade},
+		content=#{content}
 		where bkey=#{bkey}
 	</update>
 

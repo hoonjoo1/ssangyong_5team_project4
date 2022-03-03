@@ -74,7 +74,7 @@ $(document).ready(function(){
                             <div class="row">
                                 <div class="col-lg-6">
                                     <div class="checkout__input">
-                                        <p>대표자<span>*</span></p>
+                                        <p>장바구니 번호<span>*</span></p>
                                         <input type="text" disabled="disabled" value="${cart.cartkey}">
                                     </div>
                                 </div>
@@ -86,29 +86,24 @@ $(document).ready(function(){
                                 </div>
                             </div>
                             <div class="checkout__input">
-                                <p>방문시간<span>*</span></p>
-                                <input type="date" disabled="disabled">
-                                <input type="time" disabled="disabled">
-                            </div>
-                            <div class="checkout__input">
                                 <p>예약메뉴<span>*</span></p>
-                                <input type="text" placeholder="예약 메뉴" class="checkout__input__add" disabled="disabled">
+                                <input type="text" placeholder="예약 메뉴" class="checkout__input__add" disabled="disabled" value="${cart.menu }">
                             </div>
                             <div class="checkout__input">
                                 <p>남기고 싶은 말<span>*</span></p>
-                                <input type="text">
+                                <input type="text" value="${cart.message}" disabled="disabled">
                             </div>
                             <div class="row">
                                 <div class="col-lg-6">
                                     <div class="checkout__input">
                                         <p>Phone<span>*</span></p>
-                                        <input type="text" value="${cart.phone}">
+                                        <input type="text" value="${cart.phone}" disabled="disabled">
                                     </div>
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="checkout__input">
                                         <p>Email<span>*</span></p>
-                                        <input type="text" value="${cart.email}">
+                                        <input type="text" value="${cart.email}" disabled="disabled">
                                     </div>
                                 </div>
                             </div>
@@ -174,7 +169,7 @@ $(document).ready(function(){
                                 </div>
                                 <button type="submit" class="site-btn" onclick="location.href='/project4/cartlist.do'">리스트로</button>
                                 <button type="button" class="btn btn-danger">예약 취소</button>
-                                <button type="button" class="btn btn-warning" onclick="location.href='/project4//payregisterForm.do'">예약하기</button>
+                                <button type="button" class="btn btn-warning" onclick="location.href='/project4//payregisterForm.do'">결제하기</button>
                             </div>
                         </div>
                     </div>

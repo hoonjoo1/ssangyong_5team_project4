@@ -55,7 +55,7 @@
 				</div>
 			</div>
 		</div>
-		<input type="hidden" value="${ur.urkey }" name="urkey"> <br> 
+		 <br> 
 		<button class="site-btn" onclick="location.href='/project4/urlist.do'">목록으로</button>
 		<button class="site-btn" onclick="location.href='/project4/urlist.do'">목록으로</button>
 		<input type="submit" value="수정하기" class="site-btn">

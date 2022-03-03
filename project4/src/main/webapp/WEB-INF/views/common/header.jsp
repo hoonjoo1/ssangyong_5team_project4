@@ -420,7 +420,6 @@ request.setCharacterEncoding("utf-8");
 
 
 
-                                 <a href="#"><img src="https://img.icons8.com/ios-filled/14/000000/lock.png"/>    로그인</a>
                                 <a href="/project4/userinsertForm.do"><img src="https://img.icons8.com/metro/14/000000/add-user-male.png"/>    회원가입</a>
                                 <a href="/project4/usermypage.do?userkey=${users.userkey }"><i class="fa fa-user"></i>    마이페이지</a>
                                 <a href="#"><img src="https://img.icons8.com/external-sbts2018-solid-sbts2018/14/000000/external-headphone-social-media-sbts2018-solid-sbts2018.png"/>    고객센터</a>

@@ -5,7 +5,7 @@
 
 <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 <link rel="icon" href="/favicon.ico" type="image/x-icon">
-<%@ include file="../includes/header.jsp"%>
+<%@ include file="../common/header.jsp"%>
 <div class="checkout__form" style="width: 50%; margin: 0 auto;">
 	<h4>상세 식당 리뷰</h4>
 	<div class="row">
@@ -47,10 +47,10 @@
 		</div>
 	</div>
 	<button class="site-btn"
-		onclick="location.href='/br/updateForm.do?bkey='+${br.bkey}">수정하기</button>
+		onclick="location.href='/project4/brupdateForm.do?bkey='+${br.bkey}">수정하기</button>
 	<button class="site-btn"
-		onclick="location.href='/br/delete.do?bkey='+${br.bkey}">삭제하기</button>
-	<button class="site-btn" onclick="location.href='/br/list.do'">목록으로</button>
+		onclick="location.href='/project4/brdelete.do?bkey='+${br.bkey}">삭제하기</button>
+	<button class="site-btn" onclick="location.href='/project4/brlist.do'">목록으로</button>
 	<br>
 </div>
 <br>
@@ -354,4 +354,4 @@ $(document).ready(function () {
 
 
 
-<%@ include file="../includes/footer.jsp"%>
+<%@ include file="../common/footer.jsp"%>

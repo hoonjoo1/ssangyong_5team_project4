@@ -27,7 +27,7 @@
 	<tbody>
 		<c:forEach var="list" items="${list }">
 			<tr class="table-danger"
-				onclick="location.href='/br/get.do?bkey='+${list.bkey}">
+				onclick="location.href='/project4/brget.do?bkey='+${list.bkey}">
 				<td>${list.bkey }</td>
 				<td>${list.title}</td>
 				<td>${list.grade }</td>

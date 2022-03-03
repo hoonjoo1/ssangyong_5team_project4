@@ -63,7 +63,7 @@ $(document).ready(function(){
 				</div>
 			</div>
 			<div class="checkout__form">
-				<h4>예약 내역을 꼼꼼히 적으시오.</h4>
+				<h4>결제 내역을 꼼꼼히 적으시오.</h4>
 				<form action="/project4/payinsert.do">
 					<div class="row">
 						<div class="col-lg-8 col-md-6">
@@ -84,12 +84,6 @@ $(document).ready(function(){
 										<input type="number" name="cnt">
 									</div>
 								</div>
-							</div>
-							<div class="checkout__input">
-								<p>
-									방문시간<span>*</span>
-								</p>
-								<input type="date"> <input type="time">
 							</div>
 							<div class="checkout__input">
 								<p>
