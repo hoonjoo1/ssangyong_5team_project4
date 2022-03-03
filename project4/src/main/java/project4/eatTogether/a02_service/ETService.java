@@ -17,8 +17,10 @@ public class ETService {
 	public List<EatTogether> ETList(EatTogether sch){
 		return dao.ETList(sch);
 	}
-	public void insET(EatTogether ins) {
+	public String insET(EatTogether ins) {
 		dao.insET(ins);
+		String msg = "등록성공";
+		return msg;
 	}
 	public EatTogether getET(int eattokey) {
 		return dao.getET(eattokey);

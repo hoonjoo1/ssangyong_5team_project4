@@ -31,7 +31,7 @@ public class ETController {
 	@RequestMapping(params="method=updateFrm")
 	public String uptETFrm(int eattokey, Model d) {
 		d.addAttribute("et",service.getET(eattokey));
-		return "eatTogether_update";
+		return "\\eatTogether\\eatTogether_update";
 	}
 	
 	@RequestMapping(params="method=update")
@@ -49,7 +49,7 @@ public class ETController {
 	
 	@RequestMapping(params="method=insert")
 	public String insET(EatTogether ins, Model d) {
-		service.insET(ins);
+		d.addAttribute("msg",service.insET(ins));
 		return "\\eatTogether\\eatTogether_write";
 	}
 	

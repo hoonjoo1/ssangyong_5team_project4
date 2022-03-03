@@ -8,28 +8,9 @@
 <html>
 
 	<head>
-	    <meta charset="UTF-8">
-	    <meta name="description" content="Ogani Template">
-	    <meta name="keywords" content="Ogani, unica, creative, html">
-	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-	    <title>우리끼니 | 같이먹어요</title>
-	
-	    <!-- Google Font -->
-	    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet">
-	
-	    <!-- Css Styles -->	    
-	    <link rel="stylesheet" href="res/css/bootstrap.min.css" type="text/css">
-	    <link rel="stylesheet" href="res/css/font-awesome.min.css" type="text/css">
-	    <link rel="stylesheet" href="res/css/elegant-icons.css" type="text/css">
-	    <link rel="stylesheet" href="res/css/nice-select.css" type="text/css">
-	    <link rel="stylesheet" href="res/css/jquery-ui.min.css" type="text/css">
-	    <link rel="stylesheet" href="res/css/owl.carousel.min.css" type="text/css">
-	    <link rel="stylesheet" href="res/css/slicknav.min.css" type="text/css">
-	    <link rel="stylesheet" href="res/css/style.css" type="text/css">
-	    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-		<script src="https://developers.google.com/web/ilt/pwa/working-with-the-fetch-api" type="text/javascript"></script>
-		<script src="http://code.jquery.com/jquery-latest.js"></script>
+	    <jsp:include page="../common/header.jsp">
+	      <jsp:param name="name" value="header" />
+	   </jsp:include> 
 	    <script>
 	    	$(document).ready(function(){
 	    		$("#regBtn").click(function(){
@@ -46,6 +27,7 @@
 					location.href="${path}/et.do?method=list";
 				});
 	    	});
+	    </script>
 	    	
 	    
 	    
@@ -249,17 +231,8 @@
             </div>
         </div>
     </section>
-	    <!-- Checkout Section End -->
-	
-	
-	    <!-- Js Plugins -->
-	    <script src="res/js/jquery-3.3.1.min.js"></script>
-	    <script src="res/js/bootstrap.min.js"></script>
-	    <script src="res/js/jquery.nice-select.min.js"></script>
-	    <script src="res/js/jquery-ui.min.js"></script>
-	    <script src="res/js/jquery.slicknav.js"></script>
-	    <script src="res/js/mixitup.min.js"></script>
-	    <script src="res/js/owl.carousel.min.js"></script>
-	    <script src="res/js/main.js"></script>
+	    <jsp:include page="../common/footer.jsp">
+	      <jsp:param name="name" value="footer" />
+	   </jsp:include>
 	</body>
 </html>
